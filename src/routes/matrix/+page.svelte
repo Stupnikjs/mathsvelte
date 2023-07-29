@@ -71,13 +71,21 @@
             <p> Rotation de 45° </p>
             {@html katexify(`\\frac{1}{\\sqrt{2}}\\begin{pmatrix} - 1 & 1 \\\\ 1 & 1 \\end{pmatrix} `, false)}
             B
-            {@html katexify(` \\begin{bmatrix} x \\\\ y \\end{bmatrix} `, false)}
+            {@html katexify(`\\binom{n}{k}`, false)}
             <div class="m-4">
                 <p> Exemple soit B = {@html katexify(` \\begin{pmatrix} 5 & 1  \\\\  2 & 1 \\end{pmatrix} `, false)}
                   et le vecteur  {@html katexify(` v = \\begin{bmatrix} 5 & 1  \\\\  2 & 1 \\end{bmatrix}`, false)}
                 </p>
             </div>
         </div>
+    </div>
+    <div class="bg-orange-50 m-5 p-5">
+        <h2>le procédé de gram-schmidt</h2>
+        <p>ou Comment construire un "othonormal vector set" ?</p>
+        <p>prenons un ensemble de vecteur lineairement independants </p>
+        <p> pour verifier l'independance il faut ecrire la matrice et verifier que le determinent n'est pas 0 ( vecteur dependants )</p>
+        <p> prenons le premier vecteur du set  {@html katexify(`v_1 \\medspace e_1 = \\frac{v_1}{\\mid v_1 \\mid} `, false)} </p>
+        <p>  {@html katexify(`v2  = \\frac{(v_2.e_1)e_1}{\\mid e_1 \\mid} + u_2 `, false)} </p>
     </div>
     
 </div>
