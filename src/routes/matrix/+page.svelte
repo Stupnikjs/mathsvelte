@@ -2,9 +2,8 @@
     import "../../style/style.css"
     import katexify from "../../functions/Katexify";
     import "@fontsource/voltaire"
-
     let math1 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}`
-    let math2 = `\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix}`
+    let math2 = `\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix} = \\begin{bmatrix} 7*5 + -6*6 \\\\ 12 * 5 + 8 * 6  \\end{bmatrix} `
     let math3 = `5\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 0  \\end{bmatrix} + 
          6\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 0 \\\\ 1  \\end{bmatrix}`
     let math4 = `5\\begin{bmatrix} 7  \\\\ 12 \\end{bmatrix} + 6\\begin{bmatrix} -6 \\\\ 8  \\end{bmatrix}`
@@ -23,10 +22,10 @@
         <p> Les matrices peuvent nous aider a resoudres des equations simultanées </p>
         <div>{@html katexify(math1, true)}</div>
         <div class="p-2 flex flex-col gap-4">
-            <h2 class="text-xl">Multiplitcation de matrices </h2>
+            <h2 class="text-xl">Multiplication de matrices </h2>
             <div>
-                <div>{@html katexify(math2, true)}</div>
-            <p>Developpement</p>
+                <div>{@html katexify(math2, true)}</div> 
+            <p class="m-2">Developpement possible</p>
             <div>
                 {@html katexify(math3, true)}
                 </div>
@@ -68,8 +67,17 @@
     <div class="m-5 p-5 flex flex-col bg-indigo-100">
         <h2>Rotation et Changement de base </h2>
         <p> Pour efectuer une rotation dans un nouvel ensemeble de coordonées  Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
-        <p> Rotation de {@html katexify(`45°`, false)}</p>
-        {@html katexify(` \\frac{1}{\\sqrt{2}}\\begin{pmatrix} - & b \\\\ c & 1 \\end{pmatrix} `, false)}
+        <div class="m-4">
+            <p> Rotation de 45° </p>
+            {@html katexify(`\\frac{1}{\\sqrt{2}}\\begin{pmatrix} - 1 & 1 \\\\ 1 & 1 \\end{pmatrix} `, false)}
+            B
+            {@html katexify(` \\begin{bmatrix} x \\\\ y \\end{bmatrix} `, false)}
+            <div class="m-4">
+                <p> Exemple soit B = {@html katexify(` \\begin{pmatrix} 5 & 1  \\\\  2 & 1 \\end{pmatrix} `, false)}
+                  et le vecteur  {@html katexify(` v = \\begin{bmatrix} 5 & 1  \\\\  2 & 1 \\end{bmatrix}`, false)}
+                </p>
+            </div>
+        </div>
     </div>
     
 </div>
@@ -78,5 +86,10 @@
 <style>
     .voltaire{
         font-family: "Voltaire", sans-serif;
+    }
+    h2{
+        background-color: black;
+        color: rgb(152, 226, 72); 
+        margin-bottom: 2rem;
     }
 </style>
