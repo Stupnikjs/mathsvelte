@@ -1,48 +1,34 @@
 <script lang="ts">
+
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import * as THREE from 'three';
 
   let el: any;
   $: x = 0.01;
+  let l = 1 ; 
 
   if (browser) {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    /*
-    let ax =   new THREE.Vector3(1, 0, 0) // X-axis
-    let ay =  new THREE.Vector3(0, 1, 0) // Y-axis
-    let az =  new THREE.Vector3(0, 0, 1) // Z-axis
-   
-    function getLineFromAxis(axis:THREE.Vector3){
-      const points = [new THREE.Vector3(0, 0, 0), axis]; // Line from origin to the axis
-      const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
-      const geometry = new THREE.BufferGeometry().setFromPoints(points);
-      const line = new THREE.Line(geometry, material);
-      return line 
-    }
-    let lineX = getLineFromAxis(ax)
-    let lineY = getLineFromAxis(ay)
-    let lineZ = getLineFromAxis(az)
-
     
-
-    scene.add(lineX)
-    scene.add(lineY)
-    scene.add(lineZ)
-
-    */
     
-    const axes = [
-      new THREE.Vector3(2, 0, 0), // X-axis
-      new THREE.Vector3(0, 2, 0), // Y-axis
-      new THREE.Vector3(0, 0, 2), // Z-axis
+    function getAxes (l:number){
+      return  [
+      new THREE.Vector3(l, 0, 0), // X-axis
+      new THREE.Vector3(0, l, 0), // Y-axis
+      new THREE.Vector3(0, 0, l), // Z-axis
     ];
+      
+    }
+    
 
     const material = new THREE.LineBasicMaterial({ color: 0x0000ff });
+
+    const axes = getAxes(l)
     axes.forEach((axis) => {
-      const points = [new THREE.Vector3(0, 0, 0), axis]; // Line from origin to the axis
+      const points = [new THREE.Vector3(0, 0, 0), axis.addScalar(1)]; // Line from origin to the axis
       const geometry = new THREE.BufferGeometry().setFromPoints(points);
       const line = new THREE.Line(geometry, material);
       scene.add(line);
@@ -59,13 +45,22 @@
         // Rotate each line around its own axis
         axis.applyAxisAngle(axes[index], x); // Rotate each line around its own axis
       });
-      scene.children[0].rotation.z += x 
+  
       scene.children[1].rotation.y += x
+      scene.children[2].rotation.y += x
 
       renderer.render(scene, camera);
     };
 
-
+    // comment rendre grow accessible 
+    /*
+    const grow = () => {
+      scene.children.forEach((el:THREE.Vector3) => {
+        el.addScalar(1)
+      })
+    }
+    */
+   
     const resize = () => {
       renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -77,11 +72,19 @@
       resize();
       animate();
     };
+    
+    
 
     onMount(() => {
       createScene(el);
     });
   }
+
+
+  
 </script>
 
 <canvas bind:this={el}></canvas>
+
+
+
