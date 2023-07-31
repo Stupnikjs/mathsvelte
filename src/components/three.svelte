@@ -8,13 +8,7 @@
   $: x = 0.01;
   let l = 1 ; 
 
-  if (browser) {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-    
-    
-    function getAxes (l:number){
+  function getAxes (l:number){
       return  [
       new THREE.Vector3(l, 0, 0), // X-axis
       new THREE.Vector3(0, l, 0), // Y-axis
@@ -22,11 +16,16 @@
     ];
       
     }
-    
+  const axes = getAxes(l)
+
+  function test(axes:THREE.Vector3[]){
+    if (browser) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     const material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 
-    const axes = getAxes(l)
+    
     axes.forEach((axis) => {
       const points = [new THREE.Vector3(0, 0, 0), axis.addScalar(1)]; // Line from origin to the axis
       const geometry = new THREE.BufferGeometry().setFromPoints(points);
@@ -51,15 +50,6 @@
 
       renderer.render(scene, camera);
     };
-
-    // comment rendre grow accessible 
-    /*
-    const grow = () => {
-      scene.children.forEach((el:THREE.Vector3) => {
-        el.addScalar(1)
-      })
-    }
-    */
    
     const resize = () => {
       renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
@@ -79,8 +69,8 @@
       createScene(el);
     });
   }
-
-
+  }
+  test(axes)
   
 </script>
 
