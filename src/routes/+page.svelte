@@ -1,5 +1,6 @@
 <script>
-    import "../style/style.css" 
+    import Svg from "../components/svg.svelte";
+import "../style/style.css" 
     import "@fontsource/voltaire" 
 </script>
 
@@ -9,8 +10,9 @@
     <a href="/mlearning">Machine Learning  </a>
   </nav>
   <h1> L'Apprentissage Automatique </h1>
-
+  <Svg></Svg>
 </div>
+
 
 
 
