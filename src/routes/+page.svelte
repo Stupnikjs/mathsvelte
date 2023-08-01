@@ -1,5 +1,5 @@
 <script>
-    import Svg from "../components/svg.svelte";
+    import Svg from "../svg/svg.svelte";
 import "../style/style.css" 
     import "@fontsource/voltaire" 
 </script>
