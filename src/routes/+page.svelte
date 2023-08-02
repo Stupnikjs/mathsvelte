@@ -10,7 +10,6 @@ import "../style/style.css"
     <a href="/mlearning">Machine Learning  </a>
   </nav>
   <h1> L'Apprentissage Automatique </h1>
-  <Svg></Svg>
 </div>
 
 
