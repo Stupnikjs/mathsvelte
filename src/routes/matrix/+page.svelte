@@ -40,34 +40,35 @@
        
     </div>
 
-    <div class="p-4 m-4 bg-gray-50 flex flex-col gap-2">
-        <h3>La Matrice Identité</h3>
+    <MatrixItem title="La Matrice Identité" color="lightyellow">
+        
         <p>C'est la matrice de meme dimension qui lorsque on multiplie une matrice, nous donne la meme matrice </p>
         <p>elle est composé de 1 sur la digonale et de 0 sur le reste</p>
         <div></div>{`AI = A `}
         <p>pour une matrice de cette forme </p>    
         {@html katexify(math7, true)}
-    </div>
-   
+    </MatrixItem>
+    
     <MatrixItem title={"Matrice inverse"} color={"lightblue"}>
         <p> c'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles {@html katexify('AB = I ', true)}  ou {@html katexify('BA = I ', true)} la matrice identité</p>
         {@html katexify(math8, true)}
     </MatrixItem>
        
     
-
-    <div class="m-5 p-5 flex flex-col bg-yellow-100">
-       <h2> Calcul de la Matrice Inversible </h2>
-       <p> soit {@html katexify(math8, true)} </p>
-       {@html katexify(math9, true)}
-    </div>
-
-    <div class="m-5 p-5 flex flex-col bg-blue-100">
-        <h2>Changement de base </h2>
-        <p> Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
-    </div>
-    <div class="m-5 p-5 flex flex-col bg-indigo-100">
-        <h2>Rotation et Changement de base </h2>
+    <MatrixItem title={"Calcul de la Matrice Inversible"} color="lightyellow">
+        <div class="m-5 p-5 flex flex-col bg-yellow-100">
+            <h2>  </h2>
+            <p> soit {@html katexify(math8, true)} </p>
+            {@html katexify(math9, true)}
+        </div>
+    </MatrixItem>
+    <MatrixItem title="Changement de base" color="lightblue">
+        <div class="m-5 p-5 flex flex-col bg-blue-100">
+            <h2> </h2>
+            <p> Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
+        </div>
+    </MatrixItem>
+    <MatrixItem title="Rotation et Changement de base" color="indigo">
         <p> Pour efectuer une rotation dans un nouvel ensemeble de coordonées  Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
         <div class="m-4">
             <p> Rotation de 45° </p>
@@ -80,7 +81,8 @@
                 </p>
             </div>
         </div>
-    </div>
+    </MatrixItem>
+
     <div class="p-5 m-5 bg-blue-200">
         <h2> Transposition </h2>
         <p></p>
@@ -122,7 +124,6 @@
       <p> Pour resumer <Katex text={"E T_E E^{-1} r = r^p "}/></p>
       
     </div>
-    
 </div>
 
 
@@ -130,5 +131,9 @@
     .voltaire{
         font-family: "Voltaire", sans-serif;
     }
-    
+    h2{
+        background-color: black;
+        color: rgb(152, 226, 72); 
+        margin-bottom: 2rem;
+    }
 </style>
