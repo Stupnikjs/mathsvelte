@@ -108,25 +108,29 @@
         
 
 
-    <div class="bg-gray-50 m-5 p-5 flex flex-col gap-2">
-      <h2> Mise en situiation </h2>
-      <p> Soit un ensemble de 3 vecteurs {@html katexify(` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`, false)} </p>
-      <p> On cherche a obtenir une base orthonormale composée d'un plan et d'un 3ème vecteur orthonormale a ce dernier </p>
-      <p> Tout d'abord on cherche {@html katexify(`e_1 = \\frac{v_1}{\\mid v_1 \\mid }  `, false)} </p>
-      <p> Donc {@html katexify(`e_1 = \\frac{1}{\\sqrt{3}}\\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix}  `, false)}
-      <p> Ensuite on cherche {@html katexify(`e_2 = \\frac{u_2}{\\mid u_2 \\mid}  `, false)} avec {@html katexify(`u_2 = v_2 - (v_2.e_1)e_1 `, false)} </p>
-      <p> Finalement on cherche v3 par le même procédé, avec notre nouvelle matrice de transformation {@html katexify(`E = \\begin{bmatrix} \\begin{pmatrix} e_1 \\end{pmatrix} \\begin{pmatrix} e_2 \\end{pmatrix} \\begin{pmatrix} e_3 \\end{pmatrix} \\end{bmatrix} `, false)}  </p>
-      <p> prenons maintenant un vecteur aleatoire que nous voulons refleter dans le plan defini par nos deux premier vecteurs {@html katexify(` v_1 \\space et \\space v_2  `, false)} 
-      <p> 
-        On estime que ce vecteur a une composante dans le plan <Katex text={'e_1 e_2'}></Katex> et la reflexion devrai juste negativer la composante de <Katex text={"e_3"} /> ce qui reviens a utiliser la 
-        matrice de transformation <Katex text={" T_E \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 &  0 & -1\\end{bmatrix}"} />
-      </p>
-      <p> En transformant le vecteur dans la base du plan grace a <Katex text={'E^{-1}'}/> </p>
-      <p> Ensuite j'applique la transformation <Katex text={"T_E"}/> </p>
-      <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
-      <p> Pour resumer <Katex text={"E T_E E^{-1} r = r^p "}/></p>
+    <MatrixItem title="Mise en situiation" color="aliceblue">
+        
+            <p> Soit un ensemble de 3 vecteurs {@html katexify(` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`, false)} </p>
+            <p> On cherche a obtenir une base orthonormale composée d'un plan et d'un 3ème vecteur orthonormale a ce dernier </p>
+            <p> Tout d'abord on cherche {@html katexify(`e_1 = \\frac{v_1}{\\mid v_1 \\mid }  `, false)} </p>
+            <p> Donc {@html katexify(`e_1 = \\frac{1}{\\sqrt{3}}\\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix}  `, false)}
+            <p> Ensuite on cherche {@html katexify(`e_2 = \\frac{u_2}{\\mid u_2 \\mid}  `, false)} avec {@html katexify(`u_2 = v_2 - (v_2.e_1)e_1 `, false)} </p>
+            <p> Finalement on cherche v3 par le même procédé, avec notre nouvelle matrice de transformation {@html katexify(`E = \\begin{bmatrix} \\begin{pmatrix} e_1 \\end{pmatrix} \\begin{pmatrix} e_2 \\end{pmatrix} \\begin{pmatrix} e_3 \\end{pmatrix} \\end{bmatrix} `, false)}  </p>
+            <p> prenons maintenant un vecteur aleatoire que nous voulons refleter dans le plan defini par nos deux premier vecteurs {@html katexify(` v_1 \\space et \\space v_2  `, false)} 
+            <p> 
+              On estime que ce vecteur a une composante dans le plan <Katex text={'e_1 e_2'}></Katex> et la reflexion devrai juste negativer la composante de <Katex text={"e_3"} /> ce qui reviens a utiliser la 
+              matrice de transformation <Katex text={" T_E \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 &  0 & -1\\end{bmatrix}"} />
+            </p>
+            <p> En transformant le vecteur dans la base du plan grace a <Katex text={'E^{-1}'}/> </p>
+            <p> Ensuite j'applique la transformation <Katex text={"T_E"}/> </p>
+            <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
+            <p> Pour resumer <Katex text={"E T_E E^{-1} r = r^p "}/></p>
       
-    </div>
+        
+        
+    </MatrixItem>
+      
+     
 </div>
 
 
