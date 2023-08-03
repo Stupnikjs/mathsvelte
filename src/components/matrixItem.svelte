@@ -5,7 +5,7 @@ $: style = "hidden"
 export let color:string
 export let title:string
 
-function clickHandler(e){
+function clickHandler(e:MouseEvent){
     e.preventDefault()
     style = "nothidden"
 
