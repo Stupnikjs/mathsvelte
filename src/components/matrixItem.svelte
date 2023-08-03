@@ -15,10 +15,10 @@ function clickHandler(e:MouseEvent){
 
 
 
-<div class="p-4 m-4 flex flex-col  colorclass" 
+<div class="colorclass p-5 ml-5" 
      style="--color: {color}" 
      >
-        <h2>{title}</h2>
+        <h2 class="text-center">{title}</h2>
         <button  class="bg-gray-50 w-1/3 m-auto mb-5" on:click={ (e) => clickHandler(e)}> Afficher </button>
         <div class={style + " flex flex-col gap-2 text-xs"}>
             <slot></slot>

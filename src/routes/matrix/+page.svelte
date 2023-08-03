@@ -4,12 +4,9 @@
     import Katex from "../../katex/katex.svelte";
     import "@fontsource/voltaire"
     import MatrixItem from "../../components/matrixItem.svelte";
+    import Header from "../../components/header.svelte";
     
     let math1 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}`
-    let math2 = `\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix} = \\begin{bmatrix} 7*5 + -6*6 \\\\ 12 * 5 + 8 * 6  \\end{bmatrix} `
-    let math3 = `5\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 0  \\end{bmatrix} + 
-         6\\begin{bmatrix} 7 & -6 \\\\ 12 & 8  \\end{bmatrix}\\begin{bmatrix} 0 \\\\ 1  \\end{bmatrix}`
-    let math4 = `5\\begin{bmatrix} 7  \\\\ 12 \\end{bmatrix} + 6\\begin{bmatrix} -6 \\\\ 8  \\end{bmatrix}`
     let math5 = `\\begin{bmatrix} 35  \\\\ 60 \\end{bmatrix} + \\begin{bmatrix} -36 \\\\ 48  \\end{bmatrix}`
     let math6 =  `\\begin{bmatrix} -1 \\\\ 108  \\end{bmatrix}`
     let math7 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1  \\end{bmatrix} = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix} `
@@ -19,8 +16,8 @@
 </script>
 
 
-
-<div class="voltaire text-center flex-col flex gap-2 text-xs">
+<Header></Header>
+<div class="voltaire flex-col flex gap-2 text-xs">
     <h1 class="text-2xl mt-5 mb-10">Les Matrices</h1>
     <p> Les matrices peuvent nous aider a resoudres des equations simultanées </p>
     
@@ -28,18 +25,24 @@
             
     <MatrixItem title="Multiplication des matrices" color="#ffecc4">
                 <div>
-                    <div>{@html katexify(math2, true)}</div> 
+                    <div>{@html katexify(`\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix} = \\begin{bmatrix} 5a + 6b \\\\ 5c + 6d  \\end{bmatrix} `, true)}</div> 
                 <p class="m-2">Developpement possible</p>
                 <div>
-                    {@html katexify(math3, true)}
+                    {@html katexify(`5\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 0  \\end{bmatrix} + 
+                    6\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 0 \\\\ 1  \\end{bmatrix}`, true)}
                     </div>
                     {`=`}
-                    <div>{@html katexify(math4, true)}</div>
+                    <div>{@html katexify(`5\\begin{bmatrix} 7  \\\\ 12 \\end{bmatrix} + 6\\begin{bmatrix} -6 \\\\ 8  \\end{bmatrix}`, true)}</div>
                     {`=`}
                     <div>{@html katexify(math6, true)}</div>
                 </div>
     </MatrixItem>
-                
+    <MatrixItem title="Operations Vectorielles" color="aqua">
+        <p> Le produit scalaire</p>
+        <p>La projection scalaire </p>
+        <p> La projection vecotrielle </p>
+
+    </MatrixItem>          
     <MatrixItem title="La Matrice Identité" color="lightyellow">
         
         <p>C'est la matrice de meme dimension qui lorsque on multiplie une matrice, nous donne la meme matrice </p>
@@ -108,8 +111,7 @@
         
 
 
-    <MatrixItem title="Mise en situiation" color="aliceblue">
-        
+    <MatrixItem title="Mise en situiation" color="aliceblue">  
             <p> Soit un ensemble de 3 vecteurs {@html katexify(` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`, false)} </p>
             <p> On cherche a obtenir une base orthonormale composée d'un plan et d'un 3ème vecteur orthonormale a ce dernier </p>
             <p> Tout d'abord on cherche {@html katexify(`e_1 = \\frac{v_1}{\\mid v_1 \\mid }  `, false)} </p>
@@ -125,12 +127,7 @@
             <p> Ensuite j'applique la transformation <Katex text={"T_E"}/> </p>
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex text={"E T_E E^{-1} r = r^p "}/></p>
-      
-        
-        
-    </MatrixItem>
-      
-     
+    </MatrixItem>  
 </div>
 
 
