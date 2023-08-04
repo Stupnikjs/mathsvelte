@@ -1,13 +1,24 @@
 <script>
+
     import "@fontsource/voltaire"
+
+    let list = [ "exaple", "michel"]
+    $: dropdown = false 
 </script>
 
 <header class="bg-indigo-100 voltaire">
-    <nav >
-        <ul class="flex items-center justify-around">
-            <li> <a href="/matrix">Algebre Linéaire</a> </li>
-            <li> <a href="/mlearning">Programation</a> </li>
-        </ul>
+    <nav>
+        <div class="flex items-center justify-around">
+            
+            <div> <a href="/math/matrix">Algebre Linéaire</a>      
+            </div>
+            {#if dropdown }
+                {#each list as item }
+                    <div>{item}</div>
+                {/each}
+                {/if}
+            <div> <a href="/programmation">Programation</a> </div>
+        </div>
     </nav>
 </header>
 

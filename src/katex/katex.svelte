@@ -3,6 +3,6 @@
     export let text:string
 </script>
 
-<div class="inline">
-    {@html katexify(`${text}`, false)}
+<div>
+    {katexify(`${text}`, false)}
 </div>

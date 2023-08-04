@@ -1,9 +1,10 @@
 <script lang="ts">
 
-$: style = "hidden"
+$: style = "nothidden"
 
 export let color:string
 export let title:string
+
 
 function clickHandler(e:MouseEvent){
     e.preventDefault()
@@ -15,11 +16,10 @@ function clickHandler(e:MouseEvent){
 
 
 
-<div class="colorclass p-5 ml-5" 
+<div class="colorclass p-2 ml-5 relative" 
      style="--color: {color}" 
      >
-        <h2 class="text-center">{title}</h2>
-        <button  class="bg-gray-50 w-1/3 m-auto mb-5" on:click={ (e) => clickHandler(e)}> Afficher </button>
+        <h2 class="text-center rounded w-1/3 absolute -top-2">{title}</h2>
         <div class={style + " flex flex-col gap-2 text-xs"}>
             <slot></slot>
         </div>
