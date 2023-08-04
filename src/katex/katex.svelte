@@ -3,6 +3,6 @@
     export let text:string
 </script>
 
-<div>
-    {katexify(`${text}`, false)}
+<div class="p-2 w-2/5">
+    {@html katexify(`${text}`, true)}
 </div>

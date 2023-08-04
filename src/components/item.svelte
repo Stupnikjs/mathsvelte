@@ -16,10 +16,10 @@ function clickHandler(e:MouseEvent){
 
 
 
-<div class="colorclass p-2 ml-5 relative" 
+<div class="colorclass p-5 mx-auto relative my-4 w-4/5 " 
      style="--color: {color}" 
      >
-        <h2 class="text-center rounded w-1/3 absolute -top-2">{title}</h2>
+        <h2 class="text-center rounded w-1/4 absolute -top-2">{title}</h2>
         <div class={style + " flex flex-col gap-2 text-xs"}>
             <slot></slot>
         </div>
@@ -29,6 +29,7 @@ function clickHandler(e:MouseEvent){
 <style>
     .colorclass{
         background-color: var(--color);
+        box-shadow: .1em .1em .1em .1em gray;
     }
     h2{
         background-color: black;
