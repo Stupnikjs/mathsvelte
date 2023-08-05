@@ -37,18 +37,15 @@
                  
    
     <Item title="Multiplication des matrices" onMountCb={registerChildComponent}>
-            <div class="p-4"> 
+        <div class="px-2"> 
                 <p class="mb-4">On peut seulement multiplier deux matrices dont la première a un nombre de colonne égale au nombre de ligne de la deuxième </p>
                 <Katex center={false} text={`\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix} = \\begin{bmatrix} 5a + 6b \\\\ 5c + 6d  \\end{bmatrix} `}></Katex>
-            </div>
-            <p class="px-4">Developpement possible</p>
-            <div class="p-4">
+         </div>
+            <p class="px-2">Developpement possible</p>
+        <div class="p-2">
             <Katex center={false} text={`5\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 0  \\end{bmatrix} + 
-                    6\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 0 \\\\ 1  \\end{bmatrix} \\space = \\space 5\\begin{bmatrix} 7  \\\\ 12 \\end{bmatrix} + 6\\begin{bmatrix} -6 \\\\ 8  \\end{bmatrix} \\space = \\space \\begin{bmatrix} -1 \\\\ 108  \\end{bmatrix}`}></Katex>
-        </div>
-        <div>
-            
-        </div>     
+                    6\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 0 \\\\ 1  \\end{bmatrix} \\space = \\space 5\\begin{bmatrix} a  \\\\ c \\end{bmatrix} + 6\\begin{bmatrix} b \\\\ d  \\end{bmatrix} \\space`}></Katex>
+        </div>   
     </Item>
     <Item title="Operations Vectorielles" onMountCb={registerChildComponent}>
         <p> Le produit scalaire</p>
@@ -59,16 +56,16 @@
     <Item title="La Matrice Identité" onMountCb={registerChildComponent}>
         <p>C'est la matrice de meme dimension qui lorsque on multiplie une matrice, nous donne la meme matrice </p>
         <p>elle est composé de 1 sur la digonale et de 0 sur le reste</p>
-        <div class="">
-            <Katex center={false} text={`AI = A `}></Katex>
+        <div class="flex flex-col gap-2">
+            <Katex center={true} text={`AI = A `}></Katex>
             <p>pour une matrice de cette forme </p>    
-            <Katex  center={false} text={math7} ></Katex>
+            <Katex  center={true} text={math7} ></Katex>
         </div>
     </Item>
     
     <Item title="Matrice inverse" onMountCb={registerChildComponent}>
-        <p> c'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex center={false} text={'AB = I '}></Katex>  ou <Katex center={false} text={'BA = I '}/> la matrice identité</p>
-        <Katex  center={false} text={math8}></Katex>
+        <p class="mb-4"> C'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex center={true} text={'AB = I \\space ou \\space BA = I  \\space \\space  la \\space matrice \\space identité'}></Katex> </p>
+        <Katex  center={true} text={math8}></Katex>
     </Item>
        
     
@@ -106,7 +103,7 @@
                 <p> prenons le premier vecteur du set  <Katex center={false} text={`v_1 \\medspace e_1 = \\frac{v_1}{\\mid v_1 \\mid} `}/> </p>
                 <p>  <Katex  center={false} text={`v2  = \\frac{(v_2.e_1)e_1}{\\mid e_1 \\mid} + u_2 \\space \\space donc \\space u_2  = v_2 - (v_2.e_1)e_1 `}></Katex> </p>
             </div>
-           <div class="">
+           <div>
                 <p> ensuite prenons v3 qui n'est pas dans le meme plan que v1 et v2  </p>
                 <p><Katex  center={false} text={`u_3 = v_3 - (v_3.e_1)e_1 - (v_3.e_2)e_2`}></Katex></p>
                 <p> Ainsi de suite pour les vecteurs de dimensions superieures </p>
@@ -132,6 +129,9 @@
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex center={false} text={"E T_E E^{-1} r = r^p "}/></p>
     </Item>  
+    <Item title="eigenvectors et eigenvalues" onMountCb={registerChildComponent}>
+
+    </Item>
 </div>
 </div>
 

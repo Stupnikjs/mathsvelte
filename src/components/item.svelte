@@ -20,7 +20,7 @@ onMount(() => {
 
 
 
-<div class=" p-5 mx-auto relative my-4 w-4/5" id={`${deleteBlank(title)}`}>
+<div class=" p-4 mx-auto relative my-4 w-4/5" id={`${deleteBlank(title)}`}>
         <div class="separateur"></div>
         <h2 class="text-center rounded w-1/4 absolute -top-2">{title}</h2>
         <div class={style + " flex flex-col gap-2 fontsize"}>
