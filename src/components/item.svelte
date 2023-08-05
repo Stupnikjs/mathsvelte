@@ -2,7 +2,6 @@
 
 $: style = "nothidden"
 
-export let color:string
 export let title:string
 
 
@@ -16,9 +15,8 @@ function clickHandler(e:MouseEvent){
 
 
 
-<div class="colorclass p-5 mx-auto relative my-4 w-4/5 " 
-     style="--color: {color}" 
-     >
+<div class=" p-5 mx-auto relative my-4 w-4/5 ">
+        <div class="separateur"></div>
         <h2 class="text-center rounded w-1/4 absolute -top-2">{title}</h2>
         <div class={style + " flex flex-col gap-2 text-xs"}>
             <slot></slot>
@@ -27,14 +25,13 @@ function clickHandler(e:MouseEvent){
 </div>
 
 <style>
-    .colorclass{
-        background-color: var(--color);
-        box-shadow: .1em .1em .1em .1em gray;
-    }
     h2{
-        background-color: black;
-        color: rgb(152, 226, 72); 
-        margin-bottom: 2rem;
+        font-size: 1.1rem; 
+        white-space: nowrap;
+    }
+    .separateur{
+        border-bottom: 1px solid gray;
+        margin-bottom: 1rem;
     }
     .hidden{
         display: none;

@@ -15,14 +15,16 @@
 
 
 <Header></Header>
-<div class="voltaire flex-col flex gap-2 text-xs">
+<div class="voltaire flex-col flex gap-2 text-xs bg-yellow-50">
     
-    <Item title="Les Matrices" color="#f2f2f2">
-        <p> Les matrices peuvent nous aider a resoudres des equations simultanées </p>
-        <Katex text={math1}></Katex>          
-    </Item>
+        <div class="text-center ">
+            <h1 class="text-xl"> Les Matrices </h1>
+            <p> Les matrices peuvent nous aider a resoudres des equations simultanées </p>
+        </div>
+        <Katex text={math1} center={true}></Katex>
+                 
    
-    <Item title="Multiplication des matrices" color="#ffecc4">
+    <Item title="Multiplication des matrices">
             <div class="p-4"> 
                 <p class="mb-4">On peut seulement multiplier deux matrices dont la première a un nombre de colonne égale au nombre de ligne de la deuxième </p>
                 <Katex text={`\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix} = \\begin{bmatrix} 5a + 6b \\\\ 5c + 6d  \\end{bmatrix} `}></Katex>
@@ -36,13 +38,13 @@
             
         </div>     
     </Item>
-    <Item title="Operations Vectorielles" color="aqua">
+    <Item title="Operations Vectorielles">
         <p> Le produit scalaire</p>
         <p>La projection scalaire </p>
         <p> La projection vecotrielle </p>
 
     </Item>          
-    <Item title="La Matrice Identité" color="lightyellow">
+    <Item title="La Matrice Identité">
         <p>C'est la matrice de meme dimension qui lorsque on multiplie une matrice, nous donne la meme matrice </p>
         <p>elle est composé de 1 sur la digonale et de 0 sur le reste</p>
         <div class="">
@@ -52,22 +54,22 @@
         </div>
     </Item>
     
-    <Item title="Matrice inverse" color="lightblue">
+    <Item title="Matrice inverse">
         <p> c'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex text={'AB = I '}></Katex>  ou <Katex text={'BA = I '}/> la matrice identité</p>
         <Katex text={math8}></Katex>
     </Item>
        
     
-    <Item title="Calcul de la Matrice Inversible" color="lightyellow">
+    <Item title="Calcul de la Matrice Inversible">
         <div class="m-5 p-5 flex flex-col">
             <p> soit <Katex text={math8}></Katex> </p>
             <Katex text={math9} ></Katex>
         </div>
     </Item>
-    <Item title="Changement de base" color="lightblue">
+    <Item title="Changement de base">
             <p> Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
     </Item>
-    <Item title="Rotation et Changement de base" color="indigo">
+    <Item title="Rotation et Changement de base">
         <p> Pour effectuer une rotation dans un nouvel ensemeble de coordonées  Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
         <div class="m-4">
             <p> Rotation de 45° </p>
@@ -86,7 +88,7 @@
         <h2> Transposition </h2>
     </div>
 
-    <Item title="le procédé de gram-schmidt" color="lightgreen">
+    <Item title="le procédé de gram-schmidt">
             <p class="-mt-5 mb-4 text-xl"> ou Comment construire une base vectorielle orthnormale ?</p>
             <p> prenons un ensemble de vecteur lineairement independants </p>
             <p class="my-2"> pour verifier l'independance il faut ecrire la matrice et verifier que le determinent n'est pas 0 ( vecteur dependants )</p>
@@ -103,7 +105,7 @@
         
 
 
-    <Item title="Mise en situiation" color="aliceblue">  
+    <Item title="Mise en situiation">  
             <p> Soit un ensemble de 3 vecteurs <Katex text={` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`}></Katex> </p>
             <p> On cherche a obtenir une base orthonormale composée d'un plan et d'un 3ème vecteur orthonormale a ce dernier </p>
             <p> Tout d'abord on cherche <Katex text={`e_1 = \\frac{v_1}{\\mid v_1 \\mid } `}/> </p>
