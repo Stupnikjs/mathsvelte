@@ -15,7 +15,7 @@
     $: itemTitles = [] as string[]; 
 
     function registerChildComponent(componentTitle:string) {
-    if (!itemTitles.includes(componentTitle))itemTitles.push(componentTitle);
+    if (!itemTitles.includes(componentTitle)) itemTitles.push(componentTitle);
     itemTitles = itemTitles
    }
 
@@ -67,7 +67,7 @@
     </Item>
     
     <Item title="Matrice inverse" onMountCb={registerChildComponent}>
-        <p> c'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex text={'AB = I '}></Katex>  ou <Katex text={'BA = I '}/> la matrice identité</p>
+        <p> c'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex center={false} text={'AB = I '}></Katex>  ou <Katex center={false} text={'BA = I '}/> la matrice identité</p>
         <Katex  center={false} text={math8}></Katex>
     </Item>
        
@@ -116,21 +116,21 @@
 
 
     <Item title="Mise en situiation" onMountCb={registerChildComponent}>  
-            <p> Soit un ensemble de 3 vecteurs <Katex text={` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`}></Katex> </p>
+            <p> Soit un ensemble de 3 vecteurs <Katex center={false} text={` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`}></Katex> </p>
             <p> On cherche a obtenir une base orthonormale composée d'un plan et d'un 3ème vecteur orthonormale a ce dernier </p>
-            <p> Tout d'abord on cherche <Katex text={`e_1 = \\frac{v_1}{\\mid v_1 \\mid } `}/> </p>
-            <p> Donc <Katex text={`e_1 = \\frac{1}{\\sqrt{3}}\\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix}  `}></Katex>
-             Ensuite on cherche <Katex text={`e_2 = \\frac{u_2}{\\mid u_2 \\mid}  `}/> avec <Katex text={`u_2 = v_2 - (v_2.e_1)e_1 `}></Katex> 
-            <p> Finalement on cherche v3 par le même procédé, avec notre nouvelle matrice de transformation <Katex text={`E = \\begin{bmatrix} \\begin{pmatrix} e_1 \\end{pmatrix} \\begin{pmatrix} e_2 \\end{pmatrix} \\begin{pmatrix} e_3 \\end{pmatrix} \\end{bmatrix} `} /> </p>
-            <p> prenons maintenant un vecteur aleatoire que nous voulons refleter dans le plan defini par nos deux premier vecteurs <Katex text={` v_1 \\space et \\space v_2  `} />
+            <p> Tout d'abord on cherche <Katex center={false}  text={`e_1 = \\frac{v_1}{\\mid v_1 \\mid } `}/> </p>
+            <p> Donc <Katex  center={false} text={`e_1 = \\frac{1}{\\sqrt{3}}\\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix}  `}></Katex>
+             Ensuite on cherche <Katex  center={false} text={`e_2 = \\frac{u_2}{\\mid u_2 \\mid}  `}/> avec <Katex center={false} text={`u_2 = v_2 - (v_2.e_1)e_1 `}></Katex> 
+            <p> Finalement on cherche v3 par le même procédé, avec notre nouvelle matrice de transformation <Katex center={false} text={`E = \\begin{bmatrix} \\begin{pmatrix} e_1 \\end{pmatrix} \\begin{pmatrix} e_2 \\end{pmatrix} \\begin{pmatrix} e_3 \\end{pmatrix} \\end{bmatrix} `} /> </p>
+            <p> prenons maintenant un vecteur aleatoire que nous voulons refleter dans le plan defini par nos deux premier vecteurs <Katex center={false} text={` v_1 \\space et \\space v_2  `} />
             <p> 
-              On estime que ce vecteur a une composante dans le plan <Katex text={'e_1 e_2'}></Katex> et la reflexion devrai juste negativer la composante de <Katex text={"e_3"} /> ce qui reviens a utiliser la 
-              matrice de transformation <Katex text={" T_E \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 &  0 & -1\\end{bmatrix}"} />
+              On estime que ce vecteur a une composante dans le plan <Katex center={false}  text={'e_1 e_2'}></Katex> et la reflexion devrai juste negativer la composante de <Katex center={false} text={"e_3"} /> ce qui reviens a utiliser la 
+              matrice de transformation <Katex center={false} text={" T_E \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 &  0 & -1\\end{bmatrix}"} />
             </p>
-            <p> En transformant le vecteur dans la base du plan grace a <Katex text={'E^{-1}'}/> </p>
-            <p> Ensuite j'applique la transformation <Katex text={"T_E"}/> </p>
+            <p> En transformant le vecteur dans la base du plan grace a <Katex center={false} text={'E^{-1}'}/> </p>
+            <p> Ensuite j'applique la transformation <Katex  center={false} text={"T_E"}/> </p>
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
-            <p> Pour resumer <Katex text={"E T_E E^{-1} r = r^p "}/></p>
+            <p> Pour resumer <Katex center={false} text={"E T_E E^{-1} r = r^p "}/></p>
     </Item>  
 </div>
 </div>
@@ -144,11 +144,7 @@
     .voltaire{
         font-family: "Voltaire", sans-serif;
     }
-    h2{
-        background-color: black;
-        color: rgb(152, 226, 72); 
-        margin-bottom: 2rem;
-    }
+    
     .fontsize{
         font-size: 0.6rem;
     }
