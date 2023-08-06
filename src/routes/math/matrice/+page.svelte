@@ -104,7 +104,27 @@
                 <p><Katex  center={false} text={`u_3 = v_3 - (v_3.e_1)e_1 - (v_3.e_2)e_2`}></Katex></p>
                 <p> Ainsi de suite pour les vecteurs de dimensions superieures </p>
            </div> 
-           <Python></Python>   
+           <Python>
+            def gsBasis(A) :
+            B = np.array(A, dtype=np.float_) # Make B as a copy of A, 
+            # Loop over all vectors, starting with zero, label them with i
+            for i in range(B.shape[1]) :
+                # Inside that loop, loop over all previous vectors, j, to subtract.
+                for j in range(i) :
+                    # Complete the code to subtract the overlap with previous vectors.
+                    # you'll need the current vector B[:, i] and a previous vector B[:, j]
+                    B[:, i] = B[:, i] - B[:, i] @ B[:, j] * B[:, j]
+                # Next insert code to do the normalisation test for B[:, i]
+                if la.norm(B[:, i]) > verySmallNumber :
+                    B[:, i] = B[:, i] / la.norm(B[:, i])
+                else :
+                    B[:, i] = np.zeros_like(B[:, i])
+                    
+                
+                    
+            # Finally, we return the result:
+            return B
+           </Python>   
     </Item>
         
 
