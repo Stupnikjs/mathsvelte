@@ -1,1 +1,0 @@
-<div> Vecteur </div>

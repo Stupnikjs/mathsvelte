@@ -12,7 +12,7 @@
 <div  class=""
 on:mouseenter={ () => { dropDown = "dropdown"}}  
 on:mouseleave={() => { dropDown = "nodropdown"}}>
-  <a href="/math/matrix" class="relative h-full">{title}</a>
+  <a href={`/${title}`} class="relative h-full m-auto bg-red-50 w-24 px-5">{title}</a>
   <div class={dropDown} >
       {#each items as item, ind}
       <li class={hoverIndex === ind ? "hover": "nohover"} 
@@ -21,7 +21,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
         hoverIndex = ind
         }}  
       on:mouseleave={() => { hoverIndex = -1}}
-        >{item}</li>
+        ><a href={`/${title}/${item}`}>{item}</a></li>
       {/each}
   </div>
 </div>
@@ -32,7 +32,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
 
 .dropdown{
       position: absolute;
-      padding: 2%;
+      width: 4rem;
       border: 1px solid #ccc;
       border-radius: 4px;
       background-color: antiquewhite;
@@ -47,10 +47,15 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
     }
 
     .nohover{
-        display: flex;
+        
+        width: 100%;
+        text-align: center;
     }
 
     .hover{
         background-color: aliceblue;
+        width: 100%;
+        text-align: center;
+
     }
 </style>

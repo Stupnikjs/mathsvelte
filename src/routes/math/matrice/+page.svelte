@@ -47,12 +47,7 @@
                     6\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 0 \\\\ 1  \\end{bmatrix} \\space = \\space 5\\begin{bmatrix} a  \\\\ c \\end{bmatrix} + 6\\begin{bmatrix} b \\\\ d  \\end{bmatrix} \\space`}></Katex>
         </div>   
     </Item>
-    <Item title="Operations Vectorielles" onMountCb={registerChildComponent}>
-        <p> Le produit scalaire</p>
-        <p>La projection scalaire </p>
-        <p> La projection vecotrielle </p>
-
-    </Item>          
+            
     <Item title="La Matrice Identité" onMountCb={registerChildComponent}>
         <p>C'est la matrice de meme dimension qui lorsque on multiplie une matrice, nous donne la meme matrice </p>
         <p>elle est composé de 1 sur la digonale et de 0 sur le reste</p>
