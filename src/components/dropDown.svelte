@@ -1,8 +1,9 @@
 <script lang="ts">
+    
     export let title:string
     export let items: string[]
     $: dropDown = "nodropdown"
-    $: itemHover = "nohover"
+    $: hoverIndex = -1
 
 </script>
 
@@ -14,12 +15,12 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
   <a href="/math/matrix" class="relative h-full">{title}</a>
   <div class={dropDown} >
       {#each items as item, ind}
-      <li class={itemHover} 
+      <li class={hoverIndex === ind ? "hover": "nohover"} 
       id={ind.toString()}
-      on:mouseenter={(e) => { 
-        if(e.target && e.target.id === ind.toString()) itemHover = "hover" 
+      on:mouseenter={() => { 
+        hoverIndex = ind
         }}  
-      on:mouseleave={() => { dropDown = "nodropdown"}}
+      on:mouseleave={() => { hoverIndex = -1}}
         >{item}</li>
       {/each}
   </div>
