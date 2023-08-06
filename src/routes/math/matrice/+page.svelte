@@ -5,6 +5,7 @@
     import Item from "../../../components/item.svelte";
     import Header from "../../../components/header.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
+    import Python from "../../../components/python.svelte";
 
 
     let math1 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}`
@@ -102,7 +103,8 @@
                 <p> ensuite prenons v3 qui n'est pas dans le meme plan que v1 et v2  </p>
                 <p><Katex  center={false} text={`u_3 = v_3 - (v_3.e_1)e_1 - (v_3.e_2)e_2`}></Katex></p>
                 <p> Ainsi de suite pour les vecteurs de dimensions superieures </p>
-           </div>    
+           </div> 
+           <Python></Python>   
     </Item>
         
 
@@ -124,8 +126,15 @@
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex center={false} text={"E T_E E^{-1} r = r^p "}/></p>
     </Item>  
-    <Item title="eigenvectors et eigenvalues" onMountCb={registerChildComponent}>
-
+    <Item title=" Vecteur Propres (eigenvectors et eigenvalues)" onMountCb={registerChildComponent}>
+            <p> 
+                les Vecteur Propres d'une matrice sont les vecteurs qui vont garder 
+                la même direction pendant la transformation de la matrice
+            </p>
+            <p> pour une matrice A <Katex center={true} text={` A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}`}></Katex></p>
+            <Katex center={true} text={` (A - \\lambda I )r = 0`}></Katex>
+             <p> On recherche les solutions a cette équation </p><Katex center={true} text={`det(A - \\lambda I) = 0 `}></Katex>
+             <p> On obtient en developpant <Katex center={true} text={`\\lambda^2 - ( a + d)\\lambda + ad - bc = 0 `}></Katex></p>
     </Item>
 </div>
 </div>
