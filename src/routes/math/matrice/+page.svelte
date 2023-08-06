@@ -60,17 +60,13 @@
     </Item>
     
     <Item title="Matrice inverse" onMountCb={registerChildComponent}>
-        <p class="mb-4"> C'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex center={true} text={'AB = I \\space ou \\space BA = I  \\space \\space  la \\space matrice \\space identité'}></Katex> </p>
+        <p class=""> C'est la matrice carré <i>A</i> pour laquelle il existe une matrice carré <i>B</i> selon lequelles <Katex center={true} text={'AB = I \\space ou \\space BA = I  \\space \\space  la \\space matrice \\space identité'}></Katex> </p>
+         <Katex center={true} text={` ou \\space A^{-1} `}></Katex>
         <Katex  center={true} text={math8}></Katex>
+        <Katex  center={true} text={math9} ></Katex>
     </Item>
        
-    
-    <Item title="Calcul de la Matrice Inversible" onMountCb={registerChildComponent}>
-        <div class="m-5 p-5 flex flex-col">
-            <p> soit <Katex center={false} text={math8}></Katex> </p>
-            <Katex  center={false} text={math9} ></Katex>
-        </div>
-    </Item>
+
     <Item title="Changement de base" onMountCb={registerChildComponent}>
             <p> Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
     </Item>
@@ -109,20 +105,14 @@
             B = np.array(A, dtype=np.float_) # Make B as a copy of A, 
             # Loop over all vectors, starting with zero, label them with i
             for i in range(B.shape[1]) :
-                # Inside that loop, loop over all previous vectors, j, to subtract.
+                # loop over all previous vectors, j, to subtract.
                 for j in range(i) :
-                    # Complete the code to subtract the overlap with previous vectors.
-                    # you'll need the current vector B[:, i] and a previous vector B[:, j]
                     B[:, i] = B[:, i] - B[:, i] @ B[:, j] * B[:, j]
                 # Next insert code to do the normalisation test for B[:, i]
                 if la.norm(B[:, i]) > verySmallNumber :
                     B[:, i] = B[:, i] / la.norm(B[:, i])
                 else :
                     B[:, i] = np.zeros_like(B[:, i])
-                    
-                
-                    
-            # Finally, we return the result:
             return B
            </Python>   
     </Item>
@@ -145,6 +135,19 @@
             <p> Ensuite j'applique la transformation <Katex  center={false} text={"T_E"}/> </p>
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex center={false} text={"E T_E E^{-1} r = r^p "}/></p>
+            <Python>
+                def build_reflection_matrix(bearBasis) : 
+                # The parameter bearBasis is a 2×2 matrix 
+                E = gsBasis(bearBasis) 
+                # Write a matrix in component form that performs the mirror's reflection in the mirror's basis.
+                Einv = inv(E)
+                
+                # Recall, the mirror operates by negating the last component of a vector.
+                TE = np.array([[1,0], [0, -1]])
+
+                T = E @ TE @ Einv
+                return T
+            </Python>
     </Item>  
     <Item title=" Vecteur Propres (eigenvectors et eigenvalues)" onMountCb={registerChildComponent}>
             <p> 
