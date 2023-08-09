@@ -1,10 +1,9 @@
 <script lang="ts">
     import "../../../style/style.css"
-    import Katex from "../../../katex/katex.svelte";
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
-    import Header from "../../../components/header.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
+    import Katex from "../../../katex/katex.svelte";
 
 
 
@@ -20,7 +19,6 @@
 </script>
 
 
-<Header></Header>
 <div class="gridtemp">
     <AsideComp items={itemTitles}></AsideComp>
     <div class="voltaire flex-col flex gap-2 fontsize bg-yellow-50">
@@ -31,9 +29,14 @@
 
         </Item>
         <Item title="Operations Vectorielles" onMountCb={registerChildComponent}>
-            <p> Le produit scalaire</p>
-            <p>La projection scalaire </p>
-            <p> La projection vecotrielle </p>
+            <h3> Le produit scalaire</h3>
+            <Katex text={` v_1 = \\begin{pmatrix} a \\\\ b \\\\ c \\\\ d \\end{pmatrix} \\space  \\space 
+            v_2 = \\begin{pmatrix} e \\\\ f \\\\ g \\\\ h \\end{pmatrix} `} tailwind={"text-center"} ></Katex>
+            <Katex text={`v1.v2 \\space = = ae + fb + gc + dh `} tailwind={"text-center"}></Katex>
+            <h3>La projection scalaire </h3>
+            <Katex text={` s = \\mid v_1 \\mid \\cos\\Theta =  \\frac{v_1 . v_2}{\\mid v1 \\mid} `} tailwind={' text-center'}></Katex>
+            <h3> La projection vecotrielle </h3>
+            <Katex text={` s = \\frac{v_1 . v_2}{\\mid v1 \\mid} * \\frac{v_1}{\\mid v_1 \\mid } `} tailwind={' text-center'}></Katex>
     
         </Item>  
                  

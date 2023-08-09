@@ -1,11 +1,10 @@
 <script>
     import "../style/style.css" 
     import "@fontsource/voltaire" 
-    import Header from "../components/header.svelte";
     import icon from "../static/favicon.png"
 </script>
 
-<Header></Header>
+
 <div class="flex items-center justify-center w-full bg-red-50">
   <h1 class="voltaire inline"> Bienvenue sur MathSvelte </h1>
    <div>
