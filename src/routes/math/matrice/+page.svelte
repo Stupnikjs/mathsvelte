@@ -6,6 +6,7 @@
     import Header from "../../../components/header.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Python from "../../../components/python.svelte";
+    import { onMount } from "svelte";
 
  
     let math7 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1  \\end{bmatrix} = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix} `
@@ -84,8 +85,11 @@
          <Katex tailwind={"text-center"} text={` ou \\space A^{-1} `}></Katex>
         <Katex  tailwind={"text-center"} text={math8}></Katex>
         <Katex  tailwind={"text-center"} text={math9} ></Katex>
+    </Item >
+     
+    <Item title="Determinent" onMountCb={registerChildComponent}>
+        <p> Le determinent peut se definir comme le facteur de croissance d'une matrice  par exemple ad - bc dans une matrice a deux dimensions</p>
     </Item>
-       
 
     <Item title="Changement de base" onMountCb={registerChildComponent}>
             <p> Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
@@ -105,7 +109,12 @@
         </div>
     </Item>
 
-    <Item title="Transposition" onMountCb={registerChildComponent}></Item>
+    <Item title="Transposition" onMountCb={registerChildComponent}>
+        <p> C'est l'operation dans laqquelle nous allons transformer les colones en ligne et vice versa </p>
+        <p> cette operation est possible sur des matrices carrées </p>
+        <Katex text={`A^T A = I_n `} tailwind=''></Katex>
+        <p> donc la transposée fait partie des inverse d'une matrice </p>
+    </Item>
 
     <Item title="le procédé de gram-schmidt" onMountCb={registerChildComponent}>
             <p class="mb-4"> ou Comment construire une base vectorielle orthnormale ?</p>
