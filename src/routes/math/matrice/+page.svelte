@@ -12,7 +12,7 @@
     let math7 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1  \\end{bmatrix} = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix} `
     let math8 = `B = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}`
     let math9 = `B^{-1} = \\frac{1}{ad - bc} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}`
-
+    let tail = ""
     $: itemTitles = [] as string[]; 
 
     function registerChildComponent(componentTitle:string) {
