@@ -1,13 +1,13 @@
 <script>
+   
+ $: show = false
 
-    $: show = false
 </script>
-
 
 
 <button  class="bg-yellow-100 p-2" on:click={() => { show = !show}}>Example en Python</button>
 {#if show}
-<pre class={"smallfont bg-black overflow-x-scroll" }>
+<pre class={" codeclass overflow-x-scroll" }>
     <code class="text-white" >
        <slot/>
     </code>   
@@ -16,8 +16,11 @@
 
 <style>
 
-    .smallfont{
-        font-size: .45rem;
+    .codeclass{
+        
+        background-color: rgb(47, 61, 74);
+        color: yellow;
+
     }
     .show{
         display: block;
@@ -27,4 +30,3 @@
     }
 
 </style>
-

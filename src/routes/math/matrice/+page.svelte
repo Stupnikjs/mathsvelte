@@ -24,7 +24,7 @@
 
 
 
-<div class="gridtemp">
+<div class="gridtemp fontsize">
     <AsideComp items={itemTitles}></AsideComp>
     <div class="voltaire flex-col flex gap-2 fontsize bg-yellow-50 mt-5">
     
@@ -197,6 +197,17 @@
 
 
 <style>
+
+    @media (width > 1000px) {
+        .fontsize{
+            font-size: .6rem;
+        }
+    }
+    @media (width < 1000px){
+        .fontsize{
+            font-size: 1rem;
+        }
+    }
     .gridtemp{
         display: grid;
         grid-template-columns: 20% 1fr;
@@ -205,7 +216,5 @@
         font-family: "Voltaire", sans-serif;
     }
     
-    .fontsize{
-        font-size: 0.6rem;
-    }
+  
 </style>

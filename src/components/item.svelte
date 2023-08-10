@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import { deleteBlank } from "../functions/deleteBlank";
-
+import { browser } from "$app/environment";
 
 $: style = "nothidden"
 
@@ -12,7 +12,16 @@ onMount(() => {
     onMountCb(title)
   });
 
+ 
 
+
+function fontSize(width:number){
+    if (width > 1000) return "1rem"
+    if (width < 1000 && width > 500) return "0.5rem"
+    else return  "0.45rem"
+}
+
+$: width = browser ? window.innerWidth : 0
 
 
 
