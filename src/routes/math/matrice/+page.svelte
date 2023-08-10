@@ -3,10 +3,9 @@
     import Katex from "../../../katex/katex.svelte";
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
-    import Header from "../../../components/header.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Python from "../../../components/python.svelte";
-    import { onMount } from "svelte";
+   
 
  
     let math7 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1  \\end{bmatrix} = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix} `
@@ -27,7 +26,7 @@
 
 <div class="gridtemp">
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="voltaire flex-col flex gap-2 fontsize bg-yellow-50">
+    <div class="voltaire flex-col flex gap-2 fontsize bg-yellow-50 mt-5">
     
         
             <h1 class="text-xl text-center mt-4"> Les Matrices </h1>

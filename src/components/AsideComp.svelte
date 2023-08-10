@@ -10,13 +10,16 @@ export let items:string[]
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <aside class="voltaire flex flex-col bg-indigo-50 gap-2 py-4">
-    {#each items as item, ind}
+    <div class="fixed w-1/5 mt-10">
+        {#each items as item, ind}
         <div class={"flex items-center w-10/12 mx-auto asideItem " + (hoverStatus === ind ? "hovered": "nothovered")} 
              on:mouseenter={() => { hoverStatus = ind}} 
              on:mouseleave={() => { hoverStatus = -1}}>
             <a  href={`#${deleteBlank(item)}`} class="flex-1 mr-1">{item}</a><i class="fa-solid fa-arrow-right mtop mr-2"></i>
         </div>
-    {/each}
+        {/each}
+    </div>
+    
 
 </aside>
 
@@ -26,7 +29,7 @@ export let items:string[]
 .voltaire{
     font-family: "Voltaire", sans-serif;
     font-size: .6rem;
-    position: fixed; 
+     
 }
 .mtop{
     margin-top: .9%;
