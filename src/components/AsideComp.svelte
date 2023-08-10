@@ -26,6 +26,7 @@ export let items:string[]
 .voltaire{
     font-family: "Voltaire", sans-serif;
     font-size: .6rem;
+    position: fixed; 
 }
 .mtop{
     margin-top: .9%;
