@@ -47,10 +47,15 @@
                 <p> Reviens a poser le systeme   
                </p>
                <ul class="text-center">
-                <li>1x + 2y = 3 </li>
-                <li>2x + 3y = 4 </li>
-                <li>3x + 6y = 8</li>
-                </ul>
+                
+                <li>1x + 2y + 3z = 3 </li>
+                <li>2x + 3y  + 5z = 4 </li>
+                <li>3x + 6y + 1z = 8</li>
+            </ul>
+            <p class="text-center"> ou </p>
+                <Katex tailwind=" text-center" text={`\\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 5 \\\\ 3 & 6 & 1 \\end{pmatrix} \\begin{pmatrix}  x \\\\ y \\\\ z \\end{pmatrix} = 
+                \\begin{pmatrix} 3 \\\\ 4 \\\\ 8 \\end{pmatrix} `}></Katex>
+               
             </div>
             
             
