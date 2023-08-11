@@ -5,6 +5,7 @@
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Python from "../../../components/python.svelte";
+    import Matrix from "../../../components/Matrix.svelte";
    
 
  
