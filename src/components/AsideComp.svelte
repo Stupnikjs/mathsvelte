@@ -9,8 +9,8 @@ export let items:string[]
 
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<aside class="voltaire flex flex-col bg-indigo-50 gap-2 py-4 aside">
-    <div class="fixed w-1/5 mt-10 h-5/6 ">
+<aside class="voltaire bg-indigo-50 gap-2 py-4">
+    <div class="fixed w-1/5 my-5 flex flex-col">
         {#each items as item, ind}
         <div class={"flex items-center w-10/12 mx-auto asideItem " + (hoverStatus === ind ? "hovered": "nothovered")} 
              on:mouseenter={() => { hoverStatus = ind}} 
@@ -25,22 +25,10 @@ export let items:string[]
 
 
 <style> 
-/*
-@media (width < 800px) {
-        .aside{
-            display: none;
-        }
-    }
-    @media (width > 1000px){
-       .aside{
-        display: flex;
-       }
-    }
 
-    */
 .voltaire{
     font-family: "Voltaire", sans-serif;
-    font-size: .6rem;
+    font-size: .35rem;
      
 }
 .mtop{

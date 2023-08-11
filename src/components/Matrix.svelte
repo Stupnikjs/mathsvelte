@@ -4,9 +4,9 @@
     type item = string | number
     export let arr: item[][] 
     export let tailwind: string
-    export let type; 
+    export let type:string; 
 
-    function arrToString(arr:number[][]){
+    function arrToString(arr:item[][]){
         let str = ""
         for (let i = 0 ; i < arr.length; i++){
             for (let j = 0 ; j < arr[i].length; j++){

@@ -25,7 +25,7 @@
 
 <div class="gridtemp fontsize">
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="voltaire flex-col flex fontsize bg-yellow-50 mt-5">
+    <div class="p-5 voltaire flex-col flex fontsize bg-yellow-50 mt-5">
     
         
             <h1 class="text-xl text-center mt-4"> Les Matrices </h1>
@@ -45,26 +45,35 @@
                 <Matrix type="p" arr={[[1,2,3], [2,3,4], [3,6,8]]} tailwind="text-center"></Matrix>
                 <p> Reviens a poser le systeme   
                </p>
-               <ul class="text-center">
-                
-                <li>1x + 2y + 3z = 3 </li>
-                <li>2x + 3y  + 5z = 4 </li>
-                <li>3x + 6y + 1z = 8</li>
-            </ul>
-            <p class="text-center"> ou </p>
-                <Katex tailwind=" text-center" text={`\\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 5 \\\\ 3 & 6 & 1 \\end{pmatrix} \\begin{pmatrix}  x \\\\ y \\\\ z \\end{pmatrix} = 
-                \\begin{pmatrix} 3 \\\\ 4 \\\\ 8 \\end{pmatrix} `}></Katex>
-               
+            <div class="flex flex-col justify-center items-center">
+                <ul>
+                    <li>1x + 2y + 3z = 3 </li>
+                    <li>2x + 3y  + 5z = 4 </li>
+                    <li>3x + 6y + 1z = 8</li>
+                </ul>
+                <p class="text-center"> ou </p>
+                <div class="flex items-center">
+                    <Matrix arr={[[1,2,3], [2,3,5], [3,6,1]]} tailwind="" type="p" />
+                    <Matrix arr={[["x"], ["y"], ["z"]]} tailwind="" type="p" />
+                    <p>=</p>
+                    <Matrix arr={[[3], [4], [8]]} tailwind="" type="p" /> 
+                </div>
+              
             </div>
-            
-            
-           
-                 
-   
-    <Item title="Multiplication des matrices" onMountCb={registerChildComponent}>
+             
+            </div>
+
+    <Item title="Multiplications " onMountCb={registerChildComponent}>
         <div class="px-2"> 
                 <p class="mb-4">On peut seulement multiplier deux matrices dont la première a un nombre de colonne égale au nombre de ligne de la deuxième </p>
-                <Katex tailwind={"text-center"} text={`\\begin{bmatrix} a & b \\\\ c & d  \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6  \\end{bmatrix} = \\begin{bmatrix} 5a + 6b \\\\ 5c + 6d  \\end{bmatrix} `}></Katex>
+                <div class="flex justify-center items-center"> 
+                    
+                    <Matrix arr={[["a","b"], ["c", "d"]]} tailwind="" type="p"/>
+                    <Matrix arr={[[5], [6]]} tailwind="" type="p"/>
+                    <p> = </p>
+                    <Matrix arr={[["5a + 6b"], [ "5c + 6d"]]} tailwind="" type="p"/>
+                </div>
+               
          </div>
             <p class="px-2">Developpement possible</p>
         <div class="">
@@ -73,7 +82,7 @@
         </div>   
     </Item>
             
-    <Item title="La Matrice Identité" onMountCb={registerChildComponent}>
+    <Item title="Matrice Identité" onMountCb={registerChildComponent}>
         <p>C'est la matrice de meme dimension qui lorsque on multiplie une matrice, nous donne la meme matrice </p>
         <p>elle est composé de 1 sur la digonale et de 0 sur le reste</p>
         <div class="flex flex-col gap-2">
@@ -97,7 +106,7 @@
     <Item title="Changement de base" onMountCb={registerChildComponent}>
             <p> Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
     </Item>
-    <Item title="Rotation et Changement de base" onMountCb={registerChildComponent}>
+    <Item title="Rotation Changement de base" onMountCb={registerChildComponent}>
         <p> Pour effectuer une rotation dans un nouvel ensemeble de coordonées  Pour changer de base on mutliplie le vecteur par l'inverse de la nouvelle matrice base </p>
         
         <div class="flex justify-center items-center">
@@ -116,7 +125,7 @@
         <p> donc la transposée fait partie des inverse d'une matrice </p>
     </Item>
 
-    <Item title="le procédé de gram-schmidt" onMountCb={registerChildComponent}>
+    <Item title="le procédé de Gram-Schmidt" onMountCb={registerChildComponent}>
             <p class="mb-4"> ou Comment construire une base vectorielle orthnormale ?</p>
             <p> prenons un ensemble de vecteur lineairement independants </p>
             <p class="my-2"> pour verifier l'independance il faut ecrire la matrice et verifier que le determinent n'est pas 0 ( vecteur dependants )</p>
@@ -148,7 +157,7 @@
         
 
 
-    <Item title="Mise en situiation" onMountCb={registerChildComponent}>  
+    <Item title="Example" onMountCb={registerChildComponent}>  
             <p> Soit un ensemble de 3 vecteurs <Katex tailwind={"text-center"} text={` \\begin{pmatrix}  1  \\\\ 1 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  2  \\\\ 0 \\\\ 1  \\end{pmatrix} \\begin{pmatrix}  3  \\\\ 1 \\\\ -1  \\end{pmatrix}`}></Katex> </p>
             <p> On cherche a obtenir une base orthonormale composée d'un plan et d'un 3ème vecteur orthonormale a ce dernier </p>
             <p> Tout d'abord on cherche <Katex tailwind={"text-center"}  text={`e_1 = \\frac{v_1}{\\mid v_1 \\mid } `}/> </p>
@@ -178,7 +187,7 @@
                 return T
             </Python>
     </Item>  
-    <Item title=" Vecteur Propres (eigenvectors et eigenvalues)" onMountCb={registerChildComponent}>
+    <Item title=" Vecteur Propres (eigenvectors)" onMountCb={registerChildComponent}>
             <p> 
                 les Vecteur Propres d'une matrice sont les vecteurs qui vont garder 
                 la même direction pendant la transformation de la matrice

@@ -9,10 +9,10 @@
 
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div  class=""
+<div  class="relative"
 on:mouseenter={ () => { dropDown = "dropdown"}}  
 on:mouseleave={() => { dropDown = "nodropdown"}}>
-  <a href={`/${title}`} class="relative h-full m-auto bg-red-50 w-24 px-5">{title}</a>
+  <a href={`/${title}`} class=" h-full m-auto bg-red-50 w-24 px-5">{title}</a>
   <div class={dropDown} >
       {#each items as item, ind}
       <li class={hoverIndex === ind ? "hover": "nohover"} 
@@ -32,7 +32,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
 
 .dropdown{
       position: absolute;
-      width: 4rem;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 4px;
       background-color: antiquewhite;
@@ -40,6 +40,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      font-size: .6rem;
     }
 
     .nodropdown{
