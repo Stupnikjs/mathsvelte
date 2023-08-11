@@ -38,7 +38,7 @@
                 </p>
                 <p> 
                     On appelle matrice colonne les matrices qui ne sont composé que d'une seule colonne
-                    <Matrix arr={[["a", "b", "c", "d"]]} type="p" tailwind={"my-3 text-center"}/>
+                    <Matrix arr={[["a"], ["b"], ["c"], ["d"]]} type="b" tailwind={"my-3 text-center"}/>
                 </p>
                 <p class="mb-3"> Elles peuvent nous aider a resoudres des equations simultanées </p>
                

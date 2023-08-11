@@ -4,7 +4,7 @@
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Katex from "../../../katex/katex.svelte";
-
+    import Three from "../../../three/three.svelte";
 
 
     $: itemTitles = [] as string[]; 
@@ -26,7 +26,7 @@
         <Item title="Definition" onMountCb={registerChildComponent}>
             <p> Un vecteur peut être défini par une direction et une magnitude </p>
             <p> Un vecteur posséde une ou plusieurs dimensions </p>
-
+            <Three></Three>
         </Item>
         <Item title="Operations Vectorielles" onMountCb={registerChildComponent}>
             <h3> Le produit scalaire</h3>

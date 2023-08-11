@@ -1,16 +1,19 @@
+
+
+
 <script lang="ts">
 
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import * as THREE from 'three';
-    import { createLabelSprite } from '../functions/threeLabel';
+
 
   let el: any;
   $: x = 1;
   $: y = 0;
   $: z = 0;
 
-  let l = 1 ; 
+  let l = 3 ; 
 
   
   function getAxes (l:number){
@@ -33,7 +36,7 @@
     scene.background = new THREE.Color("#3f6ad7")
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    const material = new THREE.LineBasicMaterial({ color: 0x0000ff });
+    const material = new THREE.LineBasicMaterial({ color: "black" });
 
     
     axes.forEach((axis) => {
@@ -42,6 +45,8 @@
       const line = new THREE.Line(geometry, material);
   
       scene.add(line);
+     
+
     });
 
     let renderer: THREE.WebGLRenderer;
@@ -63,7 +68,7 @@
    
 
     const resize = () => {
-      renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+      renderer.setSize(window.innerWidth / 4, window.innerHeight / 3);
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
     };
@@ -83,16 +88,29 @@
   }
   let scene = test(axes)
 
-  function clickHandler(){
-    scene.children[0].scale.x += x
-
-  }
+  
 
   
 </script>
 
-<canvas bind:this={el}></canvas>
-<button on:click={clickHandler}> Agrandir  </button>
+<div class="flex flex-col">
+  <canvas class="" bind:this={el}></canvas>
+  <fieldset>
+    <label for="x">x</label>
+    <input type="number" on:input={ (e) => { if (e) x = +e.currentTarget.value }} bind:value={x}>
+  </fieldset>
+  <fieldset>
+    <label for="y">y</label>
+    <input type="number" on:input={ (e) => { if (e) y = +e.currentTarget.value }} bind:value={y}>
+  </fieldset>
+  <fieldset>
+    <label for="z">z</label>
+    <input type="number" on:input={ (e) => { if (e) z = +e.currentTarget.value }} bind:value={z}>
+  </fieldset>
+  
+</div>
+
+
 
 
 
