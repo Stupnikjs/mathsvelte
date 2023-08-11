@@ -10,7 +10,7 @@ export let items:string[]
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <aside class="voltaire flex flex-col bg-indigo-50 gap-2 py-4 aside">
-    <div class="fixed w-1/5 mt-10">
+    <div class="fixed w-1/5 mt-10 h-5/6 ">
         {#each items as item, ind}
         <div class={"flex items-center w-10/12 mx-auto asideItem " + (hoverStatus === ind ? "hovered": "nothovered")} 
              on:mouseenter={() => { hoverStatus = ind}} 
