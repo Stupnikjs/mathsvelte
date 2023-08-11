@@ -126,16 +126,18 @@
     </Item>
 
     <Item title="le procédé de Gram-Schmidt" onMountCb={registerChildComponent}>
-            <p class="mb-4"> ou Comment construire une base vectorielle orthnormale ?</p>
+            <p class="mb-4 text-center "> il nous permet de  construire une base vectorielle orthnormale </p>
             <p> prenons un ensemble de vecteur lineairement independants </p>
             <p class="my-2"> pour verifier l'independance il faut ecrire la matrice et verifier que le determinent n'est pas 0 ( vecteur dependants )</p>
-            <div>
-                <p> prenons le premier vecteur du set  <Katex tailwind={"text-center"} text={`v_1 \\medspace e_1 = \\frac{v_1}{\\mid v_1 \\mid} `}/> </p>
+            <div class="flex flex-col items-center justify-center gap-1">
+                <p> On trouve le premier vecteur du set  <Katex tailwind={"text-center"} text={` e_1 = \\frac{v_1}{\\mid v_1 \\mid} `}/> </p>
                 <p>  <Katex  tailwind={"text-center"} text={`v2  = \\frac{(v_2.e_1)e_1}{\\mid e_1 \\mid} + u_2 \\space \\space donc \\space u_2  = v_2 - (v_2.e_1)e_1 `}></Katex> </p>
+                <p> pour finir on normalise <Katex tailwind="text-center" text={`e_2 = \\frac{u_2}{\\mid u_2 \\mid}`} />
             </div>
-           <div>
+           <div class="flex flex-col items-center justify-center gap-1">
                 <p> ensuite prenons v3 qui n'est pas dans le meme plan que v1 et v2  </p>
                 <p><Katex  tailwind={"text-center"} text={`u_3 = v_3 - (v_3.e_1)e_1 - (v_3.e_2)e_2`}></Katex></p>
+                <p> et on normalise <Katex tailwind="text-center" text={`e_3 = \\frac{u_3}{\\mid u_3 \\mid}`} />
                 <p> Ainsi de suite pour les vecteurs de dimensions superieures </p>
            </div> 
            <Python>
