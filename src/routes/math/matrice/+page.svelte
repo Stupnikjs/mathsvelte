@@ -38,10 +38,11 @@
                 </p>
                 <p> 
                     On appelle matrice colonne les matrices qui ne sont composé que d'une seule colonne
-                    <Katex text={`\\begin{bmatrix} a \\\\ b \\\\ c \\\\ d \\end{bmatrix}`} tailwind={"my-3 text-center"}></Katex>
+                    <Matrix arr={[["a", "b", "c", "d"]]} type="p" tailwind={"my-3 text-center"}/>
                 </p>
                 <p class="mb-3"> Elles peuvent nous aider a resoudres des equations simultanées </p>
-                <Katex text={`\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}`} tailwind={"text-center "}></Katex>
+               
+                <Matrix type="p" arr={[[1,2,3], [2,3,4], [3,6,8]]} tailwind="text-center"></Matrix>
                 <p> Reviens a poser le systeme   
                </p>
                <ul class="text-center">

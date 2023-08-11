@@ -1,8 +1,10 @@
 <script lang="ts">
     import Katex from "../katex/katex.svelte";
 
-    export let arr: number[][]
+    type item = string | number
+    export let arr: item[][] 
     export let tailwind: string
+    export let type; 
 
     function arrToString(arr:number[][]){
         let str = ""
@@ -11,6 +13,7 @@
                 str += arr[i][j]
                 str += " "
                 if (j === arr[i].length - 1) str += "\\\\"
+                else str += "&"
             }
         }
         return str
@@ -19,4 +22,4 @@
 </script>
 
 
-<Katex tailwind={tailwind} text={`\\begin{pmatrix} ${arrToString(arr)} \\end{pmatrix}`}></Katex>
+<Katex tailwind={tailwind} text={`\\begin{${type}matrix} ${arrToString(arr)} \\end{${type}matrix}`}></Katex>
