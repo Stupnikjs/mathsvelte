@@ -33,7 +33,7 @@
 
 <style>
  
-   .voltaire{
+   :global(.voltaire){
     font-family: "Voltaire", sans-serif;
    
    }

@@ -9,3 +9,11 @@
 <Header></Header>
 <slot />
 <Footer></Footer>
+
+<style>
+ 
+    :global(.voltaire){
+     font-family: "Voltaire", sans-serif;
+    
+    }
+ </style>

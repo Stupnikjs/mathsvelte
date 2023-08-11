@@ -14,7 +14,7 @@
 
     let dataDrop = {
       title: "data", 
-      items : ["pandas", "analyse explorative", "machine learning"]
+      items : ["pandas", "analyse", "machine learning"]
     }
 
   </script>

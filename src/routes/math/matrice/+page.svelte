@@ -176,13 +176,18 @@
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex tailwind={"text-center"} text={"E T_E E^{-1} r = r^p "}/></p>
             <Python>
-                def build_reflection_matrix(bearBasis) : 
-                # The parameter bearBasis is a 2×2 matrix 
-                E = gsBasis(bearBasis) 
-                # Write a matrix in component form that performs the mirror's reflection in the mirror's basis.
+                def matrice_reflexion(baseR) : 
+
+                # baseR est une matrice 2 * 2  
+                # On obtient E la baseOrthonormale a partir de baseR
+
+                E = getE()
+
+                # On applique l'inverse puis la transformation puis la base pour reconvertir dans la base 
+                # initiale
+        
                 Einv = inv(E)
                 
-                # Recall, the mirror operates by negating the last component of a vector.
                 TE = np.array([[1,0], [0, -1]])
 
                 T = E @ TE @ Einv
@@ -199,6 +204,7 @@
              <p> On recherche les solutions a cette équation </p><Katex tailwind={""} text={`det(A - \\lambda I) = 0 `}></Katex>
              <p> On obtient en developpant <Katex tailwind={"text-center"} text={`\\lambda^2 - ( a + d)\\lambda + ad - bc = 0 `}></Katex></p>
     </Item>
+    <a href="/math/matrice/play"> play with matrice</a>
 </div>
 </div>
 
@@ -219,9 +225,6 @@
         display: grid;
         grid-template-columns: 20% 1fr;
     }
-    .voltaire{
-        font-family: "Voltaire", sans-serif;
-    }
-    
+  
   
 </style>
