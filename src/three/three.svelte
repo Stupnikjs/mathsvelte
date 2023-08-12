@@ -9,7 +9,7 @@
 
 
   let el: any;
-  $: x = 1;
+  $: x = 0;
   $: y = 0;
   $: z = 0;
 
@@ -39,15 +39,17 @@
     const material = new THREE.LineBasicMaterial({ color: "black" });
 
     
-    axes.forEach((axis) => {
-      const points = [new THREE.Vector3(0, 0, 0), axis.addScalar(1)]; // Line from origin to the axis
+    const lines = axes.map((axis) => {
+      const points = [new THREE.Vector3(0, 0, 0), axis.clone().addScalar(1)];
       const geometry = new THREE.BufferGeometry().setFromPoints(points);
       const line = new THREE.Line(geometry, material);
-  
-      scene.add(line);
      
 
+    
+      scene.add(line);
+      return line;
     });
+
 
     let renderer: THREE.WebGLRenderer;
 
@@ -56,13 +58,16 @@
 
     const animate = () => {
       requestAnimationFrame(animate);
+
       
       axes.forEach((axis, index) => {
         // Rotate each line around its own axis
         axis.applyAxisAngle(axes[index], x); // Rotate each line around its own axis
+       
       });
   
-        
+      
+      
       renderer.render(scene, camera);
     };
    
@@ -89,6 +94,11 @@
   let scene = test(axes)
 
   
+  
+  
+  
+
+  
 
   
 </script>
@@ -97,15 +107,15 @@
   <canvas class="" bind:this={el}></canvas>
   <fieldset>
     <label for="x">x</label>
-    <input type="number" on:input={ (e) => { if (e) x = +e.currentTarget.value }} bind:value={x}>
+    <input type="number" on:input={ (e) => {  x = +e.currentTarget.value }} bind:value={x}>
   </fieldset>
   <fieldset>
     <label for="y">y</label>
-    <input type="number" on:input={ (e) => { if (e) y = +e.currentTarget.value }} bind:value={y}>
+    <input type="number" on:input={ (e) => {  y = +e.currentTarget.value }} bind:value={y}>
   </fieldset>
   <fieldset>
     <label for="z">z</label>
-    <input type="number" on:input={ (e) => { if (e) z = +e.currentTarget.value }} bind:value={z}>
+    <input type="number" on:input={ (e) => {  z = +e.currentTarget.value }} bind:value={z}>
   </fieldset>
   
 </div>
