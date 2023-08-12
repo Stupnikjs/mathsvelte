@@ -4,7 +4,7 @@
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
-    import Python from "../../../components/python.svelte";
+    import Codecomp from "../../../components/codecomp.svelte";
     import Matrix from "../../../components/Matrix.svelte";
    
 
@@ -140,7 +140,7 @@
                 <p> et on normalise <Katex tailwind="text-center" text={`e_3 = \\frac{u_3}{\\mid u_3 \\mid}`} />
                 <p> Ainsi de suite pour les vecteurs de dimensions superieures </p>
            </div> 
-           <Python>
+           <Codecomp>
             def gsBasis(A) :
             B = np.array(A, dtype=np.float_) # Make B as a copy of A, 
             # Loop over all vectors, starting with zero, label them with i
@@ -154,7 +154,7 @@
                 else :
                     B[:, i] = np.zeros_like(B[:, i])
             return B
-           </Python>   
+           </Codecomp>   
     </Item>
         
 
@@ -175,7 +175,7 @@
             <p> Ensuite j'applique la transformation <Katex  tailwind={"text-center"} text={"T_E"}/> </p>
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex tailwind={"text-center"} text={"E T_E E^{-1} r = r^p "}/></p>
-            <Python>
+            <Codecomp>
                 def matrice_reflexion(baseR) : 
 
                 # baseR est une matrice 2 * 2  
@@ -192,7 +192,7 @@
 
                 T = E @ TE @ Einv
                 return T
-            </Python>
+            </Codecomp>
     </Item>  
     <Item title=" Vecteur Propres (eigenvectors)" onMountCb={registerChildComponent}>
             <p> 

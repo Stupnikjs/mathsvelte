@@ -5,7 +5,7 @@
 </script>
 
 
-<button  class="bg-yellow-100 p-2" on:click={() => { show = !show}}>Example en Python</button>
+<button  class="bg-yellow-100 p-2" on:click={() => { show = !show}}> Code </button>
 {#if show}
 <pre class={" codeclass overflow-x-scroll" }>
     <code class="text-white" >
