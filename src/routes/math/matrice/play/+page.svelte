@@ -2,7 +2,7 @@
     
 
     import Axis from "../../../../three/axis.svelte";
-    import Line from "../../../../three/line.svelte";
+    
 
 </script>
 

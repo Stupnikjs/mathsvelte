@@ -15,30 +15,36 @@
   
   if (browser){
 
-  const div = document.createElement( 'div' );
-  div.className = 'label';
-  div.textContent = 'Earth';
-
-  div.style.backgroundColor = 'transparent';
-  div.style.fontSize = '.7rem';
-  div.style.color = "white"
-  const label = new CSS2DObject( div );
-  label.position.set( -1.5 , -2, 0 );
-  label.center.set( 0, 1 );
   
-  label.layers.set( 0 );
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
   
-  scene.add(label)
- 
+  function createDomLabel(text:string){
+    const div = document.createElement( 'div' );
+    div.className = 'label';
+    div.textContent = text;
+    div.style.backgroundColor = 'transparent';
+    div.style.fontSize = '.7rem';
+    div.style.color = "white"
+    const label = new CSS2DObject( div );
+    label.position.set( -.1 , -1.5, 0.5 );
+    label.center.set( 0, 1 );
+    
+    label.layers.set( 0 );
+    return label
+  }
+  
+  
 
   let renderer: THREE.WebGLRenderer;
   
 
   for (let obj of objArr){
-    
-    scene.add(obj);
+    console.log(obj)
+    let x = "i"
+    x += "e"
+  obj.add(createDomLabel(x))
+  scene.add(obj);
   }
 
   
@@ -79,7 +85,7 @@
 
     document.body.appendChild( labelRenderer.domElement );
    
-    const controls = new OrbitControls(camera, renderer.domElement )
+    const controls = new OrbitControls(camera, labelRenderer.domElement )
     controls.update();
     resize();
     animate();
