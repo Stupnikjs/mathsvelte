@@ -10,32 +10,34 @@
   
   let el: any;
   let labelRenderer: any; 
-  
+
+
   
   if (browser){
+
+  const div = document.createElement( 'div' );
+  div.className = 'label';
+  div.textContent = 'Earth';
+
+  div.style.backgroundColor = 'transparent';
+  div.style.fontSize = '.7rem';
+  div.style.color = "white"
+  const label = new CSS2DObject( div );
+  label.position.set( -1.5 , -2, 0 );
+  label.center.set( 0, 1 );
   
+  label.layers.set( 0 );
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
   
+  scene.add(label)
  
-
 
   let renderer: THREE.WebGLRenderer;
   
 
   for (let obj of objArr){
-    const div = document.createElement( 'div' );
-    div.className = 'label';
-    div.textContent = 'Earth';
-
-    div.style.backgroundColor = 'transparent';
-    div.style.fontSize = '.7rem';
-
-    const label = new CSS2DObject( div );
-    label.position.set( -1.5 , -2, 0 );
-    label.center.set( 0, 1 );
-    obj.add(label)
-    label.layers.set( 0 );
+    
     scene.add(obj);
   }
 
@@ -66,17 +68,18 @@
   const createScene = (el:any) => {
     renderer = new THREE.WebGLRenderer({ antialias: true, canvas: el });
     renderer.setPixelRatio( window.devicePixelRatio );
+    
     document.body.appendChild( renderer.domElement );
     
     labelRenderer = new CSS2DRenderer();
     labelRenderer.setSize( window.innerWidth, window.innerHeight );
     labelRenderer.domElement.style.position = 'absolute';
-    labelRenderer.domElement.style.color = 'white';
+    labelRenderer.domElement.style.top = "0%"
+    
 
-    labelRenderer.domElement.style.top = '0px';
     document.body.appendChild( labelRenderer.domElement );
    
-    const controls = new OrbitControls(camera, labelRenderer.domElement )
+    const controls = new OrbitControls(camera, renderer.domElement )
     controls.update();
     resize();
     animate();
@@ -99,6 +102,6 @@
 
 </script>
 
-<div style="position:relative">
-<canvas class="m-auto" bind:this={el} />
+<div style="position: relative">
+      <canvas class="m-auto" bind:this={el} />
 </div>

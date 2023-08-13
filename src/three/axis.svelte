@@ -3,22 +3,30 @@ import * as THREE from "three";
 import Three from "./three.svelte"
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
-export let arr: number[][]; 
+export let arr: any; 
 
-let axisHelper = new THREE.AxesHelper(1.7)
-console.log(axisHelper)
+let lines: any =  [] 
 
-const material = new THREE.LineBasicMaterial( { color: "yellow" } );
-const points = [];
-    
-points.push( new THREE.Vector3( ...arr[0]));
-points.push( new THREE.Vector3( ...arr[1]));
-
-
-const geometry = new THREE.BufferGeometry().setFromPoints(points);
-const line = new THREE.Line(geometry, material)
+function returnLine(arr:number[][], color:string){
+    const material = new THREE.LineBasicMaterial( { color: color } );
+    const points = [];
+      
+    points.push( new THREE.Vector3( ...arr[0]));
+    points.push( new THREE.Vector3( ...arr[1]));
 
 
+    const geometry = new THREE.BufferGeometry().setFromPoints(points);
+    const line = new THREE.Line(geometry, material)
+    return line
+}
+
+let lineX = returnLine([[0,0,0], [1, 0, 0]], "yellow")
+let lineY = returnLine([[0,0,0], [0, 1, 0]], "red")
+let lineZ = returnLine([[0,0,0], [1, 0, 1]], "blue")
+
+lines.push(lineX)
+lines.push(lineY) 
+lines.push(lineZ)
 
 
 </script>
@@ -27,10 +35,7 @@ const line = new THREE.Line(geometry, material)
 
 
 <div class="three">
-    <Three objArr={[axisHelper, line]}></Three>
-    <div class="labelx">x</div>
-    <div class="labely">y</div>
-    <div class="labelz">z</div>
+    <Three objArr={[...lines]}></Three>
 </div>
 
 
@@ -39,26 +44,5 @@ const line = new THREE.Line(geometry, material)
     .three{
       position:relative
     }
-    .labelx{
-      position: absolute;
-      top:35%;
-      right: 25%;
-      color:white;
-      font-size: .5rem;
-    }
-    .labely{
-      position: absolute;
-      top:10%;
-      left: 50%;
-      color:white;
-      font-size: .5rem;
-    }
-  
-    .labelz{
-      position: absolute;
-      top:55%;
-      right: 55%;
-      color:white;
-      font-size: .5rem;
-    }
+    
   </style>
