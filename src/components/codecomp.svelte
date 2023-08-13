@@ -1,14 +1,14 @@
 <script>
    
- $: show = false
+$: show = false
 
 </script>
 
 
-<button  class="bg-yellow-100 p-2" on:click={() => { show = !show}}> Code </button>
+<button  class="bg-yellow-100 p-2 w-1/3 m-auto" on:click={() => { show = !show}}> Code </button>
 {#if show}
 <pre class={" codeclass overflow-x-scroll" }>
-    <code class="text-white" >
+    <code class="text-white">
        <slot/>
     </code>   
 </pre>
@@ -20,6 +20,7 @@
         
         background-color: rgb(47, 61, 74);
         color: yellow;
+        font-size: .7rem;
 
     }
     .show{

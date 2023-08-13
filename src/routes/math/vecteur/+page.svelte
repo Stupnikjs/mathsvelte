@@ -4,10 +4,13 @@
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Katex from "../../../katex/katex.svelte";
-    import Three from "../../../three/three.svelte";
+    import Axis from "../../../three/axis.svelte";
 
 
     $: itemTitles = [] as string[]; 
+    $: x = 1; 
+    $: y = 1; 
+    $: z = 1; 
 
     function registerChildComponent(componentTitle:string) {
     if (!itemTitles.includes(componentTitle)) itemTitles.push(componentTitle);
@@ -26,7 +29,7 @@
         <Item title="Definition" onMountCb={registerChildComponent}>
             <p> Un vecteur peut être défini par une direction et une magnitude </p>
             <p> Un vecteur posséde une ou plusieurs dimensions </p>
-            <Three></Three>
+            <Axis arr={[[0,0,0], [x,y,z]]}></Axis>
         </Item>
         <Item title="Operations Vectorielles" onMountCb={registerChildComponent}>
             <h3> Le produit scalaire</h3>
@@ -54,7 +57,5 @@
         font-family: "Voltaire", sans-serif;
     }
     
-    .fontsize{
-        font-size: 0.6rem;
-    }
+    
 </style>
