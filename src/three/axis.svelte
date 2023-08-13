@@ -1,12 +1,14 @@
 <script lang="ts">
 import * as THREE from "three";
 import Three from "./three.svelte"
+import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
 export let arr: number[][]; 
 
 let axisHelper = new THREE.AxesHelper(1.7)
+console.log(axisHelper)
 
-const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+const material = new THREE.LineBasicMaterial( { color: "yellow" } );
 const points = [];
     
 points.push( new THREE.Vector3( ...arr[0]));
@@ -15,7 +17,9 @@ points.push( new THREE.Vector3( ...arr[1]));
 
 const geometry = new THREE.BufferGeometry().setFromPoints(points);
 const line = new THREE.Line(geometry, material)
-   
+
+
+
 
 </script>
 

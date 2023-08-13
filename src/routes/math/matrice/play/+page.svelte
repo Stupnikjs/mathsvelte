@@ -1,12 +1,10 @@
 <script>
-    import {matrix, ones, inv, eigs} from "mathjs"
-    import Matrixd3 from "../../../../d3/matrixd3.svelte";
-    const b = matrix([[1, 0], [1, 1]])
     
+
+    import Axis from "../../../../three/axis.svelte";
+    import Line from "../../../../three/line.svelte";
+
 </script>
 
 
-<div>
-   Experimente avec les matrices 
-   <Matrixd3></Matrixd3>
-</div>
+<Axis arr={[[0,1,0], [0,1,0]]}></Axis>
