@@ -31,7 +31,7 @@
     
     
    
-    
+    scene.add(new AxesHelper())
 
     camera.position.set(2, 2, 5); // Adjust camera position for a better view of the lines
     camera.lookAt(scene.position);
