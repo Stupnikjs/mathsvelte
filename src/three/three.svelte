@@ -6,7 +6,7 @@
   import  { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
   
-  export let objArr:any
+  export let objArr:THREE.Object3D[]
   
   let el: any;
   let labelRenderer: any; 
@@ -19,32 +19,34 @@
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
   
-  function createDomLabel(text:string){
-    const div = document.createElement( 'div' );
+  function createDomLabel(text:string, up:THREE.Vector3){
+    const div = document.createElement('div');
     div.className = 'label';
     div.textContent = text;
     div.style.backgroundColor = 'transparent';
     div.style.fontSize = '.7rem';
     div.style.color = "white"
-    const label = new CSS2DObject( div );
-    label.position.set( -.1 , -1.5, 0.5 );
+    const label = new CSS2DObject(div);
+    console.log(up.x, up.y , up.z)
+    label.position.set( up.x , up.y - 2 ,up.z );
     label.center.set( 0, 1 );
     
     label.layers.set( 0 );
     return label
   }
   
-  
 
   let renderer: THREE.WebGLRenderer;
   
+  let letter : string = "x"
 
   for (let obj of objArr){
+    if (obj.up.x === 1 ) letter = "x"
+    if (obj.up.y === 1 ) letter = "y"
+    if (obj.up.z === 1 ) letter = "z"
     console.log(obj)
-    let x = "i"
-    x += "e"
-  obj.add(createDomLabel(x))
-  scene.add(obj);
+    obj.add(createDomLabel(letter, obj.up))
+    scene.add(obj);
   }
 
   
