@@ -31,12 +31,12 @@ export default function createScene (objArr:THREE.Object3D[]){
     };
    
     
-    return (el:any) => {
+    return (el:any, target:Element) => {
       
         renderer = new THREE.WebGLRenderer({ antialias: true, canvas: el });
         renderer.setPixelRatio( window.devicePixelRatio );
         
-        document.body.appendChild( renderer.domElement );
+        target.appendChild( renderer.domElement );
        
         const controls = new OrbitControls(camera, renderer.domElement )
         controls.update();

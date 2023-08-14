@@ -30,15 +30,21 @@
  
 
     function clickHandler(){
-    if (browser && count === 0) createScene([helpers, createLine()])(el)
-    if (browser && count > 0) {
+    let target = document.querySelector("#target")
+    if (browser && target){
+        if (count === 0 ) createScene([helpers, createLine()])(el, target)
+        if (count > 0 ) {
         let canavas = document.querySelectorAll("canvas")
         canavas.forEach(el => el.remove())
         count = 0
-        sceneCreator(el)
-    }
+        createScene([helpers, createLine()])(el, target)
+        }
+        count += 1
 
-    count += 1
+    }
+    
+
+    
         
 
     }
@@ -73,19 +79,26 @@
             </Codecomp>
         </div>
 
-        <fieldset>
-            <label for="x">x</label>
-            <input name="x" type="number" bind:value={x}/>
-        </fieldset>
-        <fieldset>
-            <label for="y">y</label>
-            <input name="y" type="number" bind:value={y}/>
-        </fieldset>
-        <fieldset>
-            <label for="x">z</label>
-            <input name="z" type="number" bind:value={z}/>
-        </fieldset>
-        <button on:click={clickHandler}> Valider </button>
+        <div class="flex h-full">
+            <div id="target" class="w-1/2 bg-black"></div>
+            <div class="flex flex-col justify-center items-center bg-indigo-50 w-1/2">
+                <fieldset>
+                    <label for="x">x</label>
+                    <input name="x" type="number" bind:value={x}/>
+                </fieldset>
+                <fieldset>
+                    <label for="y">y</label>
+                    <input name="y" type="number" bind:value={y}/>
+                </fieldset>
+                <fieldset>
+                    <label for="x">z</label>
+                    <input name="z" type="number" bind:value={z}/>
+                </fieldset>
+                <button on:click={clickHandler}> Valider </button>
+            </div>
+            
+        </div>
+        
     </section>
    
    
