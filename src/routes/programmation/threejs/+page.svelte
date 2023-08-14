@@ -1,29 +1,47 @@
 <script lang="ts">
     import Codecomp from "../../../components/codecomp.svelte";
-    import Three from "../../../three/three.svelte";
     import * as THREE from "three" ; 
-
+    import createScene from "../../../three/createScene";
+    import { browser } from "$app/environment";
 
    $: x = 0 
    $: y = 0 
    $: z = 0 
+   $: count = 0 
+
+   let el:any ; 
+
 
    const helpers = new THREE.AxesHelper(2)
 
-   function returnLine(arr:number[][], color:string){
-    const material = new THREE.LineBasicMaterial( { color: color } );
+   const createLine = () => {
+    const material = new THREE.LineBasicMaterial( { color: "red" } );
     const points = [];
       
-    points.push( new THREE.Vector3( ...arr[0]));
-    points.push( new THREE.Vector3( ...arr[1]));
+    points.push( new THREE.Vector3( 0,0,0));
+    points.push( new THREE.Vector3( x,y,z));
 
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
-    const line = new THREE.Line(geometry, material)
-    return line
-}
+    return new THREE.Line(geometry, material)
+   }
+    
+
  
 
+    function clickHandler(){
+    if (browser && count === 0) createScene([helpers, createLine()])(el)
+    if (browser && count > 0) {
+        let canavas = document.querySelectorAll("canvas")
+        canavas.forEach(el => el.remove())
+        count = 0
+        sceneCreator(el)
+    }
+
+    count += 1
+        
+
+    }
 
 
 </script>
@@ -55,10 +73,19 @@
             </Codecomp>
         </div>
 
-        <input type="number" bind:value={x}/>
-        {#if x !== 0 }
-        <Three objArr={[helpers, returnLine([[0, 0, 0], [x, x, x]], "red")]}></Three>
-        {/if}
+        <fieldset>
+            <label for="x">x</label>
+            <input name="x" type="number" bind:value={x}/>
+        </fieldset>
+        <fieldset>
+            <label for="y">y</label>
+            <input name="y" type="number" bind:value={y}/>
+        </fieldset>
+        <fieldset>
+            <label for="x">z</label>
+            <input name="z" type="number" bind:value={z}/>
+        </fieldset>
+        <button on:click={clickHandler}> Valider </button>
     </section>
    
    
