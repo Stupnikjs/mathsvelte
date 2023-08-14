@@ -1,12 +1,16 @@
 <script lang="ts">
     import Codecomp from "../../../components/codecomp.svelte";
     import Three from "../../../three/three.svelte";
-    import Threecss2D from "../../../three/threecss2D.svelte";
     import * as THREE from "three" ; 
 
-    let lines = [] as any 
 
-    function returnLine(arr:number[][], color:string){
+   $: x = 0 
+   $: y = 0 
+   $: z = 0 
+
+   const helpers = new THREE.AxesHelper(2)
+
+   function returnLine(arr:number[][], color:string){
     const material = new THREE.LineBasicMaterial( { color: color } );
     const points = [];
       
@@ -17,15 +21,10 @@
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     const line = new THREE.Line(geometry, material)
     return line
-    }
+}
+ 
 
-    let lineX = returnLine([[0,0,0], [1, 0, 0]], "yellow")
-    let lineY = returnLine([[0,0,0], [0, 1, 0]], "red")
-    let lineZ = returnLine([[0,0,0], [1, 0, 1]], "blue")
 
-    lines.push(lineX)
-    lines.push(lineY) 
-    lines.push(lineZ)
 
 </script>
 <main class="voltaire">
@@ -55,7 +54,11 @@
                 const line = new THREE.Line(geometry, material)`}
             </Codecomp>
         </div>
-        <Three objArr={[...lines]}></Three>
+
+        <input type="number" bind:value={x}/>
+        {#if x !== 0 }
+        <Three objArr={[helpers, returnLine([[0, 0, 0], [x, x, x]], "red")]}></Three>
+        {/if}
     </section>
    
    

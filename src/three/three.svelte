@@ -1,115 +1,63 @@
 <script lang="ts">
 
-  import { browser } from '$app/environment'
-  import {  onMount } from 'svelte'; 
-  import * as THREE from 'three';
-  import  { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-  import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-  
-  export let objArr:THREE.Object3D[]
-  
-  let el: any;
-  let labelRenderer: any; 
-
-
-  
-  if (browser){
-
-  
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-  
-  function createDomLabel(text:string, up:THREE.Vector3){
-    const div = document.createElement('div');
-    div.className = 'label';
-    div.textContent = text;
-    div.style.backgroundColor = 'transparent';
-    div.style.fontSize = '.7rem';
-    div.style.color = "white"
-    const label = new CSS2DObject(div);
-    console.log(up.x, up.y , up.z)
-    label.position.set( up.x , up.y - 2 ,up.z );
-    label.center.set( 0, 1 );
-    
-    label.layers.set( 0 );
-    return label
-  }
-  
-
-  let renderer: THREE.WebGLRenderer;
-  
-  let letter : string = "x"
-
-  for (let obj of objArr){
-    if (obj.up.x === 1 ) letter = "x"
-    if (obj.up.y === 1 ) letter = "y"
-    if (obj.up.z === 1 ) letter = "z"
-    console.log(obj)
-    obj.add(createDomLabel(letter, obj.up))
-    scene.add(obj);
-  }
-
-  
-  
-
-  camera.position.set(1, 3, 6); // Adjust camera position for a better view of the lines
-  camera.lookAt(scene.position);
-  camera.layers.enable(0)
-
-
-  
-  const animate = () => {
-    requestAnimationFrame(animate);
-    
-    
-    renderer.render(scene, camera);
-    labelRenderer.render( scene, camera );
-  };
-
-  const resize = () => {
-    renderer.setSize(window.innerWidth, window.innerHeight)
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-  };
-
-
-  const createScene = (el:any) => {
-    renderer = new THREE.WebGLRenderer({ antialias: true, canvas: el });
-    renderer.setPixelRatio( window.devicePixelRatio );
-    
-    document.body.appendChild( renderer.domElement );
-    
-    labelRenderer = new CSS2DRenderer();
-    labelRenderer.setSize( window.innerWidth, window.innerHeight );
-    labelRenderer.domElement.style.position = 'absolute';
-    labelRenderer.domElement.style.top = "0%"
-    
-
-    document.body.appendChild( labelRenderer.domElement );
+    import { browser } from '$app/environment'
+    import {  onMount } from 'svelte'; 
+    import * as THREE from 'three';
+    import  { OrbitControls } from 'three/addons/controls/OrbitControls.js';
    
-    const controls = new OrbitControls(camera, labelRenderer.domElement )
-    controls.update();
-    resize();
-    animate();
+    export let objArr:THREE.Object3D[]
     
+    let el: any;
+    let labelRenderer: any; 
+  
+  
+    
+    if (browser){ 
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    let renderer: THREE.WebGLRenderer; 
+   
+    for (let obj of objArr){
+      scene.add(obj);
+    }
+  
+    camera.position.set(1, 3, 6); // Adjust camera position for a better view of the lines
+    camera.lookAt(scene.position);
+    camera.layers.enable(0)
+
+    const animate = () => {
+      requestAnimationFrame(animate);  
+      renderer.render(scene, camera);
+    };
+  
+    const resize = () => {
+      renderer.setSize(window.innerWidth, window.innerHeight)
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    };
+  
+  
+    const createScene = (el:any) => {
+      renderer = new THREE.WebGLRenderer({ antialias: true, canvas: el });
+      renderer.setPixelRatio( window.devicePixelRatio );
+      
+      document.body.appendChild( renderer.domElement );
+     
+      const controls = new OrbitControls(camera, renderer.domElement )
+      controls.update();
+      resize();
+      animate();
+      
+    }
+   
+    onMount(() => {     
+      createScene(el)    
+    });
   }
+
+  </script>
   
   
-  
-  onMount(() => { 
-    
-    createScene(el)
-    
-  });
-
-
-
-}
+<canvas class="m-auto" bind:this={el} />
  
-
-
-</script>
-
-<div style="position: relative">
-      <canvas class="m-auto" bind:this={el} />
-</div>
