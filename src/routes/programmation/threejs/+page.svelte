@@ -12,7 +12,7 @@
    let el:any ; 
 
 
-   const helpers = new THREE.AxesHelper(2)
+   const helpers = new THREE.AxesHelper(1)
 
    const createLine = () => {
     const material = new THREE.LineBasicMaterial( { color: "red" } );
@@ -80,7 +80,7 @@
         </div>
 
         <div class="flex h-full">
-            <div id="target" class="w-1/2 bg-black"></div>
+            <div id="target" class="w-1/2 bg-black overflow-hidden"></div>
             <div class="flex flex-col justify-center items-center bg-indigo-50 w-1/2">
                 <fieldset>
                     <label for="x">x</label>
