@@ -4,6 +4,7 @@
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Katex from "../../../katex/katex.svelte";
+    import Vectordemo from "../../../three/Vectordemo.svelte";
 
 
     $: itemTitles = [] as string[]; 
@@ -37,7 +38,7 @@
             <Katex text={` s = \\frac{v_1 . v_2}{\\mid v1 \\mid} * \\frac{v_1}{\\mid v_1 \\mid } `} tailwind={' text-center'}></Katex>
     
         </Item>  
-                 
+        <Vectordemo></Vectordemo>       
     </div>
    
 </div>
