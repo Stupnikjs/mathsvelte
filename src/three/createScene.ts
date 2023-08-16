@@ -15,7 +15,7 @@ export default function createScene (objArr:THREE.Object3D[]){
       scene.add(obj);
     }
   
-    camera.position.set(1, 3, 6); // Adjust camera position for a better view of the lines
+    camera.position.set(1, 2, 1); // Adjust camera position for a better view of the lines
     camera.lookAt(scene.position);
     camera.layers.enable(0)
 

@@ -3,6 +3,7 @@
     import * as THREE from "three" ; 
     import createScene from "./createScene";
     import { browser } from "$app/environment";
+    import Matrix from "../components/Matrix.svelte";
 
    $: x = 0 
    $: y = 0 
@@ -18,8 +19,8 @@
     const material = new THREE.LineBasicMaterial( { color: "red" } );
     const points = [];
       
-    points.push( new THREE.Vector3( 0,0,0));
-    points.push( new THREE.Vector3( x,y,z));
+    points.push( new THREE.Vector3(0,0,0));
+    points.push( new THREE.Vector3(x,y,z));
 
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
@@ -53,11 +54,15 @@
 
 </script>
 
-
-
+<div class="flex flex-col items-center ">
+    <h1 class="text-xs mb-2">Je crée un vecteur avec les coordonées </h1>
+    <Matrix arr={[["x"], ["y"], ["z"]]} tailwind="text-xs inline" type="b"></Matrix>
+</div>
 <div class="flex h-full mb-5">
+    
     <div id="target" class="w-1/2 bg-black overflow-hidden border border-indigo-50 border-4 rounded"></div>
     <div class="flex flex-col justify-center items-center bg-indigo-50 w-1/2">
+        
         <fieldset class="flex items-center">
             <label for="x" class="flex">x </label><div class="w-3 h-3 bg-orange-400"></div>
             <input name="x" type="number" bind:value={x}/>
