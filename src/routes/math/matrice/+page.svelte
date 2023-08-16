@@ -211,16 +211,7 @@
 
 <style>
 
-    @media (width < 1000px) {
-        :global(.fontsize){
-            font-size: .9rem;
-        }
-    }
-    @media (width > 1000px){
-    :global(.fontsize){
-            font-size: 1.2rem;
-        }
-    }
+    
     .gridtemp{
         display: grid;
         grid-template-columns: 20% 1fr;

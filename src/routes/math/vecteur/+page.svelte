@@ -5,6 +5,7 @@
     import AsideComp from "../../../components/AsideComp.svelte";
     import Katex from "../../../katex/katex.svelte";
     import Vectordemo from "../../../three/Vectordemo.svelte";
+    import Matrix from "../../../components/Matrix.svelte";
 
 
     $: itemTitles = [] as string[]; 
@@ -37,7 +38,13 @@
             <h3> La projection vecotrielle </h3>
             <Katex text={` s = \\frac{v_1 . v_2}{\\mid v1 \\mid} * \\frac{v_1}{\\mid v_1 \\mid } `} tailwind={' text-center'}></Katex>
     
-        </Item>  
+        </Item> 
+        <Item title="Vecteur 3D" onMountCb={registerChildComponent}>
+            <div class="flex flex-col items-center ">
+                <h1 class="text-xs mb-2">Je crée un vecteur avec les coordonées </h1>
+                <Matrix arr={[["x"], ["y"], ["z"]]} tailwind="text-xs inline" type="b"></Matrix>
+            </div>
+        </Item> 
         <Vectordemo></Vectordemo>       
     </div>
    

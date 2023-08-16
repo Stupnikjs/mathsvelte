@@ -18,4 +18,14 @@ import Header from "../components/header.svelte";
      font-family: "Voltaire", sans-serif;
     
     }
+    @media (width < 1000px) {
+        :global(.fontsize){
+            font-size: .6rem;
+        }
+    }
+    @media (width > 1000px){
+    :global(.fontsize){
+            font-size: 1.2rem;
+        }
+    }
  </style>

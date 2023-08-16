@@ -54,10 +54,7 @@
 
 </script>
 
-<div class="flex flex-col items-center ">
-    <h1 class="text-xs mb-2">Je crée un vecteur avec les coordonées </h1>
-    <Matrix arr={[["x"], ["y"], ["z"]]} tailwind="text-xs inline" type="b"></Matrix>
-</div>
+
 <div class="flex h-full mb-5">
     
     <div id="target" class="w-1/2 bg-black overflow-hidden border border-indigo-50 border-4 rounded"></div>
