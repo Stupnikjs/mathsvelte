@@ -55,19 +55,19 @@
 
 
 
-<div class="flex h-full">
-    <div id="target" class="w-1/2 bg-black overflow-hidden"></div>
+<div class="flex h-full mb-5">
+    <div id="target" class="w-1/2 bg-black overflow-hidden border border-indigo-50 border-4 rounded"></div>
     <div class="flex flex-col justify-center items-center bg-indigo-50 w-1/2">
-        <fieldset>
-            <label for="x">x</label>
+        <fieldset class="flex items-center">
+            <label for="x" class="flex">x </label><div class="w-3 h-3 bg-orange-400"></div>
             <input name="x" type="number" bind:value={x}/>
-        </fieldset>
-        <fieldset>
-            <label for="y">y</label>
+        </fieldset >
+        <fieldset class="flex items-center">
+            <label for="y">y</label><div class="w-3 h-3 bg-green-400"></div>
             <input name="y" type="number" bind:value={y}/>
         </fieldset>
-        <fieldset>
-            <label for="x">z</label>
+        <fieldset class="flex items-center">
+            <label for="x">z</label><div class="w-3 h-3 bg-blue-400"></div>
             <input name="z" type="number" bind:value={z}/>
         </fieldset>
         <button on:click={clickHandler}> Valider </button>
