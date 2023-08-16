@@ -3,6 +3,7 @@
     import * as THREE from "three" ; 
     import createScene from "../../../three/createScene";
     import { browser } from "$app/environment";
+    import Plandemo from "../../../three/Plandemo.svelte";
 
    $: x = 0 
    $: y = 0 
@@ -51,9 +52,10 @@
 
 
 </script>
-<main class="voltaire">
-    <h1> three js est un bibliothèque Javascript 3D </h1>
-    <section>
+
+<main class="voltaire fontsize">
+    <h1 class=""> three js est un bibliothèque Javascript 3D </h1>
+    <section class="mt-8">
         <div class="flex flex-col">
             <h2> il repose sur une hierarchie de composant</h2>
             <h3>le composant principal est la scene </h3>
@@ -79,25 +81,9 @@
             </Codecomp>
         </div>
 
-        <div class="flex h-full">
-            <div id="target" class="w-1/2 bg-black overflow-hidden"></div>
-            <div class="flex flex-col justify-center items-center bg-indigo-50 w-1/2">
-                <fieldset>
-                    <label for="x">x</label>
-                    <input name="x" type="number" bind:value={x}/>
-                </fieldset>
-                <fieldset>
-                    <label for="y">y</label>
-                    <input name="y" type="number" bind:value={y}/>
-                </fieldset>
-                <fieldset>
-                    <label for="x">z</label>
-                    <input name="z" type="number" bind:value={z}/>
-                </fieldset>
-                <button on:click={clickHandler}> Valider </button>
-            </div>
+       
             
-        </div>
+        <Plandemo></Plandemo>
         
     </section>
    

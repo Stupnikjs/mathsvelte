@@ -15,30 +15,35 @@
 
    const helpers = new THREE.AxesHelper(0.5)
 
+    const createPlan = () => {
+    const material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+    const geometry = new THREE.PlaneGeometry( x, y );
+    return new THREE.Mesh(geometry, material)
+
+   }
+    
    const createLine = () => {
     const material = new THREE.LineBasicMaterial( { color: "red" } );
     const points = [];
       
-    points.push( new THREE.Vector3(0,0,0));
-    points.push( new THREE.Vector3(x,y,z));
+    points.push( new THREE.Vector3( 0,0,0));
+    points.push( new THREE.Vector3( x,y,z));
 
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     return new THREE.Line(geometry, material)
    }
-    
-
  
 
     function clickHandler(){
     let target = document.querySelector("#target")
     if (browser && target){
-        if (count === 0 ) createScene([helpers, createLine()])(el, target)
+        if (count === 0 ) createScene([helpers, createPlan()])(el, target)
         if (count > 0 ) {
         let canavas = document.querySelectorAll("canvas")
         canavas.forEach(el => el.remove())
         count = 0
-        createScene([helpers, createLine()])(el, target)
+        createScene([helpers, createPlan(), createLine()])(el, target)
         }
         count += 1
 
@@ -74,5 +79,4 @@
         </fieldset>
         <button on:click={clickHandler}> Valider </button>
     </div>
-    
 </div>

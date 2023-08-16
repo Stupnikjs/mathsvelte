@@ -1,7 +1,6 @@
 <script>
     import Footer from "../components/Footer.svelte";
-import Header from "../components/header.svelte";
-    
+    import Header from "../components/header.svelte";  
     import "../style/app.css";
 </script>
 
@@ -20,12 +19,12 @@ import Header from "../components/header.svelte";
     }
     @media (width < 1000px) {
         :global(.fontsize){
-            font-size: .6rem;
+            font-size: .5rem;
         }
     }
     @media (width > 1000px){
     :global(.fontsize){
-            font-size: 1.2rem;
+            font-size: .7rem;
         }
     }
  </style>
