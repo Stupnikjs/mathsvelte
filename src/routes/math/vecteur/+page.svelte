@@ -10,6 +10,7 @@
 
     $: itemTitles = [] as string[]; 
 
+
     function registerChildComponent(componentTitle:string) {
     if (!itemTitles.includes(componentTitle)) itemTitles.push(componentTitle);
     itemTitles = itemTitles
@@ -52,10 +53,8 @@
 
 
 <style>
-    .gridtemp{
-        display: grid;
-        grid-template-columns: 20% 1fr;
-    }
+     
+    
     .voltaire{
         font-family: "Voltaire", sans-serif;
     }

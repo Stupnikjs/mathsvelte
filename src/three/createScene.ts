@@ -3,7 +3,7 @@ import * as THREE from "three";
 import  { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
-export default function createScene (objArr:THREE.Object3D[]){
+export default function createScene (objArr:THREE.Object3D[], inAnimate:Function, inResize:Function){
     
    
     const scene = new THREE.Scene();
@@ -20,13 +20,15 @@ export default function createScene (objArr:THREE.Object3D[]){
     camera.layers.enable(0)
 
     const animate = () => {
-      requestAnimationFrame(animate);  
+      requestAnimationFrame(animate); 
+      inAnimate() 
       renderer.render(scene, camera);
     };
   
     const resize = () => {
       renderer.setSize(window.innerWidth/2, window.innerHeight/2)
       camera.aspect = window.innerWidth / window.innerHeight;
+      inResize()
       camera.updateProjectionMatrix();
     };
    

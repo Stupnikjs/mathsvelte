@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/noto-sans-mongolian": "^5.0.8",
 		"@fontsource/voltaire": "^5.0.5",
 		"@svgdotjs/svg.js": "^3.2.0",
 		"@types/d3": "^7.4.0",
@@ -32,6 +33,5 @@
 		"katex": "^0.16.8",
 		"mathjs": "^11.9.1",
 		"three": "^0.155.0"
-		
 	}
 }

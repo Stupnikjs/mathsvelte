@@ -9,7 +9,7 @@
     }
     let codeDrop = {
       title: "programmation",
-      items : ["threejs"]
+      items : ["threejs", "mathjs"]
     }
 
     let dataDrop = {

@@ -20,7 +20,7 @@
     const points = [];
       
     points.push( new THREE.Vector3(0,0,0));
-    points.push( new THREE.Vector3(x,y,z));
+    points.push( new THREE.Vector3(x/2,y/2,z/2));
 
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);

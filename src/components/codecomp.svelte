@@ -1,6 +1,7 @@
 <script>
    
 $: show = false
+import "@fontsource/noto-sans-mongolian"
 
 </script>
 
@@ -18,8 +19,9 @@ $: show = false
 
     .codeclass{
         
-        background-color: rgb(143, 160, 176);
-        color: yellow;
+        background-color: rgb(69, 77, 84);
+        color: rgb(209, 209, 175);
+        
 
     }
     .show{
@@ -30,7 +32,7 @@ $: show = false
     }
 
     .fontFamily{
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: rgb(224, 224, 144)
+        font-family: "Noto sans mongolian", sans-serif;
+        color: rgb(196, 196, 131)
     }
 </style>
