@@ -48,13 +48,25 @@
             <p> On obtient donc des connexion localisée a partir des images fournis en input, des valeurs de pixels, qui vont etre connectée a des sous ensemble de neurones seulement dans la couche suivante  </p>
             <p> Se fesant nous determinons un filtre, qui va ensuite se voir attribué un poids par le reseaux pendant l'entrainement </p>
             <p> On repete le processus avec d'autres filtes si besoin, c'est en empilant ces filtres ensemble que l'on obtient la couche </p>
-
+            <p> Il est possible d'empiler plusieurs couches convolutive </p>
+            <p> le reseau peut alors decouvrir des modeles a l'interieur d'autres modeles </p>
         </Item>
         <Item title="Images en couleurs" onMountCb={registerChildComponent}>
            <p> On apprehende les images comme des tensor ou vecteurs tridimensionels </p>
            <p> les trois dimensions correspondants a des niveaux de rouge vert et bleu  RGB </p>
            <p> chaque niveau de couleur aura un niveau d'intensité different</p>
-           
+           <div> 
+            <p>la matrice de couleur à alors 3 dimensions </p>
+            <ul class="p-2">
+                <li>la largeur </li>
+                <li> la hauteur </li>
+                <li>les niveaux de couleurs </li>
+            </ul>
+           </div>
+           <p> l'ordre des couleurs n'importe pas </p>
+        </Item>
+        <Item title="Couche de Pooling" onMountCb={registerChildComponent}>
+
         </Item>
        
     </div>
