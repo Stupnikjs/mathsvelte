@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { deleteBlank } from "../functions/deleteBlank";
+
     
     export let title:string
     export let items: string[]
@@ -12,7 +14,7 @@
 <div  class="relative"
 on:mouseenter={ () => { dropDown = "dropdown"}}  
 on:mouseleave={() => { dropDown = "nodropdown"}}>
-  <a href={`/${title}`} class=" h-full m-auto bg-red-50 w-full px-5">{title}</a>
+  <a href={`/${deleteBlank(title)}`} class=" h-full m-auto bg-red-50 w-full px-5">{title}</a>
   <div class={dropDown} >
       {#each items as item, ind}
       <li class={hoverIndex === ind ? "hover": "nohover"} 
@@ -21,7 +23,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
         hoverIndex = ind
         }}  
       on:mouseleave={() => { hoverIndex = -1}}
-        ><a href={`/${title}/${item}`}>{item}</a></li>
+        ><a href={`/${deleteBlank(title)}/${deleteBlank(item)}`}>{item}</a></li>
       {/each}
   </div>
 </div>

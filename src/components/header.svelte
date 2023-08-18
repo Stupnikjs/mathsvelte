@@ -5,7 +5,7 @@
   
     let mathDrop = {
       title: "math",
-      items : ["matrice", "vecteur"]
+      items : ["matrice", "vecteur", "derivation"]
     }
     let codeDrop = {
       title: "programmation",
@@ -14,7 +14,11 @@
 
     let dataDrop = {
       title: "data", 
-      items : [ "analyse", "machine learning"]
+      items : [ "analyse"]
+    }
+    let machineDrop = {
+      title: "deep learning",
+      items : ["ANN", "CNN", "RNN"]
     }
 
   </script>
@@ -29,6 +33,9 @@
             </DropDown>    
             <DropDown
             {...dataDrop}>
+            </DropDown>    
+            <DropDown
+            {...machineDrop}>
             </DropDown>    
                
 

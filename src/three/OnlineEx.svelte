@@ -18,7 +18,7 @@
 		const positions = [];
 		const colors = [];
 
-		for ( let i = 0; i < 1000; i ++ ) {
+		for ( let i = 0; i < 10; i ++ ) {
 
             const x = Math.random() * r - r / 2;
             const y = Math.random() * r - r / 2;
@@ -42,9 +42,11 @@
 
             geometry.computeBoundingSphere();
             generateMorphTargets(geometry)
-
+            
             return new THREE.Line( geometry, material );
+            
    }
+  
 
    let line = createLine()
 
@@ -79,7 +81,7 @@
 
     onMount(() => {
         let element = clickHandler()
-        createScene([line],onAnimate,onResize)(el, element!)
+        createScene([line],onAnimate,onResize, [1, 20, 200])(el, element!)
     })
 
 </script>

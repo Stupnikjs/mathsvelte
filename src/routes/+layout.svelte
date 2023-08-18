@@ -52,4 +52,8 @@
     }
         
     }
+
+    :global(.katex-html){
+    display: none;
+}
  </style>

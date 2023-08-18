@@ -10,6 +10,9 @@
    $: z = 0 
    $: count = 0 
 
+   let cameraPos = {x : 1, y:20, z:100} 
+
+
    let el:any ; 
 
 
@@ -38,12 +41,12 @@
     function clickHandler(){
     let target = document.querySelector("#target")
     if (browser && target){
-        if (count === 0 ) createScene([helpers, createPlan()])(el, target)
+        if (count === 0 ) createScene([helpers, createPlan()], function(){}, function(){}, [10, 40, 200])(el, target)
         if (count > 0 ) {
         let canavas = document.querySelectorAll("canvas")
         canavas.forEach(el => el.remove())
         count = 0
-        createScene([helpers, createPlan(), createLine()])(el, target)
+        createScene([helpers, createPlan(), createLine()], function(){}, function(){}, [10, 40, 200])(el, target)
         }
         count += 1
 
@@ -62,7 +65,7 @@
 
 <div class="flex h-full mb-5">
     
-    <div id="target" class="w-1/2 bg-black overflow-hidden border border-indigo-50 border-4 rounded"></div>
+    <div id="target" class="w-1/2 bg-black overflow-hidden border border-indigo-50 border-4 rounded flex"></div>
     <div class="flex flex-col justify-center items-center bg-indigo-50 w-1/2">
         
         <fieldset class="flex items-center">

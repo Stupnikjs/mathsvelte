@@ -3,11 +3,12 @@ import * as THREE from "three";
 import  { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
-export default function createScene (objArr:THREE.Object3D[], inAnimate:Function, inResize:Function){
+
+export default function createScene (objArr:THREE.Object3D[], inAnimate:Function, inResize:Function, cameraPos: number[]){
     
    
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     
     let renderer: THREE.WebGLRenderer; 
    
@@ -15,7 +16,8 @@ export default function createScene (objArr:THREE.Object3D[], inAnimate:Function
       scene.add(obj);
     }
   
-    camera.position.set(1, 2, 1); // Adjust camera position for a better view of the lines
+    
+    camera.position.set(...cameraPos); // Adjust camera position for a better view of the lines
     camera.lookAt(scene.position);
     camera.layers.enable(0)
 

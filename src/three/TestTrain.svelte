@@ -7,6 +7,7 @@
 
     let el:any ; 
     $: count = 0 
+    let cameraPos = {x : 1, y:20, z:100} 
 
     const createLine = () => {
         const geometry = new THREE.BufferGeometry();
@@ -44,15 +45,15 @@
 
 
     function clickHandler(){
-        let target = document.querySelector("#target")
+        let target = document.querySelector("#train")
         return target
     }
     onMount(() => {
         let element = clickHandler()
-        createScene([createLine()], function(){}, function(){})(el, element!)
+        createScene([createLine()], function(){}, function(){}, [1, 20, 100])(el, element!)
     })
 
 </script>
 
 
-<div id="target" class="w-full bg-black overflow-hidden border border-indigo-50 border-4 rounded"></div>
+<div id="train" class="w-full bg-black overflow-hidden border border-indigo-50 border-4 rounded"></div>

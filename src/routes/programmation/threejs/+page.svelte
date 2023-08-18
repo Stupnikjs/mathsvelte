@@ -119,9 +119,11 @@
         </div>
 
        
-            
-        <TestTrain></TestTrain>
-        <OnlineEx></OnlineEx>
+        <div class="flex">
+            <TestTrain></TestTrain>
+            <OnlineEx></OnlineEx>
+        </div>
+        
         
     </section>
    

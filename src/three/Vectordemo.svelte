@@ -9,18 +9,19 @@
    $: y = 0 
    $: z = 0 
    $: count = 0 
+   let cameraPos = {x : 1, y:1, z:5} 
 
    let el:any ; 
 
 
-   const helpers = new THREE.AxesHelper(0.5)
+   const helpers = new THREE.AxesHelper(2)
 
    const createLine = () => {
     const material = new THREE.LineBasicMaterial( { color: "red" } );
     const points = [];
       
     points.push( new THREE.Vector3(0,0,0));
-    points.push( new THREE.Vector3(x/2,y/2,z/2));
+    points.push( new THREE.Vector3(2*x,2*y,2*z));
 
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
@@ -33,12 +34,12 @@
     function clickHandler(){
     let target = document.querySelector("#target")
     if (browser && target){
-        if (count === 0 ) createScene([helpers, createLine()])(el, target)
+        if (count === 0 ) createScene([helpers, createLine()], function(){}, function(){}, [1, 1, 5])(el, target)
         if (count > 0 ) {
         let canavas = document.querySelectorAll("canvas")
         canavas.forEach(el => el.remove())
         count = 0
-        createScene([helpers, createLine()])(el, target)
+        createScene([helpers, createLine()], function(){}, function(){}, [1, 1, 5])(el, target)
         }
         count += 1
 
