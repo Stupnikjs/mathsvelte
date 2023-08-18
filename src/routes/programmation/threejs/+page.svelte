@@ -7,11 +7,20 @@
     import TestTrain from "../../../three/TestTrain.svelte"
     import "@fontsource/noto-sans-mongolian"
     import OnlineEx from "../../../three/OnlineEx.svelte";
+    import AsideComp from "../../../components/AsideComp.svelte";
+    import Item from "../../../components/item.svelte";
 
    $: x = 0 
    $: y = 0 
    $: z = 0 
    $: count = 0 
+
+   $: itemTitles = [] as string[]; 
+
+    function registerChildComponent(componentTitle:string) {
+    if (!itemTitles.includes(componentTitle)) itemTitles.push(componentTitle);
+    itemTitles = itemTitles
+    }
 
    let el:any ; 
 
@@ -56,32 +65,45 @@
 
 </script>
 
-<main class="voltaire fontsize">
-    <h1 class=""> three js est un bibliothèque Javascript 3D </h1>
+<main class="voltaire fontsize gridtemp">
+    <AsideComp items={itemTitles}></AsideComp>
     <section class="mt-8">
         <div class="flex flex-col">
-            <h2> il repose sur une hierarchie de composant</h2>
-            <h3>le composant principal est la scene </h3>
-            <Codecomp>
-                const scene = new THREE.Scene();
-            </Codecomp>
-            <p> Puis viens la camera qui est le deuxième element indispensable car c'est le point de vue </p>
-            <Codecomp>
-                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            </Codecomp>
-            <p> Prenons l'exemple très simple ou l'ou crée une ligne </p>
-            <Codecomp>
-                {`
-                const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
-                const points = [];
-                
-                points.push( new THREE.Vector3(0,0,1)); // les coordonées du premier point 
-                points.push( new THREE.Vector3(1,0,1)); // les coordonées du second point  
-                
-                
-                const geometry = new THREE.BufferGeometry().setFromPoints(points);
-                const line = new THREE.Line(geometry, material)`}
-            </Codecomp>
+            <Item title="Intro" onMountCb={registerChildComponent}>
+                <h2> il repose sur une hierarchie de composant</h2>
+            </Item>
+            
+
+            <Item title="Scene" onMountCb={registerChildComponent}>
+                <h3>le composant principal est la scene </h3>
+                <Codecomp>
+                    const scene = new THREE.Scene();
+                </Codecomp>
+            </Item>
+           <Item title="Camera" onMountCb={registerChildComponent}>
+                <p> Puis viens la camera qui est le deuxième element indispensable car c'est le point de vue </p>
+                <Codecomp>
+                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                </Codecomp>
+           </Item>
+          
+           <Item title="Lignes" onMountCb={registerChildComponent}>
+                <p> Prenons l'exemple très simple ou l'ou crée une ligne </p>
+                <Codecomp>
+                    {`
+                    const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+                    const points = [];
+                    
+                    points.push( new THREE.Vector3(0,0,1)); // les coordonées du premier point 
+                    points.push( new THREE.Vector3(1,0,1)); // les coordonées du second point  
+                    
+                    
+                    const geometry = new THREE.BufferGeometry().setFromPoints(points);
+                    const line = new THREE.Line(geometry, material)`}
+                </Codecomp>
+           </Item>
+           
+           <Item title="Example1" onMountCb={registerChildComponent}>
             <p> Maintenant une imbrication plus complexe de lignes </p>
             <Codecomp>
                 {`const geometry = new THREE.BufferGeometry();
@@ -116,10 +138,12 @@
 
 				line = new THREE.Line( geometry, material );`}
             </Codecomp>
+           </Item>
+            
         </div>
 
        
-        <div class="flex">
+        <div class="flex my-5">
             <TestTrain></TestTrain>
             <OnlineEx></OnlineEx>
         </div>

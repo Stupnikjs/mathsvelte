@@ -20,7 +20,7 @@
 
 
 
-<div class="gridtemp fontsize">
+<div class="gridtemp fontsize mb-5">
     <AsideComp items={itemTitles}></AsideComp>
     <div class="voltaire">
         <Item title=" Generalitées  " onMountCb={registerChildComponent}>
@@ -31,6 +31,7 @@
         <Item title="Noyaux d'image ou Filtre" onMountCb={registerChildComponent}>
             <p> Une image est un ensemble de pixels </p>
             <p> On applique un filtre d'image sur une image d'entrée </p>
+            <p> On va balayer le filtre sur l'ensemble de l'image</p>
             <Matrix type="p" tailwind="" arr={[[0.0625,0.125, 0.062], [0.125, 0.25, 0.125], [0.0625,0.125, 0.0625]]}></Matrix>
             <p> C'est le reseau de neurones convolutif qui determinera les poids reels pour faire de la classification d'images </p>
             <p> Pour gerer les bords de l'image on ajoute du padding a l'image pour ne pas perdre de données aux bords de l'image </p>
@@ -39,6 +40,21 @@
         <Item title="Couches de convolution" onMountCb={registerChildComponent}>
             <p>C'est un partie du reseau de neurones convolutif</p>
             <p> Si l'on utilise des resaux de neurones artificiels classiques, le nombre de parametres sera trop importants, lorsque l'on traite les images</p>
+            <p> Reduction de la connectivité locale , tout les neurones ne seront pas entierment connecté </p>
+            <p> Ils sont plutot connecté a un sous ensemble de neurones locaux dans la couche suivante, qui finissent par devenir les filtres </p>
+            <p> On peut choisir le nombre de filtre appliqué a une image </p>
+            <p> le reseau se charge d'apprendre les meilleurs poids pour le filtre </p>
+            <p> Il faut preserver les informations bidimenstionelles dans la couches de convolution </p>
+            <p> On obtient donc des connexion localisée a partir des images fournis en input, des valeurs de pixels, qui vont etre connectée a des sous ensemble de neurones seulement dans la couche suivante  </p>
+            <p> Se fesant nous determinons un filtre, qui va ensuite se voir attribué un poids par le reseaux pendant l'entrainement </p>
+            <p> On repete le processus avec d'autres filtes si besoin, c'est en empilant ces filtres ensemble que l'on obtient la couche </p>
+
+        </Item>
+        <Item title="Images en couleurs" onMountCb={registerChildComponent}>
+           <p> On apprehende les images comme des tensor ou vecteurs tridimensionels </p>
+           <p> les trois dimensions correspondants a des niveaux de rouge vert et bleu  RGB </p>
+           <p> chaque niveau de couleur aura un niveau d'intensité different</p>
+           
         </Item>
        
     </div>

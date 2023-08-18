@@ -13,6 +13,7 @@
     .footer{
         background-color: black;
         color: white; 
+       
 
     }
     .voltaire{
