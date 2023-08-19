@@ -9,6 +9,7 @@
     import OnlineEx from "../../../three/OnlineEx.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Item from "../../../components/item.svelte";
+    
 
    $: x = 0 
    $: y = 0 
@@ -147,6 +148,7 @@
             <TestTrain></TestTrain>
             <OnlineEx></OnlineEx>
         </div>
+       
         
         
     </section>

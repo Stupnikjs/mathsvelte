@@ -68,6 +68,42 @@
         <Item title="Couche de Pooling" onMountCb={registerChildComponent}>
 
         </Item>
+        <Item title="Pratique MNIST" onMountCb={registerChildComponent}>
+            <p> On importe le dataset depuis keras qui contient des images correspondant a des representation de chiffres  </p>
+            <Codecomp>
+                from tensorflow.keras.datasets import mnist
+            </Codecomp>
+           <p> On charge les images regroupé dans des groupes d'entrainement et de test </p>
+           <Codecomp>
+            (x_train, x_test),(y_train, y_test ) = mnist.load_data()
+           </Codecomp>
+           <p> dans les features x on a 6000 tableau de 28 px sur 28 px </p>
+           <Codecomp>
+            x_train.shape
+           </Codecomp>
+            <p> pour les y ou les label, on a un tableau simple de 6000 labels </p>
+            <p> on utilise alors le one hot encoding puisqu'il s'agit d'une classification </p>
+            <Codecomp>
+                from tensorflow.keras.utils import to_categorical
+
+                y_categorical_test = to_categorical(y_test)
+                y_categorical_train = to_categorical(y_train)
+            </Codecomp>
+            <p> ensuite il faut normaliser les données, on veux des valeurs entre 0 et 1</p>
+            <p> pour cela on divise simlpement par 255 la valeur maximale du pixel </p>
+            <Codecomp>
+                x_train = x_train / 255
+                x_test = x_train / 255
+            </Codecomp>
+            <p> on reshape nos données pour ajouter le nombre de canaux de couleurs </p>
+            <Codecomp>
+                # taille de l'echantillon , argeur, hauteur, canaux de couleurs
+                x_test = x_test.reshape(6000,28,28, 1)
+            </Codecomp>
+
+        </Item>
+
        
     </div>
+
 </div>

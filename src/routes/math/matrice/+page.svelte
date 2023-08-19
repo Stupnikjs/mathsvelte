@@ -6,7 +6,7 @@
     import AsideComp from "../../../components/AsideComp.svelte";
     import Codecomp from "../../../components/codecomp.svelte";
     import Matrix from "../../../components/Matrix.svelte";
-   
+    import Matrix3D from "../../../three/Matrix3D.svelte";
 
  
     let math7 = `\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix}\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1  \\end{bmatrix} = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 4 \\\\ 3 & 6 & 8  \\end{bmatrix} `
@@ -205,6 +205,10 @@
              <p> On obtient en developpant <Katex tailwind={"text-center"} text={`\\lambda^2 - ( a + d)\\lambda + ad - bc = 0 `}></Katex></p>
     </Item>
    
+    <Item title="Transformation 3D" onMountCb={registerChildComponent}>
+        <Matrix3D></Matrix3D>
+
+    </Item>
 </div>
 </div>
 
