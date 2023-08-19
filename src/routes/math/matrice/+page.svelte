@@ -140,6 +140,7 @@
                 <p> et on normalise <Katex tailwind="text-center" text={`e_3 = \\frac{u_3}{\\mid u_3 \\mid}`} />
                 <p> Ainsi de suite pour les vecteurs de dimensions superieures </p>
            </div> 
+           
            <Codecomp>
             def gsBasis(A) :
             B = np.array(A, dtype=np.float_) # Make B as a copy of A, 
@@ -175,24 +176,8 @@
             <p> Ensuite j'applique la transformation <Katex  tailwind={"text-center"} text={"T_E"}/> </p>
             <p> Finalement on utilise E pour retransformer le vecteur dans ma base </p>
             <p> Pour resumer <Katex tailwind={"text-center"} text={"E T_E E^{-1} r = r^p "}/></p>
-            <Codecomp>
-                def matrice_reflexion(baseR) : 
-
-                # baseR est une matrice 2 * 2  
-                # On obtient E la baseOrthonormale a partir de baseR
-
-                E = getE()
-
-                # On applique l'inverse puis la transformation puis la base pour reconvertir dans la base 
-                # initiale
-        
-                Einv = inv(E)
-                
-                TE = np.array([[1,0], [0, -1]])
-
-                T = E @ TE @ Einv
-                return T
-            </Codecomp>
+           
+  
     </Item>  
     <Item title=" Vecteur Propres (eigenvectors)" onMountCb={registerChildComponent}>
             <p> 

@@ -31,7 +31,10 @@
         <Item title="Noyaux d'image ou Filtre" onMountCb={registerChildComponent}>
             <p> Une image est un ensemble de pixels </p>
             <p> On applique un filtre d'image sur une image d'entrée </p>
-            <p> On va balayer le filtre sur l'ensemble de l'image</p>
+            <p> 
+                On va balayer le filtre sur l'ensemble de l'image avec un pas que l'on appelle stride
+                c'est a dire le decalage entre les applications successives du filtre  
+            </p>
             <Matrix type="p" tailwind="" arr={[[0.0625,0.125, 0.062], [0.125, 0.25, 0.125], [0.0625,0.125, 0.0625]]}></Matrix>
             <p> C'est le reseau de neurones convolutif qui determinera les poids reels pour faire de la classification d'images </p>
             <p> Pour gerer les bords de l'image on ajoute du padding a l'image pour ne pas perdre de données aux bords de l'image </p>
@@ -66,7 +69,8 @@
            <p> l'ordre des couleurs n'importe pas </p>
         </Item>
         <Item title="Couche de Pooling" onMountCb={registerChildComponent}>
-
+            <p> le pooling consiste a reduire les matrices resultante de l'application du filtre 
+                a leur valeur la plus importante </p>
         </Item>
         <Item title="Pratique MNIST" onMountCb={registerChildComponent}>
             <p> On importe le dataset depuis keras qui contient des images correspondant a des representation de chiffres  </p>
@@ -84,7 +88,7 @@
             <p> pour les y ou les label, on a un tableau simple de 6000 labels </p>
             <p> on utilise alors le one hot encoding puisqu'il s'agit d'une classification </p>
             <Codecomp>
-                from tensorflow.keras.utils import to_categorical
+                from  tensorflow.keras.utils  import  to_categorical
 
                 y_categorical_test = to_categorical(y_test)
                 y_categorical_train = to_categorical(y_train)
@@ -92,17 +96,21 @@
             <p> ensuite il faut normaliser les données, on veux des valeurs entre 0 et 1</p>
             <p> pour cela on divise simlpement par 255 la valeur maximale du pixel </p>
             <Codecomp>
-                x_train = x_train / 255
-                x_test = x_train / 255
+        x_train = x_train / 255
+        x_test = x_train / 255
             </Codecomp>
             <p> on reshape nos données pour ajouter le nombre de canaux de couleurs </p>
             <Codecomp>
-                # taille de l'echantillon , argeur, hauteur, canaux de couleurs
-                x_test = x_test.reshape(6000,28,28, 1)
+                # taille de l'echantillon , largeur, hauteur, canaux de couleurs
+        x_test = x_test.reshape(6000,28,28, 1)
             </Codecomp>
 
         </Item>
-
+        <div>
+            <span>pour plus de description voici une super description du fonctionement des CNN </span>
+            <a class="p-2 bg-black text-white flex items-cente flex-0 "href="https://fr.blog.businessdecision.com/tutoriel-deep-learning-le-reseau-neuronal-convolutif-cnn/"> lien </a>
+        </div> 
+        
        
     </div>
 
