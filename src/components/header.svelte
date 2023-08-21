@@ -23,7 +23,7 @@
 
   </script>
   
-  <header class="bg-indigo-100 voltaire h-8 fixed w-full">
+  <header class="bg-indigo-100 voltaire fixed w-full header h10">
         <nav class="h-full flex items-center justify-around">
             <DropDown
             {...mathDrop}>
@@ -48,6 +48,7 @@
       font-family: "Voltaire", sans-serif;
       z-index: 1; 
     }
+   
   
 
   </style>

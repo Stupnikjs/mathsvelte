@@ -18,7 +18,7 @@
 </script>
 
 
-<div class="gridtemp fontsize">
+
     <AsideComp items={itemTitles}></AsideComp>
     <div class="voltaire">
         <Item title=" Generalitées  " onMountCb={registerChildComponent}>
@@ -29,5 +29,5 @@
         </Item>
        
     </div>
-</div>
+
 

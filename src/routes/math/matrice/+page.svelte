@@ -23,11 +23,10 @@
 
 
 
-<div class="gridtemp fontsize">
+
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="p-5 voltaire flex-col flex fontsize bg-yellow-50 mt-5">
-    
-        
+    <div class="voltaire flex-col flex fontsize bg-yellow-50 mt-5">
+  
             <h1 class="text-xl text-center mt-4"> Les Matrices </h1>
 
             <div class="p-4 mx-auto relative my-4 w-4/5">
@@ -195,16 +194,11 @@
 
     </Item>
 </div>
-</div>
+
 
 
 <style>
 
     
-    .gridtemp{
-        display: grid;
-        grid-template-columns: 20% 1fr;
-    }
-  
-  
+
 </style>

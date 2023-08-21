@@ -20,12 +20,68 @@
 
 
 
-<div class="gridtemp fontsize mb-5">
+
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="voltaire">
+    <div class="voltaire mt-5">
         <Item title=" Generalitées  " onMountCb={registerChildComponent}>
            <p> CNN ou Convolutional Neural Network </p>
          
+        </Item>
+        
+        <Item title="Pretraitment des données " onMountCb={registerChildComponent}>
+           <Codecomp>
+            from tensorflow.keras.datasets import mnist
+
+            (x_train, y_train), (x_test, y_test) = mnist.load_data()
+            x_train.shape
+           </Codecomp>
+           <Codecomp>
+            from tensorflow.keras.utils import to_categorical
+            y_cat_test = to_categorical(y_test,10)
+            y_cat_train = to_categorical(y_train,10)
+           </Codecomp>
+           <Codecomp>
+            x_train = x_train/255
+       x_test = x_test/255
+           </Codecomp>
+           <p> reshape les données pour inclure le nombre de cannaux de couleurs</p>
+           <Codecomp>
+            x_train = x_train.reshape(60000, 28, 28, 1)
+       x_test = x_test.reshape(10000,28,28,1)
+           </Codecomp>
+        </Item>
+
+        <Item title=" Modéle CNN Tensorflow" onMountCb={registerChildComponent}>
+            <h2> Modéle </h2>
+            <p> Le parametre input_shape est fixé par les données (le format de l'image en pixels)</p>
+            <Codecomp>
+            model = Sequential()
+
+            # Couche convolutive
+            model.add(Conv2D(filters=32, kernel_size=(4,4),input_shape=(28, 28, 1), activation='relu',))
+            </Codecomp>
+            <Codecomp>
+            # Pooling
+            model.add(MaxPool2D(pool_size=(2, 2)))
+
+            <p></p>
+            <Codecomp>
+            # Images aplaties de 28 par 28 à 764 
+            model.add(Flatten())
+            </Codecomp>
+            
+
+        # 128 neurones dans une couche cachée Dense (vous pouvez changer ce nombre de neurones)
+        model.add(Dense(128, activation='relu'))
+
+        # La dernière couche est le calssificateur, donc 10 classes possibles
+        model.add(Dense(10, activation='softmax'))
+
+        # https://keras.io/metrics/
+        model.compile(loss='categorical_crossentropy',
+                    optimizer='adam',
+                    metrics=['accuracy']) # nous pouvons ajouter des metrics supplémentaires https://keras.io/metrics/
+            </Codecomp>
         </Item>
 
         <Item title="Noyaux d'image ou Filtre" onMountCb={registerChildComponent}>
@@ -114,4 +170,3 @@
        
     </div>
 
-</div>

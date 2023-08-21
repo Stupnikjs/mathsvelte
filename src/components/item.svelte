@@ -17,7 +17,7 @@ onMount(() => {
 
 
 
-<div class="pt-10  mx-auto relative  w-4/5 fontsize" id={`${deleteBlank(title)}`}>
+<div class="pt-20  mx-auto relative  w-4/5 fontsize" id={`${deleteBlank(title)}`}>
         
         <h2 class=" rounded bg-pink-50 p-2 mb-2 shaddow">{title}</h2>
         <div class={style + " flex flex-col gap-2 fontsize border border-blue-100 p-2 bg-purple-50"}>

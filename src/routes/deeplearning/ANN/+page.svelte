@@ -20,9 +20,9 @@
 
 
 
-<div class="gridtemp fontsize mb-5">
+
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="voltaire">
+    <div class="voltaire mt-5">
         <Item title=" Generalitées " onMountCb={registerChildComponent}>
 
            <h2> ANN ou Artificial Neural Network ou Reseau de neurones artificiels </h2>
@@ -41,86 +41,26 @@
 
          
         </Item>
-
-        <Item title="Noyaux d'image ou Filtre" onMountCb={registerChildComponent}>
-            <ul>
-                <p> Une image est un ensemble de pixels </p>
-                <p> On applique un filtre d'image sur une image d'entrée </p>
-                <p> On va balayer le filtre sur l'ensemble de l'image</p>
-                <Matrix type="p" tailwind="" arr={[[0.0625,0.125, 0.062], [0.125, 0.25, 0.125], [0.0625,0.125, 0.0625]]}></Matrix>
-                <p> C'est le reseau de neurones convolutif qui determinera les poids reels pour faire de la classification d'images </p>
-                <p> Pour gerer les bords de l'image on ajoute du padding a l'image pour ne pas perdre de données aux bords de l'image </p>
-                
-            </ul>
-           
+        <Item title="Modéle Perceptron simplifié " onMountCb={registerChildComponent}>
+            <p> On peut simplifier notre perceptron en une fonction f(x) qui aeccepte plusieurs input x </p>
+            <p> Cette fonction de x va produire un output y </p>
+            <p> On souhaite ajuster des parametres de la fonctions pour que le neurone apprene </p>
+            <p> donc on ajoute un poids de x1 noté w1 tel que y = x1w1 + x2w2</p>
+            <p> on ajoute aussi un biais dans la fonction pour le cas ou x = 0 </p>
+            <p> y = (x1w1 + b) + (x2w2 + b) </p>
         </Item>
-        <Item title="Couches de convolution" onMountCb={registerChildComponent}>
-            <p>C'est un partie du reseau de neurones convolutif</p>
-            <p> Si l'on utilise des resaux de neurones artificiels classiques, le nombre de parametres sera trop importants, lorsque l'on traite les images</p>
-            <p> Reduction de la connectivité locale , tout les neurones ne seront pas entierment connecté </p>
-            <p> Ils sont plutot connecté a un sous ensemble de neurones locaux dans la couche suivante, qui finissent par devenir les filtres </p>
-            <p> On peut choisir le nombre de filtre appliqué a une image </p>
-            <p> le reseau se charge d'apprendre les meilleurs poids pour le filtre </p>
-            <p> Il faut preserver les informations bidimenstionelles dans la couches de convolution </p>
-            <p> On obtient donc des connexion localisée a partir des images fournis en input, des valeurs de pixels, qui vont etre connectée a des sous ensemble de neurones seulement dans la couche suivante  </p>
-            <p> Se fesant nous determinons un filtre, qui va ensuite se voir attribué un poids par le reseaux pendant l'entrainement </p>
-            <p> On repete le processus avec d'autres filtes si besoin, c'est en empilant ces filtres ensemble que l'on obtient la couche </p>
-            <p> Il est possible d'empiler plusieurs couches convolutive </p>
-            <p> le reseau peut alors decouvrir des modeles a l'interieur d'autres modeles </p>
+        <Item title="Reseaux " onMountCb={registerChildComponent}>
+            
         </Item>
-        <Item title="Images en couleurs" onMountCb={registerChildComponent}>
-           <p> On apprehende les images comme des tensor ou vecteurs tridimensionels </p>
-           <p> les trois dimensions correspondants a des niveaux de rouge vert et bleu  RGB </p>
-           <p> chaque niveau de couleur aura un niveau d'intensité different</p>
-           <div> 
-            <p>la matrice de couleur à alors 3 dimensions </p>
-            <ul class="p-2">
-                <li>la largeur </li>
-                <li> la hauteur </li>
-                <li>les niveaux de couleurs </li>
-            </ul>
-           </div>
-           <p> l'ordre des couleurs n'importe pas </p>
-        </Item>
-        <Item title="Couche de Pooling" onMountCb={registerChildComponent}>
-
-        </Item>
-        <Item title="Pratique MNIST" onMountCb={registerChildComponent}>
-            <p> On importe le dataset depuis keras qui contient des images correspondant a des representation de chiffres  </p>
-            <Codecomp>
-                from tensorflow.keras.datasets import mnist
-            </Codecomp>
-           <p> On charge les images regroupé dans des groupes d'entrainement et de test </p>
-           <Codecomp>
-            (x_train, x_test),(y_train, y_test ) = mnist.load_data()
-           </Codecomp>
-           <p> dans les features x on a 6000 tableau de 28 px sur 28 px </p>
-           <Codecomp>
-            x_train.shape
-           </Codecomp>
-            <p> pour les y ou les label, on a un tableau simple de 6000 labels </p>
-            <p> on utilise alors le one hot encoding puisqu'il s'agit d'une classification </p>
-            <Codecomp>
-                from  tensorflow.keras.utils  import  to_categorical
-
-                y_categorical_test = to_categorical(y_test)
-                y_categorical_train = to_categorical(y_train)
-            </Codecomp>
-            <p> ensuite il faut normaliser les données, on veux des valeurs entre 0 et 1</p>
-            <p> pour cela on divise simlpement par 255 la valeur maximale du pixel </p>
-            <Codecomp>
-        x_train = x_train / 255
-        x_test = x_train / 255
-            </Codecomp>
-            <p> on reshape nos données pour ajouter le nombre de canaux de couleurs </p>
-            <Codecomp>
-                # taille de l'echantillon , largeur, hauteur, canaux de couleurs
-        x_test = x_test.reshape(6000,28,28, 1)
-            </Codecomp>
-
+        <Item title="Fonction d'activation" onMountCb={registerChildComponent}>
+            <p> La Fonction d'activation va devoir être coherente avec le problème que cherche a resoudre le reseau de neurone </p>
+            <p> il existe une mutitude de fonction d'activation </p>
+            <p> Dans un problème de classification les fonction sigmoide, tangente hyperbolique ou echelon seront preferées </p>
+            <p> Dans un problème de regression la fonction Unité lineaire rectifié ReLU importante dans le cas de vanishing gradient</p>
         </Item>
 
+
+     
        
     </div>
 
-</div>

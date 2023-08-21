@@ -21,9 +21,9 @@
 </script>
 
 
-<div class="gridtemp">
+
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="voltaire flex-col flex gap-2 fontsize bg-yellow-50">
+    <div class="voltaire flex-col flex gap-2 fontsize bg-yellow-50 mt-5">
         <h1 class="text-xl text-center mt-2"> Les Vecteurs </h1>
         <Item title="Definition" onMountCb={registerChildComponent}>
             <p> Un vecteur peut être défini par une direction et une magnitude </p>
@@ -49,7 +49,6 @@
         <Vectordemo></Vectordemo>       
     </div>
    
-</div>
 
 
 <style>

@@ -66,7 +66,7 @@
 
 </script>
 
-<main class="voltaire fontsize gridtemp">
+
     <AsideComp items={itemTitles}></AsideComp>
     <section class="mt-8">
         <div class="flex flex-col">
@@ -154,4 +154,3 @@
     </section>
    
    
-</main>
