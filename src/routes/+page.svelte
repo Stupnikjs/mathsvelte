@@ -15,14 +15,16 @@
 </script>
 
 
-<div  class="voltaire flex items-center justify-center w-full bg-red-50 p-5 flex-col min-full-h">
-  <h1 class="voltaire inline"> Bienvenue sur MathSvelte </h1>
-   <div>
-      <img src={icon} alt="svelte" class="h-12">
-   </div> 
-   <h2> Blog éducatif consacré aux Mathematiques, au developpement et Machine Learning</h2>
 
-</div>
+    <div></div>
+   <div class="p-5 bg-indigo-100 voltaire py-20 text-3xl">
+      <h1 class="voltaire  text-center"> Bienvenue sur MathSvelte </h1>
+      <h2> Blog éducatif consacré aux Mathematiques, au developpement et Machine Learning </h2>
+      
+   </div> 
+  
+
+
 
 
 

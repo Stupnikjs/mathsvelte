@@ -56,32 +56,28 @@
             <p> Le parametre input_shape est fixé par les données (le format de l'image en pixels)</p>
             <Codecomp>
             model = Sequential()
-
-            # Couche convolutive
-            model.add(Conv2D(filters=32, kernel_size=(4,4),input_shape=(28, 28, 1), activation='relu',))
+        model.add(Conv2D(filters=32, kernel_size=(4,4),input_shape=(28, 28, 1), activation='relu',))
             </Codecomp>
+            <p>Couche de pooling</p>
             <Codecomp>
-            # Pooling
             model.add(MaxPool2D(pool_size=(2, 2)))
-
-            <p></p>
+            </Codecomp>
+            <p> Applati les images en 28 * 28 lignes </p>
             <Codecomp>
-            # Images aplaties de 28 par 28 à 764 
             model.add(Flatten())
             </Codecomp>
-            
-
-        # 128 neurones dans une couche cachée Dense (vous pouvez changer ce nombre de neurones)
-        model.add(Dense(128, activation='relu'))
-
-        # La dernière couche est le calssificateur, donc 10 classes possibles
+            <Codecomp> 
+                model.add(Dense(128, activation='relu'))
         model.add(Dense(10, activation='softmax'))
-
-        # https://keras.io/metrics/
-        model.compile(loss='categorical_crossentropy',
-                    optimizer='adam',
-                    metrics=['accuracy']) # nous pouvons ajouter des metrics supplémentaires https://keras.io/metrics/
             </Codecomp>
+
+           <Codecomp>
+            model.compile(loss='categorical_crossentropy',
+            optimizer='adam',
+            metrics=['accuracy']) 
+           </Codecomp>
+        
+        
         </Item>
 
         <Item title="Noyaux d'image ou Filtre" onMountCb={registerChildComponent}>

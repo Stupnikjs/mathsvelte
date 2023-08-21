@@ -28,7 +28,7 @@ onMount(() => {
 
 <style>
     h2{
-        font-size: 1.1rem; 
+        font-size: 2rem; 
         white-space: nowrap;
     }
     .separateur{

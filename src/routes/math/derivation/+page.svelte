@@ -5,6 +5,7 @@
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Codecomp from "../../../components/codecomp.svelte";
+    import { onMount } from "svelte";
     
    
     $: itemTitles = [] as string[]; 
@@ -20,7 +21,7 @@
 
 
 
-<div class="gridtemp fontsize">
+
     <AsideComp items={itemTitles}></AsideComp>
     <div class="voltaire">
         <Item title=" Generalitées  " onMountCb={registerChildComponent}>
@@ -58,12 +59,17 @@
             </div>
         </Item>
         <Item title=" Dérivée de fonctions imbriquées" onMountCb={registerChildComponent}>
+            <Katex text={"\\frac{df}{dx}"} tailwind=""></Katex>
+        </Item>
+
+        <Item title="Matrice Jacobiènne " onMountCb={registerChildComponent}>
+        </Item>
+        <Item title="Matrice Hessienne" onMountCb={registerChildComponent}>
 
         </Item>
-    </div>
-   
 
-</div>
+    </div>
+
 
 
 <style>
