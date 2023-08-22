@@ -5,7 +5,7 @@
     import { onMount } from "svelte";
     
 
-
+    export let ratio:number; 
     let el:any ; 
     $: count = 0 
     const r = 100;
@@ -81,7 +81,7 @@
 
     onMount(() => {
         let element = clickHandler()
-        createScene([line],onAnimate,onResize, [1, 20, 200])(el, element!)
+        createScene([line],onAnimate,onResize, [1, 20, 200], ratio)(el, element!)
     })
 
 </script>

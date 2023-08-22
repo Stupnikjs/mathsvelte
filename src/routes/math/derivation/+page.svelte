@@ -4,8 +4,7 @@
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
-    import Codecomp from "../../../components/codecomp.svelte";
-    import { onMount } from "svelte";
+ 
     
    
     $: itemTitles = [] as string[]; 
@@ -73,12 +72,4 @@
 
 
 <style>
-
-    
-    .gridtemp{
-        display: grid;
-        grid-template-columns: 20% 1fr;
-    }
-  
-  
 </style>

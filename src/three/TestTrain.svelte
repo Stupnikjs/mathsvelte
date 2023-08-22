@@ -6,6 +6,7 @@
 
 
     let el:any ; 
+    export let ratio:number; 
     $: count = 0 
     let cameraPos = {x : 1, y:20, z:100} 
 
@@ -50,7 +51,7 @@
     }
     onMount(() => {
         let element = clickHandler()
-        createScene([createLine()], function(){}, function(){}, [1, 20, 100])(el, element!)
+        createScene([createLine()], function(){}, function(){}, [1, 20, 100], ratio)(el, element!)
     })
 
 </script>
