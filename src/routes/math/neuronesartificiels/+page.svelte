@@ -6,6 +6,7 @@
     import Katex from "../../../katex/katex.svelte";
     import Vectordemo from "../../../three/Vectordemo.svelte";
     import Matrix from "../../../components/Matrix.svelte";
+    import Codecomp from "../../../components/codecomp.svelte";
 
 
     $: itemTitles = [] as string[]; 
@@ -50,6 +51,12 @@
             <p> L'objectif du reseau de neurones est de parvenir a ajuster les parametre de la fonction w et b appelé poids et biais pour tendre vers les valeurs de sorties de notre set d'entrainement </p>
             <p> Car pour entrainer notre reseaux de neurones nous allons avoir besoin d'un bon nombre de données qui comportent une valeur de sortie pour la valeur que l'on cherchera a avoisiner par la suite </p>
             <Katex text={` C = ( Y - Y_{test})^2`} tailwind="m-auto"></Katex>
+            <p> le nombre de poids dans une couche d'un reseau de neurones est egale au produit du nombre d'input et d'output pour cette couche </p>
+            <Codecomp>
+                a1_0 = sigma(x[0] * W[0,0] + x[1] * W[0, 1] + x[2] * W[0, 2] + b[0]) 
+                a1_1 = sigma(x[0] * W[1,0] + x[1] * W[1, 1] + x[2] * W[1, 2] + b[1]) 
+
+            </Codecomp>
         </Item>
 
     </div>

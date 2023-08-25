@@ -14,7 +14,7 @@
 <div  class="relative"
 on:mouseenter={ () => { dropDown = "dropdown"}}  
 on:mouseleave={() => { dropDown = "nodropdown"}}>
-  <a href={`/${deleteBlank(title)}`} class=" h-full text-center bg-red-200 w-full px-5 text-xl">{title}</a>
+  <a href={`/${deleteBlank(title)}`} class=" h-full text-center bg-red-200 w-full px-5 text-2xl">{title}</a>
   <div class={dropDown} >
       {#each items as item, ind}
       <li class={hoverIndex === ind ? "hover": "nohover"} 
