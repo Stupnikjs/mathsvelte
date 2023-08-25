@@ -3,11 +3,11 @@
     import Footer from "../components/Footer.svelte";
     import Header from "../components/header.svelte";  
     import "../style/app.css";
-    import '@fontsource/roboto'
     
     
     let myclasses = "gridtemp fontsize"; // Initial classes
-    
+    if (browser) console.log(window.innerWidth)
+
     function updateClasses() {
         if(browser){
             if (window.innerWidth <= 900) {
