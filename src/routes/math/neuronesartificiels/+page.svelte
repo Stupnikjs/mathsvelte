@@ -3,9 +3,7 @@
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
-    import Katex from "../../../katex/katex.svelte";
-    import Vectordemo from "../../../three/Vectordemo.svelte";
-    import Matrix from "../../../components/Matrix.svelte";
+    import Katex from "../../../katex/katex.svelte"; 
     import Codecomp from "../../../components/codecomp.svelte";
 
 

@@ -6,7 +6,7 @@
     
     
     let myclasses = "gridtemp fontsize"; // Initial classes
-    if (browser) console.log(window.innerWidth)
+    
 
     function updateClasses() {
         if(browser){
