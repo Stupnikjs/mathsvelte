@@ -3,6 +3,7 @@
     import Footer from "../components/Footer.svelte";
     import Header from "../components/header.svelte";  
     import "../style/app.css";
+    import '@fontsource/roboto'
     
     
     let myclasses = "gridtemp fontsize"; // Initial classes
@@ -51,6 +52,10 @@
 
     :global(.voltaire){
      font-family: "Voltaire", sans-serif;
+    
+    }
+    :global(.roboto){
+     font-family: "Roboto", sans-serif;
     
     }
    

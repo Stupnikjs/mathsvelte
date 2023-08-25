@@ -19,7 +19,7 @@ onMount(() => {
 
 <div class="pt-20  mx-auto w-4/5 fontsize" id={`${deleteBlank(title)}`}>
         
-        <h2 class=" rounded bg-pink-50 p-2 mb-2 shaddow">{title}</h2>
+        <h2 class="bg-yellow-50 pl-10 mb-2 shaddow">{title}</h2>
         <div class={style + " flex flex-col gap-2 fontsize border border-blue-100 p-2 bg-purple-50"}>
             <slot></slot>
         </div>
@@ -28,8 +28,10 @@ onMount(() => {
 
 <style>
     h2{
-        font-size: 2rem; 
+        font-size: 1.5rem; 
         white-space: nowrap;
+        background-color: black;
+        color: white
     }
     .separateur{
         border-bottom: 1px solid rgb(182, 179, 179);

@@ -5,12 +5,9 @@
   
     let mathDrop = {
       title: "math",
-      items : ["matrice", "vecteur", "derivation"]
+      items : ["matrice", "vecteur", "derivation", "neurones artificiels"]
     }
-    let codeDrop = {
-      title: "programmation",
-      items : ["threejs", "mathjs"]
-    }
+   
 
     let dataDrop = {
       title: "data", 
@@ -27,9 +24,6 @@
         <nav class="h-full flex items-center justify-around">
             <DropDown
             {...mathDrop}>
-            </DropDown> 
-            <DropDown
-            {...codeDrop}>
             </DropDown>    
             <DropDown
             {...dataDrop}>
