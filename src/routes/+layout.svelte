@@ -3,7 +3,7 @@
     import Footer from "../components/Footer.svelte";
     import Header from "../components/header.svelte";  
     import "../style/app.css";
-    
+    import "@fontsource/merriweather"
     
     let myclasses = "gridtemp fontsize"; // Initial classes
     
@@ -11,9 +11,9 @@
     function updateClasses() {
         if(browser){
             if (window.innerWidth <= 900) {
-            myclasses = "nogridtemp smallfont min-full-h h10 smallasideItem noaside";
+            myclasses = "nogridtemp smallfont min-full-h h10 smallasideItem noaside flex-1";
         } else {
-            myclasses = "gridtemp bigfont min-full-h bigasideItem aside";
+            myclasses = "gridtemp bigfont min-full-h bigasideItem aside flex-1";
         }
         }
        
@@ -33,13 +33,14 @@
 
 
     
-        <div class="relative">
+        <div class="flex flex-col">
             <Header></Header>
             <div class={myclasses}>
                     <slot />
             </div>
+            <Footer></Footer>
         </div>
-        <Footer></Footer>
+        
         
         
         
@@ -52,6 +53,10 @@
 
     :global(.voltaire){
      font-family: "Voltaire", sans-serif;
+    
+    }
+    :global(.merri){
+     font-family: "Merriweather", sans-serif;
     
     }
     :global(.roboto){

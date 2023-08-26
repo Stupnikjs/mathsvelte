@@ -25,8 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/noto-sans-mongolian": "^5.0.8",
-		"@fontsource/roboto": "^5.0.8",
+		"@fontsource/merriweather": "^5.0.8",
 		"@fontsource/voltaire": "^5.0.5",
 		"@svgdotjs/svg.js": "^3.2.0",
 		"@types/d3": "^7.4.0",

@@ -11,11 +11,11 @@
 
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div  class="relative"
+<div  class="relative flex-1 flex"
 on:mouseenter={ () => { dropDown = "dropdown"}}  
 on:mouseleave={() => { dropDown = "nodropdown"}}>
-  <a href={`/${deleteBlank(title)}`} class=" h-full text-center bg-red-200 w-full px-5 text-2xl">{title}</a>
-  <div class={dropDown} >
+  <a href={`/${deleteBlank(title)}`} class="link h-full bg-red-200 text-2xl text-center">{title}</a>
+  <div class={dropDown}>
       {#each items as item, ind}
       <li class={hoverIndex === ind ? "hover": "nohover"} 
       id={ind.toString()}
@@ -34,7 +34,9 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
 
 .dropdown{
       position: absolute;
-      width: 100%;
+      top: 100%;
+      width: 50%;
+      left: 25%;
       border: 1px solid #ccc;
       border-radius: 4px;
       background-color: antiquewhite;
@@ -43,11 +45,16 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
       flex-direction: column;
       justify-content: space-around;
       font-size: .9rem;
-      
 
       
     }
+  .link{
+    flex: .5; 
+    margin: auto;
+    border: .5px solid rgb(146, 58, 58) ;
+  
 
+  }
     .nodropdown{
         display: none;
     }
