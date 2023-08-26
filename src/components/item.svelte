@@ -25,7 +25,7 @@ onMount(() => {
         </div>
         
 </div>
-<div class="separateur w-4/5 m-auto" ></div>
+<div class="separateur w-4/5 mx-auto mb-5" ></div>
 
 <style>
     .separateur{

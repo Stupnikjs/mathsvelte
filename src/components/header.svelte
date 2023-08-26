@@ -20,8 +20,8 @@
 
   </script>
   
-  <header class="bg-indigo-100 voltaire fixed w-full header">
-        <nav class="h-full flex items-center">
+  <header class="bg-indigo-100 voltaire fixed w-full header h10">
+        <nav class="flex items-center h10">
             <DropDown
             {...mathDrop}>
             </DropDown>    
