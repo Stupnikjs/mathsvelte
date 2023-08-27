@@ -39,8 +39,13 @@
             </div>
          
         </Item>
-        <Item title="Exponentielle" onMountCb={registerChildComponent}>
-
+        <Item title="Derivées a connaitre" onMountCb={registerChildComponent}>
+            <div class="flex flex-col items-center">
+                <p> Dérivé de <Katex text={`e^x = e^x`} tailwind=""> </Katex></p>
+                <p> Dérivé de <Katex text={`ln(x) = \\frac{1}{x}`} tailwind=""> </Katex></p>
+                <p> Dérivé de <Katex text={`\\frac{1}{x} = - \\frac{1}{x^2}`} tailwind=""> </Katex></p>
+            </div>
+          
         </Item>
         <Item title="" onMountCb={registerChildComponent}>
 
@@ -70,7 +75,7 @@
             <p> Soit f une fonction indefiniment derivable en un point a </p>
             <p> la serie de Taylor de f en ce point est la serie de fonction </p>
             <Katex text={` f(x) + \\frac{f'(a)}{1!}(x - a ) + \\frac{f''(a)}{2!}(x - a ) + \\frac{f''(a)}{2!}(x - a ) `} tailwind=""></Katex>
-            <Katex text={`\\sum^{n}_{k=0}{}`} tailwind=""></Katex>
+            <Katex text={`\\sum^{n}_{k=0}{\\frac{f^{(k)}(a)}{k!}}(X - a)^k`} tailwind=""></Katex>
         </Item>
         
 
