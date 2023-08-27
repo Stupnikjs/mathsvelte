@@ -24,7 +24,7 @@
     }
 
     .fontFamily{
-        font-family: "Noto sans mongolian", sans-serif;
+        font-family: "Merriweather", sans-serif; 
         color: rgb(196, 196, 131)
     }
 </style>
