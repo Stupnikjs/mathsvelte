@@ -1,6 +1,5 @@
 <script>
 
-import "@fontsource/noto-sans-mongolian"
 
 </script>
 
