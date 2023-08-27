@@ -3,7 +3,6 @@
     import Footer from "../components/Footer.svelte";
     import Header from "../components/header.svelte";  
     import "../style/app.css";
-    import "@fontsource/merriweather"
     
     let myclasses = "gridtemp fontsize"; // Initial classes
     
@@ -55,10 +54,7 @@
      font-family: "Voltaire", sans-serif;
     
     }
-    :global(.merri){
-     font-family: "Merriweather", sans-serif;
-    
-    }
+  
     :global(.roboto){
      font-family: "Roboto", sans-serif;
     

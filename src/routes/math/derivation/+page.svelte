@@ -66,6 +66,13 @@
         <Item title="Matrice Hessienne" onMountCb={registerChildComponent}>
 
         </Item>
+        <Item title="Série de Taylor" onMountCb={registerChildComponent}>
+            <p> Soit f une fonction indefiniment derivable en un point a </p>
+            <p> la serie de Taylor de f en ce point est la serie de fonction </p>
+            <Katex text={` f(x) + \\frac{f'(a)}{1!}(x - a ) + \\frac{f''(a)}{2!}(x - a ) + \\frac{f''(a)}{2!}(x - a ) `} tailwind=""></Katex>
+            <Katex text={`\\sum^{n}_{k=0}{}`} tailwind=""></Katex>
+        </Item>
+        
 
     </div>
 
