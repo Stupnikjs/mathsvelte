@@ -15,7 +15,7 @@
     }
     let machineDrop = {
       title: "deep learning",
-      items : ["ANN", "CNN", "RNN"]
+      items : ["ANN", "CNN", "RNN", "Tensorflow"]
     }
 
   </script>

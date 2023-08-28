@@ -1,0 +1,89 @@
+<script lang="ts">
+    import Katex from "../../../katex/katex.svelte";
+    import "@fontsource/voltaire"
+    import Item from "../../../components/item.svelte";
+    import AsideComp from "../../../components/AsideComp.svelte";
+    import Codecomp from "../../../components/codecomp.svelte";
+    import Matrix from "../../../components/Matrix.svelte";
+    
+   
+    $: itemTitles = [] as string[]; 
+
+    function registerChildComponent(componentTitle:string) {
+    if (!itemTitles.includes(componentTitle)) itemTitles.push(componentTitle);
+    itemTitles = itemTitles
+   }
+
+   
+
+</script>
+
+
+
+
+    <AsideComp items={itemTitles}></AsideComp>
+    <div class="voltaire mt-5">
+        <Item title="Generalitées " onMountCb={registerChildComponent}>
+
+            
+        </Item>
+     
+        <Item title="Example simple" onMountCb={registerChildComponent}>
+            <p> La première étape à la creation d'un modéle de machine learning est le data enginering  ou l'analyse de notre dataset </p>
+            <p> Donc première étape on charge nos donées </p>
+            <Codecomp>
+
+    import sklearn.datasets as datasets
+           </Codecomp>
+           <Codecomp>
+
+            data = datasets.fetch_california_housing()
+       df = pd.DataFrame(data=data["data"], columns=data["feature_names"])           
+           </Codecomp>
+           <p> On recherche les elements manquants dans le datasets </p>
+           <p> S'il y en a on cherchera soit a les remplacer par une valeur, soit suprimer la feature  </p>
+            <p>la somme des données manquantes par features </p>
+           <Codecomp>
+            df.isnull().sum()
+           </Codecomp>
+           <p> On cherche la correlation de la feature par rapport au prix, ou la valeur que l'on cherche a predire </p>
+           <Codecomp>
+            df.corr()["price"].sort_values()
+           </Codecomp>
+           <p> On supprime la colonne price </p>
+           <Codecomp>
+            df.drop('price', axis=1) 
+           </Codecomp>
+           <p> On reparti notre dataset en set d'entrainement et de test</p>
+           <Codecomp>
+X = df.drop("price", axis=1).values
+     y = df["price"].values
+           </Codecomp>
+           <Codecomp>
+  from sklearn.model_selection import train_test_split
+    X_train, X_test, y_test, y_train = train_test_split(X,y, test_size=0.25, random_state=12)
+            
+           </Codecomp>
+           <Codecomp>
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation,Dropout
+           </Codecomp>
+           <Codecomp>
+                model = Sequential()
+            model.add(Dense(units=8, activation="relu"))
+            model.add(Dense(units=8, activation="relu"))
+            model.add(Dense(units=1, activation='sigmoid'))
+           </Codecomp>
+           <Codecomp>
+            model_loss = pd.DataFrame(model.history.history)
+            model_loss.plot();
+           </Codecomp>
+        </Item>
+
+     
+
+
+     
+       
+    </div>
+

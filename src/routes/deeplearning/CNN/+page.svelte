@@ -3,8 +3,8 @@
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
-    import Codecomp from "../../../components/codecomp.svelte";
     import Matrix from "../../../components/Matrix.svelte";
+    import Codecomp from "../../../components/codecomp.svelte";
     
    
     $: itemTitles = [] as string[]; 
@@ -29,53 +29,55 @@
         </Item>
         
         <Item title="Pretraitment des données " onMountCb={registerChildComponent}>
+           
            <Codecomp>
-            from tensorflow.keras.datasets import mnist
-
-            (x_train, y_train), (x_test, y_test) = mnist.load_data()
-            x_train.shape
-           </Codecomp>
-           <Codecomp>
-            from tensorflow.keras.utils import to_categorical
-            y_cat_test = to_categorical(y_test,10)
-            y_cat_train = to_categorical(y_train,10)
-           </Codecomp>
-           <Codecomp>
-            x_train = x_train/255
-       x_test = x_test/255
-           </Codecomp>
-           <p> reshape les données pour inclure le nombre de cannaux de couleurs</p>
-           <Codecomp>
-            x_train = x_train.reshape(60000, 28, 28, 1)
-       x_test = x_test.reshape(10000,28,28,1)
+                from tensorflow.keras.datasets import mnist
+    
+                (x_train, y_train), (x_test, y_test) = mnist.load_data()
+                x_train.shape
+               
+                # from tensorflow.keras.utils import to_categorical
+                y_cat_test = to_categorical(y_test,10)
+                y_cat_train = to_categorical(y_train,10)
+               
+                x_train = x_train/255
+                x_test = x_test/255
+               
+               <p> reshape les données pour inclure le nombre de cannaux de couleurs</p>
+              
+                x_train = x_train.reshape(60000, 28, 28, 1)
+                x_test = x_test.reshape(10000,28,28,1)
            </Codecomp>
         </Item>
 
         <Item title=" Modéle CNN Tensorflow" onMountCb={registerChildComponent}>
             <h2> Modéle </h2>
             <p> Le parametre input_shape est fixé par les données (le format de l'image en pixels)</p>
-            <Codecomp>
+            <pre>
+            <code>
             model = Sequential()
         model.add(Conv2D(filters=32, kernel_size=(4,4),input_shape=(28, 28, 1), activation='relu',))
-            </Codecomp>
+            </code>
             <p>Couche de pooling</p>
-            <Codecomp>
+            <code>
             model.add(MaxPool2D(pool_size=(2, 2)))
-            </Codecomp>
+            </code>
             <p> Applati les images en 28 * 28 lignes </p>
-            <Codecomp>
+            <code>
             model.add(Flatten())
-            </Codecomp>
-            <Codecomp> 
-                model.add(Dense(128, activation='relu'))
-        model.add(Dense(10, activation='softmax'))
-            </Codecomp>
+            </code>
+            <code> 
+            model.add(Dense(128, activation='relu'))
+            model.add(Dense(10, activation='softmax'))
+            </code>
 
-           <Codecomp>
+
+           <code>
             model.compile(loss='categorical_crossentropy',
             optimizer='adam',
             metrics=['accuracy']) 
-           </Codecomp>
+           </code>
+        </pre>
         
         
         </Item>
@@ -126,36 +128,36 @@
         </Item>
         <Item title="Pratique MNIST" onMountCb={registerChildComponent}>
             <p> On importe le dataset depuis keras qui contient des images correspondant a des representation de chiffres  </p>
-            <Codecomp>
+            <code>
                 from tensorflow.keras.datasets import mnist
-            </Codecomp>
+            </code>
            <p> On charge les images regroupé dans des groupes d'entrainement et de test </p>
-           <Codecomp>
+           <code>
             (x_train, x_test),(y_train, y_test ) = mnist.load_data()
-           </Codecomp>
+           </code>
            <p> dans les features x on a 6000 tableau de 28 px sur 28 px </p>
-           <Codecomp>
+           <code>
             x_train.shape
-           </Codecomp>
+           </code>
             <p> pour les y ou les label, on a un tableau simple de 6000 labels </p>
             <p> on utilise alors le one hot encoding puisqu'il s'agit d'une classification </p>
-            <Codecomp>
+            <code>
                 from  tensorflow.keras.utils  import  to_categorical
 
                 y_categorical_test = to_categorical(y_test)
                 y_categorical_train = to_categorical(y_train)
-            </Codecomp>
+            </code>
             <p> ensuite il faut normaliser les données, on veux des valeurs entre 0 et 1</p>
             <p> pour cela on divise simlpement par 255 la valeur maximale du pixel </p>
-            <Codecomp>
+            <code>
         x_train = x_train / 255
         x_test = x_train / 255
-            </Codecomp>
+            </code>
             <p> on reshape nos données pour ajouter le nombre de canaux de couleurs </p>
-            <Codecomp>
+            <code>
                 # taille de l'echantillon , largeur, hauteur, canaux de couleurs
         x_test = x_test.reshape(6000,28,28, 1)
-            </Codecomp>
+            </code>
 
         </Item>
         <div>
