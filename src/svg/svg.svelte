@@ -1,7 +1,7 @@
 <script lang="ts">
 // Import the SVG.js library
 import { SVG } from "@svgdotjs/svg.js";
-    import { onMount } from "svelte";
+import { onMount } from "svelte";
 
 // Define your neural network architecture
 const layers = [

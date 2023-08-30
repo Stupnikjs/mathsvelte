@@ -1,10 +1,9 @@
 <script lang="ts">
-    import Katex from "../../../katex/katex.svelte";
     import "@fontsource/voltaire"
     import Item from "../../../components/item.svelte";
     import AsideComp from "../../../components/AsideComp.svelte";
     import Codecomp from "../../../components/codecomp.svelte";
-    import Matrix from "../../../components/Matrix.svelte";
+    
     
    
     $: itemTitles = [] as string[]; 
@@ -74,16 +73,20 @@ from tensorflow.keras.layers import Dense, Activation,Dropout
             model.add(Dense(units=8, activation="relu"))
             model.add(Dense(units=1, activation='sigmoid'))
            </Codecomp>
+           <p> Evolution de loss et val_loss en fonction des epochs </p>
            <Codecomp>
             model_loss = pd.DataFrame(model.history.history)
             model_loss.plot();
            </Codecomp>
+            
+        </Item>
+        <Item title="Parametres de model.compile()" onMountCb={registerChildComponent}>
+            <p> En fonction du modele c'est a nous de decider combien de neurones on aura dans les couches cachées </p>
+            <p> le type de modele "regression" , "classification" nous impose un fonction de "loss" ou cout </p>
+            <p> pour les classification on utilise par exemple loss="binary_crossentropy" et pour la regression loss="mean_squared_error" </p>
+            <p> on doit choisir egalement l'optimizer </p>
         </Item>
 
-     
-
-
-     
        
     </div>
 
