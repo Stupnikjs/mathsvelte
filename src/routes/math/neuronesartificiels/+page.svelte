@@ -7,6 +7,8 @@
     import Codecomp from "../../../components/codecomp.svelte";
     import { onMount } from "svelte";
     import Svg from "../../../svg/svg.svelte";
+    import type { neuroneSvg } from "../../../svg/svg";
+    import Neurone from "../../../svg/neurone.svelte";
 
 
     $: itemTitles = [] as string[]; 
@@ -16,6 +18,8 @@
     if (!itemTitles.includes(componentTitle)) itemTitles.push(componentTitle);
     itemTitles = itemTitles
    }
+
+  
 
    
 
@@ -76,6 +80,7 @@
            <Katex text={`\\frac{\\partial{a^{(n)}}}{\\partial{a^{(n-1)}}} = \\frac{\\partial{a^{(n)}}}{\\partial{z^{(n)}}}\\frac{\\partial{z^{(n)}}}{\\partial{a^{(n-1)}}} = \\sigma '(z^{n})W^{n} `} tailwind="m-auto text-xl"> </Katex>
         </Item>
         <Svg></Svg>
+        
     </div>
    
 
