@@ -1,12 +1,16 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import type {neuroneSvg} from "./svg";
   import {sqrt, cos, pow} from "mathjs"
-  import Katex from "../katex/katex.svelte";
-  let lineLenght = 200
+  
   console.log(cos(30))
- // math.sqrt(neurone.r - neurone.r * math.cos(22.5))
+  let width:number; 
+  if (browser) width = window.innerWidth / 2
+  
 
- let neurone:neuroneSvg = {
+  $: svgWidth  = width 
+  let lineLenght = svgWidth 
+  let neurone:neuroneSvg = {
     r:40,
     xPos: 400,
     yPos: 200,
@@ -17,11 +21,12 @@
 
   y1 = neurone.yPos + neurone.r
 
+
 </script>
 
 
 <div class="bg-red-50">
-  <svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg" >
+  <svg width={svgWidth} height="500" xmlns="http://www.w3.org/2000/svg" >
     <!-- Circle -->
     
 

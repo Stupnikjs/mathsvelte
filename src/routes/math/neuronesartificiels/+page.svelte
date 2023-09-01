@@ -80,7 +80,7 @@
            <Katex text={`\\frac{\\partial{a^{(n)}}}{\\partial{a^{(n-1)}}} = \\frac{\\partial{a^{(n)}}}{\\partial{z^{(n)}}}\\frac{\\partial{z^{(n)}}}{\\partial{a^{(n-1)}}} = \\sigma '(z^{n})W^{n} `} tailwind="m-auto text-xl"> </Katex>
         </Item>
         <div class="w-3/4 mx-auto mb-5 border-blue-200 border-4">
-            <Svg></Svg>
+            <Neurone></Neurone>
         
         </div>
        

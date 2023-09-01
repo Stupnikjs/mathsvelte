@@ -86,7 +86,11 @@ from tensorflow.keras.layers import Dense, Activation,Dropout
             <p> pour les classification on utilise par exemple loss="binary_crossentropy" et pour la regression loss="mean_squared_error" </p>
             <p> on doit choisir egalement l'optimizer </p>
         </Item>
-
+        <Item title="Couche Dropout" onMountCb={registerChildComponent}>
+         <p> C'est une couche qui desactive un certain pourcentage de neurones </p>
+          <p> Elle previent le surapprentissage </p>
+        </Item>
+        
        
     </div>
 
