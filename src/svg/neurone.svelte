@@ -48,7 +48,7 @@
   let colors = [ "red", "purple", "pink", "red"] 
    
 
-  let input = [1, 3, 1 ]
+  let input = [1, 3, 2 ]
 
   function returnCirles(input:number[], size:number){
     let circles:circleCoords[] = []; 
@@ -60,7 +60,7 @@
         let lines: lineCoords[] = []; 
         for (let x = 0 ; x < nextLayer; x ++){
           let x1 = cx + r ; 
-          let x2 = i * size / input.length + r; 
+          let x2 = (i+1) * size / input.length + 2*r; 
           let y1 = cy ; 
           let y2 = ( x + 1 ) * size * ( 2 / 3 ) / ( nextLayer + 1)
           let line = new lineCoords(x1, x2, y1, y2) 
@@ -85,7 +85,7 @@
     {#each  returnCirles(input, size) as circle, ind}
       <circle cx={circle.cx} cy={circle.cy} r={circle.r} fill={colors[ind]}></circle>
       {#each circle.nextLines as line }
-      <line x1={line.x1} x2={line.x2} y1={line.y1} y2={line.y2}></line>
+      <line x1={line.x1} x2={line.x2} y1={line.y1} y2={line.y2} stroke="black"></line>
       {/each}
     {/each}
     
