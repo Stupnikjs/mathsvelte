@@ -14,7 +14,7 @@
 <div  class="relative flex-1 flex"
 on:mouseenter={ () => { dropDown = "dropdown"}}  
 on:mouseleave={() => { dropDown = "nodropdown"}}>
-  <a href={`/${deleteBlank(title)}`} class="link h10 flex items-center justify-center bg-indigo-200 text-2xl text-center">{title}</a>
+  <a href={`/${deleteBlank(title)}`} class="link h10 flex items-center justify-center  text-2xl text-center">{title}</a>
   <div class={dropDown}>
       {#each items as item, ind}
       <li class={hoverIndex === ind ? "hover": "nohover"} 
@@ -51,7 +51,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
   .link{
     flex: .5; 
     margin: auto;
-    border: .5px solid rgb(146, 58, 58) ;
+    
     font-size: 2rem;
   
 

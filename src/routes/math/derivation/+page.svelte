@@ -78,17 +78,20 @@
             <Katex text={`\\sum^{n}_{k=0}{\\frac{f^{(k)}(a)}{k!}}(X - a)^k`} tailwind=""></Katex>
         </Item>
         <Item title="Serie de Taylor multivariable" onMountCb={registerChildComponent}>
-            <Katex text={`f(x + \\Delta_x, y + \\Delta_y ) = f(x, y)`} tailwind=""></Katex>
-            <Katex text={` + ( \\delta_xf(x,y)\\Delta_x + \\delta_yf(x,y)\\Delta_y  )`} tailwind=""></Katex>
-            <Katex text={` +  \\frac{1}{2}(\\delta_{xx}f(x,y)\\Delta_x^2 + 2\\delta_{xy}f(x,y)\\Delta_x\\Delta_y  \\delta_{yy}f(x,y)\\Delta_y^2 ) `} tailwind=""></Katex>
-            <p> le terme de premier ordre n'est autre que le vecteur Jacobien de la fonction soit : </p>
+            <Katex text={`f(x + \\Delta_x, y + \\Delta_y ) = `} tailwind=""></Katex>
+            <Katex text={`+ \\space f(x, y)`} tailwind="ml-20"></Katex>
+            <Katex text={` + \\space (  \\delta_xf(x,y)\\Delta_x + \\delta_yf(x,y)\\Delta_y  )`} tailwind="ml-20"></Katex>
+            <Katex text={` +  \\frac{1}{2}(\\delta_{xx}f(x,y)\\Delta_x^2 + 2\\delta_{xy}f(x,y)\\Delta_x\\Delta_y  \\delta_{yy}f(x,y)\\Delta_y^2 ) `} tailwind="ml-20"></Katex>
+            <p class="text-center"> le terme de premier ordre n'est autre que le vecteur Jacobien de la fonction soit : </p>
             <Katex text={` \\begin{bmatrix}\\delta_xf(x,y) \\space, & \\delta_yf(x,y)\\Delta_y \\end{bmatrix} \\begin{bmatrix}\\Delta_x \\\\ \\Delta_y \\end{bmatrix} \\space \\space ou \\space \\space J_f\\Delta_x`} tailwind="text-center"></Katex>
-            <p> le  terme de deuxième ordre n'est autre que le vecteur des <Katex text={`\\Delta_x`} tailwind=""></Katex> Jacobien de la fonction soit : </p>
+            <p class="m-auto"> le  terme de deuxième ordre n'est autre que le vecteur des <Katex text={`\\Delta_x`} tailwind="inline"></Katex> Jacobien de la fonction soit : </p>
             <Katex text={`\\frac{1}{2}(\\begin{bmatrix} \\Delta_x & \\Delta_y \\end{bmatrix} \\begin{bmatrix}  \\delta_{xx}f(x,y) , &  
-            \\delta_yf(x,y) \\\\ \\delta_{xy}f(x,y) & \\delta_{yy}f(x,y) \\end{bmatrix} \\begin{bmatrix}\\Delta_x \\\\ \\Delta_y \\end{bmatrix})`} tailwind=""></Katex>
+            \\delta_yf(x,y) \\\\ \\delta_{xy}f(x,y) & \\delta_{yy}f(x,y) \\end{bmatrix} \\begin{bmatrix}\\Delta_x \\\\ \\Delta_y \\end{bmatrix})`} tailwind="text-center"></Katex>
 
         </Item>
+        <Item title="La methode Newton-Raphson" onMountCb={registerChildComponent}>
 
+        </Item>
     </div>
 
 
