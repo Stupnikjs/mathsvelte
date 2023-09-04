@@ -188,11 +188,6 @@
              <p> On recherche les solutions a cette équation </p><Katex tailwind={""} text={`det(A - \\lambda I) = 0 `}></Katex>
              <p> On obtient en developpant <Katex tailwind={"text-center"} text={`\\lambda^2 - ( a + d)\\lambda + ad - bc = 0 `}></Katex></p>
     </Item>
-   
-    <Item title="Transformation 3D" onMountCb={registerChildComponent}>
-        <Matrix3D></Matrix3D>
-
-    </Item>
 </div>
 
 
