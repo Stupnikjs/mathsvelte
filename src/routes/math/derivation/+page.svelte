@@ -22,8 +22,8 @@
 
 
     <AsideComp items={itemTitles}></AsideComp>
-    <div class="voltaire">
-        <Item title=" Generalitées  " onMountCb={registerChildComponent}>
+    <div class="voltaire mt-4">
+        <Item title=" Generalitées" onMountCb={registerChildComponent}>
             <p> Les derivées sont des fonctions qui expriment la variation de la fonction en fonction du temps </p>
             <p> On peut demontrer , et essayer de trouver mathematiquement la valeur d'une derivé, en utilisant <Katex text={"\\Delta_x"} tailwind="inline"></Katex></p>
             <Katex text={"f(x)' = \\frac{f(x + \\Delta_x ) - f(x) }{\\Delta_x }"} tailwind=""></Katex>
@@ -89,9 +89,39 @@
             \\delta_yf(x,y) \\\\ \\delta_{xy}f(x,y) & \\delta_{yy}f(x,y) \\end{bmatrix} \\begin{bmatrix}\\Delta_x \\\\ \\Delta_y \\end{bmatrix})`} tailwind="text-center"></Katex>
 
         </Item>
-        <Item title="La methode Newton-Raphson" onMountCb={registerChildComponent}>
+        <Item title="La méthode Newton-Raphson" onMountCb={registerChildComponent}>
+            <div class="flex flex-col items-center gap-4">
+                <p> Cette méthode permet de trouver la racine d'une fonction en plusieurs iterations </p>
+                <p class="text-center"> la formule :  </p>
+                <Katex text={`x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)}`} tailwind="text-center"></Katex>
+                <p> dans le cas particulier d'une fonction affine soit <Katex text={` f(x) = 2x + 2`} tailwind="text-center"></Katex></p>
+                <p> prenons 3 comme valeur initiale x0 </p>
+                <p> <Katex text={`x_1 = 3 - 8 / 2 = -1 `} tailwind=""></Katex></p>
+                <p> <Katex text={`x_1 = -1 `} tailwind="inline"></Katex> est bien la racine de la fonction </p>
+                <p> Cette méthode trouve directement la racine des fonctions affine puisqu'elle va estimer la fonction par le gradient, ou la derivée de premier ordre </p>
+            </div>
+            
 
         </Item>
+        <Item title="La descente de Gradient" onMountCb={registerChildComponent}>
+            <div class="flex flex-col items-center gap-4">
+                <p> on extrapole la méthode Newton-Raphson à des fonctions a plusieurs variables </p> 
+                <p> le gradient d'une fonction <Katex tailwind="inline" text={`\\nabla_f(x,y) = \\begin{bmatrix} \\frac{df_{(a,b)}}{dx} \\\\ \\frac{df_{(a,b)}}{dy} \\end{bmatrix} `}></Katex> <span>évalué au points a et b</span></p>
+                <p> la valeur maximale que le gradient peut prendre est <Katex tailwind="inline" text={` \\mid \\nabla_f \\mid   `}></Katex> la somme des carrées des composant de <Katex tailwind="inline" text={` \\nabla_f    `}></Katex></p>
+                <p> le gradient pointe vers la pente la plus abrupte </p>
+                <p> le gradient nous permet de trouver le minimum d'une fonction </p>
+                <p> il faut une succession de petit pas pour trouver le minimum</p>
+                <Katex text={`S_{n+1} = S_n - y \\nabla_f(S_n)`} tailwind=""></Katex> 
+            </div>
+           
+        </Item>
+        <Item title="Multiplicateur de Lagrange" onMountCb={registerChildComponent}>
+            <div class="flex flex-col items-center gap-4">
+            <Katex text={` g(x,y) = x^2 + y^2 `} tailwind=""></Katex>
+            <Katex text={`\\nabla_f = \\lambda\\nabla_g`} tailwind=""></Katex>
+            </div>   
+        </Item>
+        
     </div>
 
 
