@@ -80,6 +80,12 @@
 
 <div class="bg-red-50" bind:clientWidth={size}  style=" width={size}">
   <p class="text-center"> <Katex text={`a(n) = \\sigma(wx + b)`} tailwind=""></Katex> </p>
+  <div class="flex  w-full">
+    <p class="flex-1 text-center mr-20">  input </p>
+    <p class="flex-1 text-center ml-20"> output </p>
+
+  </div>
+  
   <svg width={size} height={size * 2/3} xmlns="http://www.w3.org/2000/svg" >
     <!-- Circle -->
   

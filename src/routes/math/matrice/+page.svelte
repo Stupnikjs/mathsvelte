@@ -179,14 +179,39 @@
   
     </Item>  
     <Item title=" Vecteur Propres (eigenvectors)" onMountCb={registerChildComponent}>
+           <div class="flex flex-col justify-center gap-2 ml-10">
             <p> 
                 les Vecteur Propres d'une matrice sont les vecteurs qui vont garder 
                 la même direction pendant la transformation de la matrice
             </p>
             <p> pour une matrice A carrée a 2 dimensions  <Katex tailwind={"text-center"} text={` A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}`}></Katex></p>
             <Katex tailwind={"text-center"} text={` (A - \\lambda I )r = 0`}></Katex>
-             <p> On recherche les solutions a cette équation </p><Katex tailwind={""} text={`det(A - \\lambda I) = 0 `}></Katex>
+             <p> On recherche les solutions a cette équation </p><Katex tailwind={"text-center"} text={`det(A - \\lambda I) = 0 `}></Katex>
              <p> On obtient en developpant <Katex tailwind={"text-center"} text={`\\lambda^2 - ( a + d)\\lambda + ad - bc = 0 `}></Katex></p>
+            <div class="flex flex-col m-10">
+                 exemple :   
+                
+                <Katex tailwind={"text-center"} text={`M = \\begin{bmatrix} 2 & 1  \\\\ 3 & 4 \\end{bmatrix}`}></Katex> 
+                <p> On cherche D tel que <Katex text={` M = C^{-1}DC`} tailwind="text-center"></Katex></p>
+                <p> <Katex tailwind={"text-center"} text={`\\lambda^2 - ( 2 + 4 )\\lambda + 2*4 - 3*1
+                 = 0 `}></Katex> </p>
+                 <p> <Katex tailwind={"text-center"} text={`\\lambda^2 - 6\\lambda + 5
+                    = 0 `}></Katex> </p>
+                 <p> <Katex tailwind={"text-center"} text={`(\\lambda - 3)^2  = 4  `}></Katex> </p>
+                 <p> <Katex tailwind={"text-center"} text={` \\lambda = 5 \\space \\space ou \\space \\space \\lambda = 1  `}></Katex> </p>
+                  <p> pour </p><Katex text={` \\lambda = 5 \\space \\space \\space  A - 5I  = \\begin{bmatrix} -3 & 1  \\\\ 3 & -1 \\end{bmatrix}`} tailwind="text-center"></Katex>
+                  <Katex text={` \\lambda = 5 \\space \\space \\space  (A - 5I)v  = \\begin{bmatrix} -3 & 1  \\\\ 3 & -1 \\end{bmatrix} \\begin{bmatrix} x \\\\ y  \\end{bmatrix} = 0 `} tailwind="text-center"></Katex>
+                  <Katex text={` -3x + y = 0  `} tailwind=" text-center"></Katex>
+                  <Katex text={` 3x - y = 0  `} tailwind="text-center"></Katex>
+                  <Katex text={`v = \\begin{bmatrix}   3y \\\\ y  \\end{bmatrix}  `} tailwind="text-center"></Katex>
+                  <p> pour </p><Katex text={` \\lambda = 1 \\space \\space \\space  A - I  = \\begin{bmatrix} 1 & 1  \\\\ 3 & 3 \\end{bmatrix}`} tailwind="text-center"></Katex>
+                  <Katex text={` \\lambda = 1 \\space \\space \\space  (A - I)v  = \\begin{bmatrix} 1 & 1  \\\\ 3 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y  \\end{bmatrix} = 0 `} tailwind="text-center"></Katex>
+                  <Katex text={` x + y = 0  `} tailwind=" text-center"></Katex>
+                  <Katex text={` 3x - 3y = 0  `} tailwind="text-center"></Katex>
+                  <Katex text={`v = \\begin{bmatrix}   1 \\\\ 1  \\end{bmatrix}  `} tailwind="text-center"></Katex>
+                </div>
+            </div> 
+       
     </Item>
 </div>
 
