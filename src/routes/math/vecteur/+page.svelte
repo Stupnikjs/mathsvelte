@@ -45,8 +45,7 @@
                 <h1 class="text-xs mb-2">Je crée un vecteur avec les coordonées </h1>
                 <Matrix arr={[["x"], ["y"], ["z"]]} tailwind="text-xs inline" type="b"></Matrix>
             </div>
-        </Item> 
-        <Vectordemo></Vectordemo>       
+        </Item>       
     </div>
    
 

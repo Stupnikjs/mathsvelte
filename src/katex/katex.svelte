@@ -27,7 +27,7 @@
 
   </script>
   
-  <div class={tailwind} bind:this={mathElement}></div>
+  <div class={tailwind + " bg-orange-100 w-1/2 m-auto p-2 shaddow"} bind:this={mathElement}></div>
   
   <style>
     

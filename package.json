@@ -25,7 +25,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/lato": "^5.0.15",
 		"@fontsource/merriweather": "^5.0.8",
+		"@fontsource/rajdhani": "^5.0.8",
 		"@fontsource/voltaire": "^5.0.5",
 		"@svgdotjs/svg.js": "^3.2.0",
 		"@types/d3": "^7.4.0",

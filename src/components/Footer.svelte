@@ -4,7 +4,7 @@ import vercel from "../static/vercel.svg"
 import three from "../static/three.png"
 </script>
 
-<footer  class="footer items-center text-center voltaire w-full  text-xs ">
+<footer  class="footer items-center text-center voltaire w-full  text-xs p-5">
     <div class="flex justify-around items-center h-full fontsize">
         <p>developpé avec SvelteKit <img src={icon} class="w-1/4 inline" alt="svelte"></p>
         <p>Tailwindcss </p>

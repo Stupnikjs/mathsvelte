@@ -1,6 +1,7 @@
 <script>
     
     import "@fontsource/voltaire";
+    import "@fontsource/lato";
     import DropDown from "./dropDown.svelte";
   
     let mathDrop = {
@@ -20,7 +21,7 @@
 
   </script>
   
-  <header class="bg-indigo-100 voltaire fixed w-full header h10">
+  <header class="bg-indigo-100 lato fixed w-full header h10">
         <nav class="flex items-center h10">
             <DropDown
             {...mathDrop}>
@@ -38,12 +39,12 @@
   </header>
   
   <style>
-    .voltaire {
-      font-family: "Voltaire", sans-serif;
-      z-index: 1; 
-    }
+    
    
-  
+    .lato{
+      font-family: "Lato", sans-serif;
+      z-index:1; 
+    }
 
   </style>
   

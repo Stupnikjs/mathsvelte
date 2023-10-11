@@ -37,7 +37,6 @@
             <div class={myclasses}>
                     <slot />
             </div>
-            <Footer></Footer>
         </div>
         
         
