@@ -1,5 +1,5 @@
 <script lang="ts">
-
+import img from "src/static/coursera.png"
 </script>
 
     <div class="flex flex-col justify-center items-center bg-blue-50 full-height">
@@ -17,7 +17,7 @@
                 <i class="fa-brands fa-github text-5xl"></i>
                 <i class="fa-brands fa-linkedin text-5xl"></i>
                 <a href="https://www.kaggle.com/nicolasboudier"><i class="fa-brands fa-kaggle text-5xl m-auto"></i></a>
-                <a href="coursera.org"><img src="/src/static/coursera.png" alt="coursera"/></a>
+                <a href="coursera.org"><img src={img} alt="coursera"/></a>
             </div> 
             <div class="flex flex-col mr-2">
                 <i class="fa-brands fa-python text-5xl m-auto python"></i>  
