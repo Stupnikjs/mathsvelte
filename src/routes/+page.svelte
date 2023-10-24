@@ -4,27 +4,30 @@
     import "@fontsource/lato"
     import "@fontsource/rajdhani"
  
-    function returnWidth(width:number){
-      if (width  < 900) return ".5rem"
-      else return "1rem"
-    }
+ 
  
 </script>
 
-    <nav class="w-full bg-green-50 lato flex justify-around">
-        <a href="/blog">Blog</a>  
-        <a href="/projet">Projets</a>
-    </nav>
-    <div class="bg-gray-200 p-5 m-5 rajdhani">
-
-        <h1>Boudier Nicolas</h1>
+    <div class="flex flex-col justify-center items-center bg-blue-50 h-full">
+        
+       
+        <a href="/projets" class="link"> Mes Projets</a>
+        <div class="flex items-center">
+            <i class="fa-brands fa-js text-2xl m-5"></i>
+            <div class="p-5 m-5 rajdhani boxshad w-full">
+                <h1> Developpeur auto-didacte </h1>
+                <p class='text-xs'> j'ai realisé plusieurs projets en lien avec le machine learning, la datascience et le developpement web</p>
+                <p> javascript et python </p>
+            </div> 
+            <i class="fa-brands fa-python text-2xl m-5"></i>
         <div>
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-linkedin"></i>
-
+    
+               
         </div>
+        </div>
+        <a href="/blog" class="link">Blog</a>  
     </div>
-   
+    
 
     
    
@@ -32,7 +35,12 @@
   
 
 <style>
-    .lato{
-        font-family: 'Lato', sans-serif;
+    .link{
+        background-color: rgb(125, 169, 207);
+        padding: 1rem 1.5rem; 
+        font-size: 1.5rem;
+    }
+    .boxshad{
+        box-shadow: .1rem .1rem .1rem .01rem;
     }
 </style>

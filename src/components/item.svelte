@@ -53,7 +53,7 @@ onMount(() => {
         display: flex;
     }
     
-    .rajdhani{
+    :global(.rajdhani){
         font-family: "rajdhani", sans-serif;
     }
     :global(.shaddow){
