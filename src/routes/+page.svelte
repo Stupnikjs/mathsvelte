@@ -1,16 +1,12 @@
 <script lang="ts">
-    import "../style/style.css" 
+    import '../style/style.css'
     import "@fontsource/voltaire" 
     import "@fontsource/lato"
     import "@fontsource/rajdhani"
- 
- 
- 
+
 </script>
 
     <div class="flex flex-col justify-center items-center bg-blue-50 h-full">
-        
-       
         <a href="/projets" class="link"> Mes Projets</a>
         <div class="flex items-center">
             <i class="fa-brands fa-js text-2xl m-5"></i>

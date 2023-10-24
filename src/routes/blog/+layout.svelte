@@ -1,8 +1,7 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import Header from "../../components/header.svelte";
-    import "../../style/app.css";
-    
+    import "../../style/app.css"
     let myclasses = "gridtemp fontsize"; // Initial classes
     
 

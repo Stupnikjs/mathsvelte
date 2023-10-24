@@ -1,18 +1,13 @@
 <script lang="ts">
-    import "../../style/style.css" 
     import "@fontsource/voltaire" 
     import "@fontsource/lato"
   
-    
 
-
-    
     function returnWidth(width:number){
       if (width  < 900) return ".5rem"
       else return "1rem"
     }
 
-    
 
 </script>
 
