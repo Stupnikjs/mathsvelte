@@ -1,8 +1,8 @@
 <script lang="ts">
     import "@fontsource/voltaire"
-    import Item from "../../../components/item.svelte";
-    import AsideComp from "../../../components/AsideComp.svelte";
-    import Codecomp from "../../../components/codecomp.svelte";
+    import Item from "../../../../components/item.svelte";
+    import Codecomp from "../../../../components/codecomp.svelte";
+    import AsideComp from "../../../../components/AsideComp.svelte";
     
     
    

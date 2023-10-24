@@ -1,11 +1,9 @@
 <script lang="ts">
-    import Katex from "../../../katex/katex.svelte";
-    import "@fontsource/voltaire"
-    import Item from "../../../components/item.svelte";
-    import AsideComp from "../../../components/AsideComp.svelte";
-    import Matrix from "../../../components/Matrix.svelte";
-    import Codecomp from "../../../components/codecomp.svelte";
     
+    import "@fontsource/voltaire"
+    import Item from "../../../../components/item.svelte";
+    import Codecomp from "../../../../components/codecomp.svelte";
+    import AsideComp from "../../../../components/AsideComp.svelte";
    
     $: itemTitles = [] as string[]; 
 

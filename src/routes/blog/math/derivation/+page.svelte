@@ -1,9 +1,9 @@
 <script lang="ts">
     import "../../../style/style.css"
-    import Katex from "../../../katex/katex.svelte";
+    import Katex from "../../../../katex/katex.svelte";
     import "@fontsource/voltaire"
-    import Item from "../../../components/item.svelte";
-    import AsideComp from "../../../components/AsideComp.svelte";
+    import Item from "../../../../components/item.svelte";
+    import AsideComp from "../../../../components/AsideComp.svelte";
  
     
    

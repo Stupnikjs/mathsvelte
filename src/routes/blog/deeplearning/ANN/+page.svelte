@@ -1,12 +1,8 @@
 <script lang="ts">
-    import Katex from "../../../katex/katex.svelte";
     import "@fontsource/voltaire"
-    import Item from "../../../components/item.svelte";
-    import AsideComp from "../../../components/AsideComp.svelte";
-    import Codecomp from "../../../components/codecomp.svelte";
-    import Matrix from "../../../components/Matrix.svelte";
-    
-   
+    import Item from "../../../../components/item.svelte";
+    import AsideComp from "../../../../components/AsideComp.svelte";
+  
     $: itemTitles = [] as string[]; 
 
     function registerChildComponent(componentTitle:string) {

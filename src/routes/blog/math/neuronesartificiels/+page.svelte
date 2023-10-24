@@ -1,14 +1,14 @@
 <script lang="ts">
     import "../../../style/style.css"
+    import Katex from "../../../../katex/katex.svelte";
     import "@fontsource/voltaire"
-    import Item from "../../../components/item.svelte";
-    import AsideComp from "../../../components/AsideComp.svelte";
-    import Katex from "../../../katex/katex.svelte"; 
-    import Codecomp from "../../../components/codecomp.svelte";
+    import Item from "../../../../components/item.svelte";
+    import Codecomp from "../../../../components/codecomp.svelte";
+    import AsideComp from "../../../../components/AsideComp.svelte";
     import { onMount } from "svelte";
-    import Svg from "../../../svg/svg.svelte";
-    import type { neuroneSvg } from "../../../svg/svg";
-    import Neurone from "../../../svg/neurone.svelte";
+    import Svg from "../../../../svg/svg.svelte";
+    import type { neuroneSvg } from "../../../../svg/svg";
+    import Neurone from "../../../../svg/neurone.svelte";
 
 
     $: itemTitles = [] as string[]; 

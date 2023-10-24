@@ -1,8 +1,7 @@
 <script lang="ts">
     import { browser } from "$app/environment";
-    import Footer from "../components/Footer.svelte";
-    import Header from "../components/header.svelte";  
-    import "../style/app.css";
+    import Header from "../../components/header.svelte";
+    import "../../style/app.css";
     
     let myclasses = "gridtemp fontsize"; // Initial classes
     
@@ -30,8 +29,6 @@
 </script>
 
 
-
-    
         <div class="flex flex-col">
             <Header></Header>
             <div class={myclasses}>

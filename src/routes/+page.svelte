@@ -2,41 +2,37 @@
     import "../style/style.css" 
     import "@fontsource/voltaire" 
     import "@fontsource/lato"
-    import OnlineEx from "../three/OnlineEx.svelte";
-    
-
-    
+    import "@fontsource/rajdhani"
+ 
     function returnWidth(width:number){
       if (width  < 900) return ".5rem"
       else return "1rem"
     }
-
-    
-
+ 
 </script>
 
+    <nav class="w-full bg-green-50 lato flex justify-around">
+        <a href="/blog">Blog</a>  
+        <a href="/projet">Projets</a>
+    </nav>
+    <div class="bg-gray-200 p-5 m-5 rajdhani">
 
+        <h1>Boudier Nicolas</h1>
+        <div>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-linkedin"></i>
 
-   <div class="p-5 bg-pink-100 voltaire py-20 text-3xl">
-      
-    <div class="bg-indigo-300 p-5 text-center mt-10 full">
-      <h1 class="voltaire  text-center"> Bienvenue sur MathSvelte </h1>
-      <h2> Blog éducatif consacré aux Mathematiques, au developpement et Machine Learning </h2>
-    </div>   
-   </div> 
+        </div>
+    </div>
+   
+
+    
+   
+
   
-
-
-
-
-
-
-
-
 
 <style>
-   .full{
-    height: 100vh;
-   }
-  
+    .lato{
+        font-family: 'Lato', sans-serif;
+    }
 </style>

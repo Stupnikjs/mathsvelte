@@ -23,7 +23,7 @@ on:mouseleave={() => { dropDown = "nodropdown"}}>
         hoverIndex = ind
         }}  
       on:mouseleave={() => { hoverIndex = -1}}
-        ><a href={`/${deleteBlank(title)}/${deleteBlank(item)}`}>{item}</a></li>
+        ><a href={`/blog/${deleteBlank(title)}/${deleteBlank(item)}`}>{item}</a></li>
       {/each}
   </div>
 </div>

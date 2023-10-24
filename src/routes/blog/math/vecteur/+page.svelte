@@ -1,11 +1,11 @@
 <script lang="ts">
-    import "../../../style/style.css"
+    import "../../../../style/style.css"
     import "@fontsource/voltaire"
-    import Item from "../../../components/item.svelte";
-    import AsideComp from "../../../components/AsideComp.svelte";
-    import Katex from "../../../katex/katex.svelte";
-    import Vectordemo from "../../../three/Vectordemo.svelte";
-    import Matrix from "../../../components/Matrix.svelte";
+    import Katex from "../../../../katex/katex.svelte";
+    import "@fontsource/voltaire"
+    import Item from "../../../../components/item.svelte";
+    import AsideComp from "../../../../components/AsideComp.svelte";
+    import Matrix from "../../../../components/Matrix.svelte";
 
 
     $: itemTitles = [] as string[]; 
