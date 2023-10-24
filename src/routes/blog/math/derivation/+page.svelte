@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "../../../../style/style.css"
+   
     import Katex from "../../../../katex/katex.svelte";
     import "@fontsource/voltaire"
     import Item from "../../../../components/item.svelte";

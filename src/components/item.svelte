@@ -53,11 +53,6 @@ onMount(() => {
         display: flex;
     }
     
-    :global(.rajdhani){
-        font-family: "rajdhani", sans-serif;
-    }
-    :global(.shaddow){
-        box-shadow: .01rem .01rem .1rem  gray;
-    }
+    
 </style>
 

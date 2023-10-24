@@ -28,11 +28,11 @@
 		"@fontsource/lato": "^5.0.15",
 		"@fontsource/merriweather": "^5.0.8",
 		"@fontsource/rajdhani": "^5.0.8",
+		"@fontsource/ubuntu-mono": "^5.0.17",
 		"@fontsource/voltaire": "^5.0.5",
 		"@svgdotjs/svg.js": "^3.2.0",
 		"@types/d3": "^7.4.0",
-		"katex": "^0.16.8", 
+		"katex": "^0.16.8",
 		"mathjs": "^11.11.2"
-
 	}
 }
