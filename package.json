@@ -31,6 +31,8 @@
 		"@fontsource/voltaire": "^5.0.5",
 		"@svgdotjs/svg.js": "^3.2.0",
 		"@types/d3": "^7.4.0",
-		"katex": "^0.16.8"
+		"katex": "^0.16.8", 
+		"mathjs": "^11.11.2"
+		
 	}
 }

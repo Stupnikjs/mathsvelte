@@ -2,7 +2,7 @@
   import { browser } from "$app/environment";
   import type {neuroneSvg} from "./svg";
   import Katex from "../katex/katex.svelte";
-    import { pow } from "mathjs";
+  import { pow } from "mathjs";
 
 
    
